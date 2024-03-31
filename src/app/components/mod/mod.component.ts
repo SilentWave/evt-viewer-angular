@@ -90,9 +90,13 @@ export class ModComponent {
   }
 
   getLayerIndex(layer): number {
-    layer = layer.replace('#','');
+    if (layer) {
+      layer = layer.replace('#','');
 
-    return this.orderedLayers.indexOf(layer);
+      return this.orderedLayers.indexOf(layer);
+    }
+
+    return 0;
   }
 
   layerHidden(subEl): boolean {
