@@ -5944,6 +5944,1561 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
             </div>
          </div>
       </div>
+
+      <div> <!-- SECONDA SELEZIONE DI LIRICHE -->
+         <pb n="95" facs="95.jpg"/>
+            <head>
+               <app>
+                  <lem varSeq="2"><mod change="#strato-4">
+                     <lb n="8"/><add place="bottom" ><hi rend="underline"><placeName>Trieste</placeName> e una donna</hi>
+                     <lb n="9"/><metamark change="#strato-3" rend="line" place="below">1911 - 1913</metamark></add></mod>
+                  </lem>
+                  <rdg varSeq="1">
+                     <mod change="#strato-4">
+                        <metamark function="textDeletion" rend="line" spanTo="#p95_7"/>
+                        <del>
+                           <mod change="#strato-2">
+                              <del>
+                           <lb n="1"/>Coi miei occhi
+                           <lb n="2"/>Nuovi versi alla <persName>Lina</persName>
+                           <lb n="3"/>Dopo la giovanezza * Fanciulli e garzoni
+                           <lb n="4"/>19<app><lem varSeq="2"><mod change="#strato-4"><subst>
+                              <del seq="1">11</del>
+                              <add seq="2" rend="supersript">10</add>
+                           </subst></mod></lem><rdg varSeq="1">11</rdg></app> * 1913
+                           <lb n="5"/>
+                           <!-- 1 -->
+                           <lb n="6"/><mod change="#strato-r"><add><metamark rend="brace" function="transposition"/>a pag. 97></add></mod></del></mod>
+                           <!-- 2 NOTE INVECE DI METAMARK cfr BOZZA p. 11 -->
+                           <note resp="#US" place="top" type="transposition"><mod change="#strato-r">
+                              <lb/>a pag. 97
+                           </mod></note>
+                           
+                           <lb n="7"/><anchor xml:id="p95_7"/>
+                        </del>
+                     </mod>
+                  </rdg></app></head> 
+            
+      
+      
+         </div>
+
+               <div n="Autunno"> 
+                  <lb/>
+                  <pb n="96" facs="96.jpg"/>
+                  <lb/>
+                  
+                  <!-- ipotesi 1  METAMARK    --> 
+                  <fw><mod change="#strato-3"><metamark function="transposition" place="top"> 
+                     <lb/>La moglie
+                     <lb/>- . -
+                     <lb/>A mia figlia</metamark></mod></fw>
+                  <lb/>
+                  
+                  <!-- ipotesi 2 NOTE INVECE DI METAMARK cfr BOZZA p. 11 -->
+                  
+                  <note resp="#US" place="top" type="transposition"><mod change="#strato-3">
+                     <lb/>La moglie
+                     <lb/>- . -
+                     <lb/>A mia figlia
+                  </mod></note>
+                  
+                  
+                  <lb/>
+                  <head>L'autunno</head>
+                  <metamark rend="line" place="below"/>
+                  <lg n="1">
+                        <l n="1">Che succede di te, della tua vita,</l> 
+                        <l n="2">mio solo amico, mia pallida sposa?</l>  
+                        <l n="3">La tua bellezza si fa dolorosa,</l> 
+                        <l n="4">nè più a Carmen somigli, a Carmençita.</l></lg> <!-- <glyph> in <charDecl> -->
+                  <lg n="2">
+                     <l n="1">Dici: "È l'autunno, è la campagna in vista</l> 
+                     <l n="2">sì ridente che fa male al mio cuore".</l>   
+                     <l n="3">Dici (e a uno strano incanto mi conquista</l>  
+                     <l n="4">la tua voce): "Non vedi là in giardino</l>  
+                        <l n="5">quell' albero, che tutto ancor non muore,</l>  
+                        <l n="6">dove ogni foglia che resta è un rubino.</l>  
+                        <l n="7">Per una donna, amico mio, che schianto</l>  
+                        <l n="8">l'autunno! ad ogni suo ritorno sai</l> 
+                     <l n="9">che sempre, fino da bambina, ho pianto."</l> 
+                        <l n="10">Altro non dici a chi ti vive accanto,</l> 
+                     <l n="11">a chi vive<app><lem varSeq="2"><mod change="#strato-0"><subst><del>di</del><add place="above">con</add><del rend="strikethrough">di</del></subst></mod></lem><rdg varSeq="1">di</rdg></app>te, col tuo dolore</l>
+                        <l n="12">che gli ascondi; e si chiede se più mai,</l> 
+                        <l n="13">anima, e dove e a che rifiorirai.</l>
+                  </lg>
+                  
+               <ab>
+                  <lb/><mod change="#strato-4"><metamark function="transposition" place="bottom-right">A mia figlia</metamark><metamark rend="arrow" function="transposition" spanTo="#p97_Capra_l13"/></mod> <!-- 101221  -->   <!-- ER: da rivedere -->
+               </ab>
+               </div>
+         
+                  <div n="Capra"> <!-- Castellani 171 -->
+                     <lb/>
+                     <pb n="97" facs="97.jpg"/>
+                     <lb/>
+                     <head>La capra</head>
+                     <metamark rend="line" place="below"/>
+                     <lg n="1">
+                        <l n="1">Ho parlato a una capra.</l>
+                        <l n="2">Era sola sul prato, era legata;</l>
+                        <l n="3">sazia d'erba, bagnata</l>
+                        <l n="4">dalla pioggia, belava.</l></lg>
+                     <lg n="2">
+                        <l n="1">Quell'uguale belato era fraterno</l>
+                        <l n="2">al mio dolore; ed io risposi, prima</l>
+                        <l n="3">per celia, poi perchè il dolore è eterno</l>
+                        <l n="4">ha una voce e non varia;</l>
+                        <l n="5">questa voce sentiva</l>
+                        <l n="6">gemere in una capra solitaria.</l></lg>
+                     <lg n="3">
+                        <l n="1">In una capra dal viso semita,</l>
+                        <l n="2"> sentiva querelarsi ogni altro male,</l>  <!-- 101221 -->
+                        <l n="3"><mod change="#strato-4"><metamark rend="arrow" function="transposition" place="margin-left" spanTo="#p97_Capra_l13"/>  
+                        <anchor xml:id="p97_Capra_l13"/></mod>ogni altra vita.</l>
+                     </lg>
+                  </div>
+         
+         <div n="Maiale"> <!-- Castellani 172-3: 
+                          12b | dapprima alternativa in margine, è stata poi inserita a testo 
+                                e erasa, pure su rasura nello stesso verso  DA LONTANO IN LUI MI -->
+            
+            <head>Il maiale</head>
+            <metamark rend="line" place="below"/>
+            <lg n="1">
+               <l n="1">La broda, fior d'immondezzaio, è pura</l>
+               <l n="2">tanto quanto il suo istinto n'è affamato;</l>
+               <l n="3">stride come il bambino sculacciato</l>
+               <l n="4">se allontani da lui la sua lordura.</l></lg>
+            <lg n="2">
+               <l n="1">Certo per lui grande ventura è quello</l>
+               <l n="2"><mod change="#strato-5"><metamark rend="vertical-line" place="margin-left" spanTo="#p97_Maiale_l6"/><anchor xml:id="p97_Maiale_l6"/></mod>che per me, per il mio pensiero, è strazio;</l>
+               <l n="3">che non si chieda perché lo vuol bello</l>
+               <l n="4">di pinguedine, e il più pascito e sazio,</l>
+               <l n="5">la massaia che scaccia il poverello;</l>
+               <l n="6">ch'egli — come ogni vita — ignori a cosa</l>  
+               <l n="7">poi gioverà, quando sarà perfetto.</l>
+               <l n="8"><gap rend="erasure" quantity="38" unit="char"/>Ma io se da lontano in lui mi metto</l> 
+               <l n="9">io sento nelle sue carni il coltello;</l>
+               <l n="10">sento quell'urlo, quella spaventosa</l>
+               <l n="11">querela, quando al gruppo un cane abbaia,</l>
+               <l n="12">e la massaia ride sulla soglia.</l></lg>
+            <lg n="3">
+               <l n="1">Solo in me mette una ben strana voglia</l>
+               <l n="2">di piangere quel suo beato aspetto.</l></lg>
+            
+         </div>
+         
+         <div n="Torrente"> <!-- Castellani 184: 9 | al  corretto in   a
+                                                16 | e   per  è  ; lo stesso verso è segnato a matita con crocetta di perplessità
+                                                   sulla forma dell'articolo o sulla variante 
+                                                   | l'Imalaja / il Himalaja  -->
+            <lb/>
+            <pb n="98" facs="98.jpg"/>
+            <lb/>
+            <head>Il torrente</head>
+            <metamark rend="line" place="below"/>
+            <lg n="1">
+               <l n="1">Tu così avventuroso nel mio mito,</l>
+               <l n="2">così povero sei fra le tue sponde;</l>
+               <l n="3">acqua non hai, non margine fiorito,</l>
+               <l n="4">dove ristagni scopri cose immonde.</l></lg>
+            <lg n="2">
+               <l n="1">Pur, se ti guardo, il cor d'ansia mi stringi,</l>
+               <l n="2">o torrentello;</l>
+               <l n="3">poi che il tuo corso è quello</l>
+               <l n="4">del mio pensiero, cui tu risospingi</l>
+               <l n="5">alle origini, a<mod change="#strato-0"><del instant="true" rend="strikethrough">l</del></mod> tutto il forte e il bello</l> <!-- cfr BOZZA p. 3 -->
+               <l n="6">che in te ammiravo: e se ancor penso i grossi</l>
+               <l n="7">fiumi, lo sbocco nell'avverso mare,</l>
+               <l n="8">quest'acqua onde tu appena i piedi arrossi,</l>
+               <l n="9">nudi, a una lavandaia,</l>
+               <l n="10">la più pericolosa e la più gaia,</l>
+               <l n="11">con isole e cascate ancor m'appare,</l>
+               <l n="12"><metamark rend="x" function="status" place="margin-left"/>e il poggio da cui scendi e <app><lem varSeq="2"><mod change="#strato-0"><add place="inline">il Himalaja</add></mod></lem><rdg ana="altVariant" type="substantive" varSeq="1">l'imalaja</rdg></app>.</l></lg> <!-- variante alternativa irrisolta -->
+            <lg n="3">
+               <l n="1">Sulla tua sponda l'erba</l>
+               <l n="2">cresceva, e cresce nel ricordo sempre;</l>
+               <l n="3">sempre è d'intorno a te <sic>Sabbato</sic> sera,</l>
+               <l n="4">sempre ad un bimbo la sua madre austera</l>
+               <l n="5">rammenta che quest'acqua è fuggitiva,</l>
+               <l n="6">che non ritrova più la sua sorgente,</l>
+               <l n="7">nè la sua riva; sempre l'ancor bella</l>
+               <l n="8">donna si attrista, e cerca la sua mano</l>
+               <l n="9">il fanciulletto, che ascoltò uno strano</l>
+               <l n="10">confronto fra la vita nostra e quella</l>
+               <l n="11">della corrente.</l>
+            </lg>
+         </div>
+
+         <div n="Faro">  <!-- Castellani 186 
+                              2-7  e 8-25  su due ritagli incollati
+                              12 | o santa | aggiunto sulla pagina
+                              22 | là celano | su rasura 
+                              28 | ) omessa       -->
+<head>Il faro</head>
+            <metamark rend="line" place="below"/>
+            <lg n="1"> <!-- 01.11.21 -->
+               <l n="1">Era (or sono vent'anni) era il mio sogno</l>
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_1"/>
+               <l n="2">di salire quassù.</l>
+               <l n="3">Già sull'uscio, al pilota domandava,</l>
+               <l n="4">scoprendomi: "Si può passare?" - "Si."</l> 
+               <l n="5">ma sempre, non osando, mi appagava</l>
+               <l n="6">del cannone che annuncia il mezzodì.</l>
+               <l n="7">Oggi sono salito;</l>
+               <anchor xml:id="pecetta_1"/>
+               <lb/>
+               <pb n="99" facs="99.jpg"/>
+               <lb/>
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_2"/>
+               <l n="8">oggi che la domenica è una pena,</l>
+               <l n="9">ch'è come un'umiliante quarantena;</l>
+               <l n="10">oggi, dopo che il più</l>
+               <l n="11">del mio tempo in un semi-ozio ho fornito.</l></lg>
+            <lg n="2">
+               <l n="1">Al mio rimorso e alla tua noia, o santa</l> 
+               <l n="2">Domenica, al color di purgatorio,</l>
+               <l n="3">di che impregni le cose col tramonto</l>
+               <l n="4">non in me stesso, fuori del mio mondo</l>
+               <l n="5">ho sperato un riparo.</l>
+               <l n="6">Ma domenica è pure qui sul faro,</l>
+               <l n="7">su questa vetta imbandierata ed alta</l>
+               <l n="8">e solitaria, come l'Alpi in fondo.</l></lg>
+            <lg n="3">
+               <l n="1">Brillano al vespro l'onde</l>
+               <l n="2">serene<mod change="#strato-1"><retrace>,</retrace></mod> <mod change="#strato-1"><del>e</del></mod> in mezzo alle deserte sponde,</l> <!-- per la variante non paradigmatica cfr  BOZZA p. 3; da capire se sia strato1 | retrace va bene? sempre da capire se sia strato1 -->
+               <l n="3">là celano le nebbie il promontorio;</l>
+               <l n="4">e visibile un poco è all'orizzonte</l>
+               <l n="5">la curva della gigantesca sfera.</l>
+               <l n="6">(L'anima mia è mendica questa sera;</l>
+               <anchor xml:id="pecetta_2"/>
+               <l n="7">chiede ad un panorama un pò di gioia;</l>
+               <l n="8">smarrita la felicità sua vera,</l>
+               <l n="9">incolpa altrui di sua perfidia e noia.</l> <!--  SIC, senza ) parentesi aperta a inizio verso 25 -->
+            </lg>
+         </div>
+         
+         <div n="Giovanetto"> <!-- Castellani 188 
+                              1-15 | su ritaglio incollato
+                              5 | come   aggiunto sulla pagina      -->
+<head>Il giovanetto</head>
+            <metamark rend="line" place="below"/>
+   <lg n="1">
+      <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_3"/>
+      <l n="1">A mezza estate su noi si riversa</l>
+      <l n="2">la bora, e soffia nell'aperto prato</l>
+      <l n="3">dove giochi, ed il florido incarnato</l>
+      <l n="4">del viso, e le tue nude gambe sferza.</l></lg>
+   <lg n="2">
+      <l n="1">Tu stai sul prato, o giovanetto, come</l>
+      <l n="2">sta sulla tolda il marinaio, o in terra</l>
+      <l n="3">propria il padrone; e se ti ammiro l'occhio</l>
+      <l n="4">non abbassi, mi guardi con fierezza,</l>
+      <l n="5">come un nemico, in volto.</l>
+      <l n="6">Forse da timidezza vien l'audacia,</l>
+      <l n="7">ed il sospetto ti fa disinvolto,</l>
+      <l n="8">mentre al compagno nella finta guerra</l>
+      <l n="9">parli sommesso, e ridere v'ascolto.</l>
+      <l n="10">La guerra è intorno ad una palla enorme,</l>
+      <l n="11">che si lancia col piede;</l>
+      <anchor xml:id="pecetta_3"/>
+      <l n="12">e chi passa e riguarda, ecco, ti vede</l>
+   <lb/> 
+   <pb n="100" facs="100.jpg"/>
+   <lb/>
+      <l n="13">svolgere in essa le tue snelle forme.</l>
+      <l n="14">Scende intanto la sera, e tinge in rosa</l>
+      <l n="15">le nubi, e a quanto del tuo corpo è ignudo</l>
+      <l n="16">fugacemente intona il suo colore.</l></lg>
+   <lg n="3">
+      <l n="1">La sua bellezza con la tua si sposa;</l> 
+      <l n="2">e una malinconia quasi amorosa</l>
+      <l n="3">mi distilla nel cuore.</l>
+   </lg> 
+            <!-- timbro della biblioteca -->
+
+         </div>
+         
+         <div n="Trieste"> <!-- Castellani 190 
+                              2-7  9-21 | su ritagli incollati >>>>> CF: con quale penna sono scritti?? strato-a ??
+                              5 | và   caduto col taglio, aggiunto e corretto in inchiostro blu sulla pagina
+                             19 | un'aria  anticipato dopo Circola, cassato -->
+            <lb/>
+            <pb n="101" facs="101.jpg"/>
+            <lb/>
+            <head>Trieste</head>
+            <metamark rend="line" place="below"/>
+            <lg n="1">
+                  <l n="1">Ho attraversata tutta la città.</l>
+                  <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_4"/>
+                  <l n="2">Poi ho salita un'erta,</l>
+                  <l n="3">popolosa in principio, indi deserta</l>
+                  <l n="4">chiusa da un muricciolo,</l>
+               <l n="5">dove, poichè più oltre non si v<app><lem varSeq="2"><mod change="#strato-0"><subst><add place="inline"><retrace>a</retrace>,</add><del>à</del></subst></mod></lem><rdg varSeq="1">à</rdg></app></l> <!-- variante successiva + retrace -->
+                  <l n="6">seggo; e mi pare che in questo cantuccio</l>
+                  <l n="7">termini la città.</l></lg>
+                  <anchor xml:id="pecetta_4"/>
+            <lg n="2">
+                  <l n="1">Trieste ha una selvaggia</l>
+                  <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_5"/>
+                  <l n="2">grazia; una grazia che ai miei occhi piace</l>     <!-- "e" di "piace" fuori pecetta -->
+                  <l n="3">come un'adolescenza aspra e vorace,</l>
+               <l n="4">con gli occhi azzurri, e mani troppo <app><lem varSeq="2"><mod change="#strato-0"><subst><add place="margin-right">grandi</add><del rend="strikethrough">gra</del></subst><metamark rend="arrow"/></mod></lem><rdg varSeq="1">gra</rdg></app></l> <!-- variante successiva + metamark -->
+                  <l n="5">per regalare un fiore;</l>
+                  <l n="6">è torbida come un amore</l>
+                  <l n="7">con gelosia.</l>
+                  <l n="8">Da quest'erta ogni chiesa, ogni sua via</l>
+                  <l n="9">scorgo, se mena all'ingombrata spiaggia,</l>
+                  <l n="10">o alla collina, cui, sulla sassosa</l>
+                  <l n="11">cima, una casa, l'ultima, s'aggrappa.</l>
+                  <l n="12">Circola 
+                     <app>
+                        <lem varSeq="2">
+                           <mod change="#strato-a"><add place="inline">in ogni cosa</add></mod>
+                        </lem>
+                        <rdg varSeq="1">
+                           <mod change="#strato-a">
+                              <del><subst>
+                                 <del rend="strikethrough">un'aria</del>
+                                 <add place="above" rend="strikethrough">in</add>
+                              </subst></del>
+                           </mod>
+                        </rdg>
+                     </app></l>  
+                  <l n="13">un'aria strana, un'aria tormentosa,</l>
+                  <l n="14">l'aria natia.</l></lg>
+                  <anchor xml:id="pecetta_5"/>
+            <lg n="3">
+                  <l n="1">La mia città, sì pittoresca e viva,</l>
+                  <l n="2">ha il cantuccio più fatto per la vita</l>
+                  <l n="3">contemplativa.</l></lg>
+         </div>
+         
+         <div n="VersoCasa"> <!-- Castellani 192 
+                              11 | in questo bel colore > su rasura
+                              12 | d'una via nel moto > su rasura
+                              18 | ove a un gran bene > su rasura
+                              -->
+            <head>Verso casa</head>  
+            <metamark rend="line" place="below"/>
+            <lg n="1">
+      <l n="1">Ed ora, se ti pare che abbastanza</l>
+      <l n="2">vagabondammo per giungere a sera;</l>
+      <l n="3">vogliamo entrare nella nostra stanza,</l>
+      <l n="4">chiuderla, e farci un pò di primavera?</l></lg>
+            <lg n="2">
+      <l n="1">Trieste, nova città,</l>
+      <l n="2">che tiene di una maschia addolescenza,</l>
+      <l n="3">che di tra il mar<retrace>e</retrace> e i duri colli senza</l>
+      <l n="4">forma e misura crebbe;</l>
+<lb/>
+<pb n="102" facs="102.jpg"/>
+<lb/>
+      <l n="5">dove l'arte 
+         <app>
+            <lem varSeq="2">
+               <mod change="#strato-4">
+                  <add place="inline">non s'ebbe</add>
+               </mod>
+            </lem>
+            <rdg varSeq="1">
+               <mod change="#strato-4">
+                  <del rend="strikethorugh">
+                     <mod change="#strato-0">
+                        <subst>
+                              <del rend="strikethrough">non</del>
+                              <add rend="superscript">mai</add>
+                        </subst>
+                   </mod>
+                   s'ebbe
+                   </del>
+               </mod>
+            </rdg>
+         </app> 
+               </l>
+      <l n="6">ozi
+         <app>
+            <lem varSeq="2">
+               <mod change="#strato-4">
+                  <add place="inline">, e se c'è, c'è in cuore</add></mod>
+                  <del rend="strikethrough"> (non c'è che in cuore</del>
+            </lem>
+            <rdg varSeq="1"> (non c'è che in cuore</rdg>
+         </app></l> 
+      <l n="7">degli abitanti, 
+         <subst><del><gap rend="erasure"/></del>
+               <add place="inspace">in questo bel colore</add></subst></l> 
+         <l n="8">di giov<subst><del><gap rend="erasure"></gap></del>
+                  <add place="inspace">anezza,</add></subst>
+         <app>
+            <lem varSeq="2">
+               <mod change="#strato-4">
+                  <add place="above">in questo assiduo</add>
+               </mod>
+            </lem>
+            <rdg varSeq="1">
+                  <del><subst><del><gap rend="erasure"/></del>
+                       <add place="inspace">d'una via nel</add></subst>
+                  </del>
+            </rdg></app> 
+                  <metamark rend="lineetta" place="inline" spanTo="#p102_1" change="#strato-4"/>
+                  <anchor xml:id="p102_1"/>
+                  moto);</l>
+      <l n="9">tutta esplorammo, fino al più remoto</l>
+      <l n="10">suo cantuccio, la più strana città.</l>
+      <l n="11">Ora che con la sera anche si fa</l>
+      <l n="12">vivo il bisogno di tornare in noi,</l>
+      <l n="13">vogliamo entrare ove con tanto amore</l>
+      <l n="14">sempre ti ascolto, <gap rend="erasure" quantity="18" unit="char"/>ove a un gran bene puoi</l> 
+      <l n="15">volgere un lungo errore?</l></lg>
+            <lg n="3">
+      <l n="16">Della più 
+         <app>
+         <lem varSeq="3">
+            <mod change="#strato-4">
+               <add>avversa pena,</add>
+            </mod>
+         </lem>
+         <rdg varSeq="2">
+            <mod change="strato-4">
+               <del rend="strikethrough">
+                  <subst>
+                     <del instant="true">lun</del>
+                     <add instant="true">dura pena</add>
+                  </subst>
+               </del>
+            </mod>
+         </rdg>
+         <rdg varSeq="1">
+            <mod change="#strato-4">
+               <del rend="strikethrough">
+                     <subst>
+                        <del>dura</del>
+                        <add>assidua</add>
+                     </subst>
+                   pena,
+               </del>
+            </mod>
+         </rdg>
+         </app></l>
+      <l n="17">della miseria più dura e nascosta,</l>
+      <l n="18">anima, noi faremo ivi un poema.</l></lg>
+         </div>
+         
+         <div n="CittaVecchia"> <!-- Castellani 194
+                              20 | parentetica su rasura
+                              21 | il   ricalcato su   o
+                              11 e 20 | corretti in inchiostro azzurro
+                              -->
+            <head>Città vecchia</head>
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">Spesso, in torbide sere, esco di casa,</l>
+               <l n="2">per godermi la via di città vecchia:</l>
+               <l n="3">giallo in qualche pozzanghera si specchia</l>
+               <l n="4">qualche fanale, e più rotta è la strada.</l></lg>
+            <lg n="2">
+               <l n="1">Di tra la gente che viene che va,</l>
+               <l n="2">dall'osteria alla casa o al lupanare;</l>
+               <l n="3">dove son merci ed uomini il detrito</l>
+               <l n="4">di un gran porto di mare;</l>
+               <l n="5">io ritrovo, passando, l'infinito</l>
+               <l n="6">nell'umiltà.</l></lg>
+            <lg n="3">
+               <l n="1">
+                  <app>
+                     <lem varSeq="2">
+                        <mod change="#strato-1">
+                           <add place="margin-left">Qui</add>
+                        </mod>
+                     </lem>
+                     <rdg varSeq="1">
+                        <del rend="strikethrough">Son</del>
+                     </rdg>
+                  </app> prostituta e marinaio, il vecchio</l>
+               <l n="2">che bestemmia, la femmina che bega,</l>
+               <l n="3">il dragone che siede alla bottega.</l>
+               <l n="4">del friggitore,</l>
+               <l n="5">la tumultuante giovane impazzita</l>
+               <l n="6">d'amore,</l>
+               <l n="7">sono tutte creature della vita</l>
+               <l n="8">e del dolore:</l>
+               <l n="9">s'agita in esse come in me il Signore.</l></lg>  
+            <lg n="4">
+               <l n="1">
+                  <app>
+                     <lem varSeq="2">
+                        <mod change="#strato-1">
+                           <add place="margin-left">Qui</add>
+                           <del rend="strikethrough">Là</del>
+                        </mod>
+                     </lem>
+                     <rdg varSeq="1">Là</rdg>
+                  </app>sen<retrace change="#strato-1">to</retrace> 
+                  <app>
+                     <lem varSeq="2">
+                        <mod change="#strato-1">
+                           <add place="inspace">, pure in strana compagnia,</add>
+                        </mod>
+                     </lem>
+                     <rdg varSeq="1">
+                        <mod change="#strato-0">
+                           <del rend="strikethrough">(e non so ancor che cosa sia)</del>     <!-- add rasura -->
+                        </mod>
+                     </rdg>
+                  </app></l>
+               <l n="2"><mod change="#strato-0"><subst><del instant="true">o</del><add instant="true">il</add></subst></mod> mio pensiero farsi</l>
+               <l n="3">più puro dove più turpe è la via.</l>
+            </lg>
+         </div>
+         
+         <div n="Appassionata"> <!-- Castellani 192 
+                              2-5 ; 8-16 | su due ritagli incollati >>>>> CF: con quale penna sono scritti?? #strato-a ??
+                              8 | Qu[anto] | ricalcato su?
+                              12 | ultima virgola caduta col taglio non riscritta
+                              -->
+            <lb/>
+            <pb n="103" facs="103.jpg"/>
+            <lb/>
+
+            <head>L'appassionata</head>
+            <metamark rend="line" place="below"/> 
+            
+         <lg n="1"> 
+            <l n="1">Tu hai come il dono della santità.</l>
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_6"/>
+            <l n="2">Nacque con te, ti segue ove ti port<mod change="#strato-0"><retrace>a</retrace></mod></l>
+            <l n="3">la passione;</l>
+            <l n="4">fa dei peccati tuoi opere buone,</l>
+            <l n="5">d'ogni giudizio ti rimanda assolta<anchor xml:id="pecetta_6"/>.</l></lg>
+         <lg n="2">
+            <l n="1">Questa grazia (che a te fors'anco è ignota)</l>
+            <l n="2">è il nostro amore, è la tua soavità.</l> 
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_7"/>
+            <l n="3"><mod change="#strato-a"><retrace>Qu</retrace></mod>anto riguardi tosto a te si vota,</l>
+            <l n="4">offre a te la sua vita.</l>
+            <l n="5">Dell'inferta ferita</l>
+            <l n="6">poi sanguini così dentro il tuo cuore,</l>
+            <l n="7">che a te chiesto è il perdono, a te, o devota,</l>
+            <l n="8">o appassionata, o pura</l>
+            <l n="9">sempre quanto la più giusta creatura;</l>
+            <l n="10">che perderti volessi non lo puoi,</l>
+            <l n="11">di cui s'amano i falli perchè tuoi.</l></lg>
+            <anchor xml:id="pecetta_7"/>
+         <lg n="3">
+            <l n="1">La tua voce, che a me giunge sì amara</l>
+            <l n="2">e sì impregnata dell'intima ambascia,</l>
+            <l n="3">l'ascolto come una musica bassa,</l>
+            <l n="4">come una lenta musica di chiesa.</l> 
+            <l n="5">Nell'anima, che tu innocente hai lesa,</l>
+            <l n="6">solo al ricordo, lascia</l>
+            <l n="7">strana dolcezza la tua voce amara.</l></lg>
+            
+            <metamark change="#strato-3" rend="asterisco" place="bottom-right" function="transposition" xml:id="A_p103" corresp="#A_p114" /> <!-- 101221 ASTERISCO DI RICHIAMO per pagina ms 114 #asterisco103_114 -->
+ 
+         </div>
+  
+         <div n="Addio"> <!-- Castellani 428
+                              27,28 | corretti in inchiostro azzurro
+                              16, 32 | virgolette omesse
+                              St21 = "Dicembre 1914"
+                              -->
+            <lb/>
+            <pb n="104" facs="104.jpg"/> <!-- titolo corrente assente -->
+            <lb/>
+
+            <metamark change="#strato-4" function="deletion" rend="line" spanTo="#p105_Addio_l40"/> <!--  101221 -->
+            <delSpan spanTo="#p105_Addio_l40"/>
+            
+            <head>L'addio</head>  
+            <metamark rend="line" place="below"/> 
+            <lg n="1">
+                  <l n="1">"Io ti saluto, amica, ed al mio cuore,</l> 
+                  <l n="2">che si gonfia commosso,</l>
+                  <l n="3">tutto affluisce il nostro vecchio amore,</l> 
+                  <l n="4">come un buon vino rosso.</l></lg>
+             <lg n="2">
+                  <l n="1">Io ti saluto, il giorno di domani</l>
+                  <l n="2">troppo triste è per me;</l>
+                  <l n="3">come le notti e i giorni che lontani</l>
+                  <l n="4">ho trascorsi da te."</l></lg>  
+              <lg n="3">
+                  <l n="1">"Il tuo dolore ed il tuo amore io sola</l>  
+                  <l n="2">conosco, a Dio sia lode;</l>
+                 <l n="3">ma p<app><lem varSeq="2"><mod change="#strato-0"><subst><add place="overwritten">ur</add><del>oi</del></subst></mod></lem><rdg>oi</rdg></app> lontano l'uomo si consola,</l>
+                  <l n="4">e la sua vita gode.</l></lg>
+              <lg n="4">
+                 <l n="1">Solo non parti tu, <app><lem varSeq="2"><mod change="#strato-0"><subst><add place="above">che</add><del rend="strikethrough">ma</del></subst></mod></lem> <rdg varSeq="1">ma</rdg></app> tua seguace</l>
+                  <l n="2">vien la fortuna, io so;</l>
+                  <l n="3">ma in quanti dubbi a me stessa la pace</l>
+                  <l n="4">e il sonno io toglierò.</l></lg>
+               <lg n="5">
+                  <l n="1">"Se me in cuore non odii, o buona, o cara,</l>  
+                  <l n="2">mi santifica questa</l>
+                  <l n="3">partenza, non la far fin troppo amara,</l>
+                  <l n="4">fanne quasi una festa.</l></lg>
+                <lg n="6">
+                  <l n="1">Perché abbassare a nuovi dubbi infami</l>
+                  <l n="2">la bella fedeltà?</l>
+                  <l n="3">Il mio ritorno, che con me tu brami,</l>
+                  <l n="4">lontano non è già."</l></lg> 
+            <lb/>
+               <pb n="105" facs="105.jpg"/>    <!-- titolo corrente cancellato con rasura -->
+             <lb/>
+                <lg n="7">
+                   <l n="1">"Se triste parti, amico, il tuo pensiero</l>   
+                   <l n="2">fa bello ove tu vai;</l>
+                   <l n="3">ma il <mod change="#strato-1"><add place="above">mio</add></mod> cuore è ammalato, e poi che il vero</l>
+                   <l n="4">dic<mod change="#strato-1"><subst><del>e</del><add place="overwritten">o</add></subst></mod>, intender nol sai.</l></lg>
+                <lg n="8">
+                     <l n="1">Si, avventurata fra le donne è quella</l>
+                     <l n="2">cui poco strugge amor;</l>
+                     <l n="3">giovane ad ogni tuo ritorno, e bella</l>
+                     <l n="4">mi ritroveresti ancor.</l></lg>
+                <lg n="9">
+                   <l n="1">"Non dir così: solo tra i ghiacci poco</l> 
+                     <l n="2">cresce il verde, e non dura.</l>
+                     <l n="3">Un ardor che ne strugge è come il fuoco</l>
+                     <l n="4">che i grappoli matura.</l></lg>
+                <lg n="10">
+                     <l n="1">L'altre donne, se a te paion serene,</l>
+                     <l n="2">non le invidiar già tu:</l>
+                     <l n="3">quanto tu cogli dalle nostre pene</l>
+                   <l n="4">vale troppo di più."</l></lg>   
+           <anchor xml:id="p105_Addio_l40"/> 
+         </div>
+         
+     
+         
+         
+         <div n="NelloStudioScultoreFiorentino"> <!-- <metamark> l'intera lirica su p. 106 cassata con un frego di matita grigia = #strato-3 --> 
+            <!-- Castellani 203
+            6-7 | care. Di   punto su rasura e iniziale ricalcata
+              7 | il bello   su rasura
+            -->
+            <lb/>
+            <pb n="106" facs="106.jpg"/> <!-- titolo corrente cancellato con foglietto attaccato = pecetta tratta dal medesimo quaderno -->
+            <lb/>
+
+            <metamark change="#strato-3" function="deletion" rend="line" spanTo="#p106_Studio_l14"/> 
+            <delSpan spanTo="#p106_Studio_l14"/>  
+            <head>Nello studio d'uno scultore fiorentino</head> 
+            <metamark rend="line" place="below"/> 
+            
+            <lg n="1"> 
+               <l n="1">Un angolo d'Italia è il giardinetto;</l>
+               <l n="2">lo studio è appresso, ed io ci vengo a oziare,</l>
+               <l n="3">e tu ci vieni, amico, a lavorare,</l>
+               <l n="4">senza l'orgoglio del capolavoro.</l></lg>
+             <lg n="2"> 
+               <l n="1">Le più povere cose a te un tesoro</l> 
+               <l n="2">sembrano, e come un tesoro le hai ca<mod change="#strato-0"><retrace>re</retrace></mod> <subst><del><gap rend="erasure"/></del><add place="inspace">.</add></subst></l> 
+               <l n="3"><mod change="#strato-0"><subst><del>d</del><add place="overwritten">D</add></subst></mod>i tutto il bello che non so lasciare</l>      <!-- rasura da aggiungere -->
+               <l n="4">si accresce il mio per te recente affetto.</l></lg>
+             <lg n="3"> 
+               <l n="1">Incontro all'uscio premono i monelli;</l>
+               <l n="2">chiaman "Vigni" a gran voce, e fuggon lesti,</l>  
+               <l n="3">ridenti in volto come Donatelli.</l></lg>
+             <lg n="4"> 
+               <l n="1">Tu li spogli con gli occhi, tu li adeschi.</l>
+               <l n="2">"Se il più piccino si mettesse un poco</l>  
+               <l n="3">nudo, mi desse un'ora del suo gioco!"</l></lg>          
+            <anchor xml:id="p106_Studio_l14"/>  
+            
+          
+         
+            <note resp="#US" place="bottom-left" type="transposition"><mod change="#strato-3">
+               <lb/>Piccolo 
+               <lb/>Nello studio 
+               <lb/>La fan. 
+               <lb/>La gatta
+            </mod></note>
+
+
+         </div>
+         
+         <div n="Fanciulla"> <!-- Castellani 201
+                             5-15 | su ritaglio incollato
+                             -->
+            <lb/>
+            <pb n="107" facs="107.jpg"/> <!-- titolo corrente cancellato con foglietto attaccato = pecetta tratta dal medesimo quaderno -->
+            <lb/>
+
+            <head>La fanciulla</head>
+            <metamark rend="line" place="below"/> 
+            <lg n="1"> 
+               <l n="1">Chi vede te vede una primavera;</l>
+               <l n="2">uno strano arboscello, che non reca</l>
+               <l n="3">fiori, ma frutta.</l></lg>
+            <lg n="2"> 
+               <l n="1">Un giorno ti tagliavano i capelli.</l>
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_8"/>
+               <l n="2">Stavi, fra il tuo carnefice e la mamma,</l>  
+               <l n="4">come a un aspro fanciul sotto la verga,</l>
+               <l n="5">a cui le guancie ira e dolore infiamma,</l>
+               <l n="6">luccicavano appena i tuoi grandi occhi;</l>
+               <l n="7">e credo ti tremassero i ginocchi</l>
+               <l n="8">dalla pena che avevi.</l>
+               <l n="9">Poi con quale fierezza raccoglievi</l>
+               <l n="10">quel tesoro caduto,</l>
+               <l n="11">quel magnifico tuo bene perduto,</l>
+               <l n="12">i tuoi lunghi capelli.</l></lg>            
+            <anchor xml:id="pecetta_8"/>
+            <lg n="3"> 
+               <l n="1">Io ti porsi uno specchio. In bruno e corto</l>
+               <l n="2">fogliame, tondeggiava ora il tuo bel volto,</l>
+               <l n="3">come un polposo frutto.</l></lg>
+         </div>
+         
+         <div n="Gatta"> <!-- Castellani 200 -->
+            
+            <head>La gatta</head>
+            <metamark rend="line" place="below"/> 
+            <lg n="1"> 
+               <l n="1">La tua gattina è diventata macra.</l>
+               <l n="2">Altro male non è il suo che d'amore;</l>
+               <l n="3">male che alle tue cure la consacra.</l></lg>
+           <lg n="2">    
+               <l n="1">Non provi un'accorata tenerezza?</l>
+               <l n="2">Non la senti vibrare come un cuore,</l>
+               <l n="3">sotto alla tua carezza?</l>
+               <l n="4">Ai miei occhi è perfetta</l>
+               <l n="5">come te questa tua selvaggia gatta;</l>
+               <l n="6">ma come te ragazza,</l>
+               <l n="7">e innamorata, che sempre cercavi,</l>
+               <l n="8">che senza pace qua e là t'aggiravi,</l>
+               <l n="9">che tutti dicevano: "È pazza!".</l></lg>   
+           <lg n="3">  
+               <l n="1">È come te ragazza.</l></lg>
+         </div>
+         
+         <div n="Bugiarda"> <!-- Castellani 198-199 -->
+            
+            <lb/>
+            <pb n="108" facs="108.jpg"/> 
+            <lb/>
+            
+            <gap rend="erasure"></gap>
+            
+            <head>La bugiarda</head>
+            <metamark rend="line" place="below"/> 
+            
+            <metamark function="editorial" place="margin-left" ><mod change="strato-r"><seg style="writing-mode: vertical-lr; text-orientation: sideways-left; float: left;">Incominciare questa poesia un po' più in giù</seg></mod></metamark>  
+            
+            <lg n="1">
+               <l n="1">Perchè arrossire? Io credo</l>
+               <l n="2"><mod change="#strato-0"><hi rend="underline">pure</hi></mod> alle tue bugie;</l> 
+               <l n="3">hanno più religione che le mie</l>
+               <l n="4">verità; che se a volte in esse io vedo</l>
+               <l n="5">ghiaccie bevande d'ardente colore,</l>
+               <l n="6">che lusingano e crescono la sete;</l>
+               <l n="7">i poeti, mio amore,</l></lg>
+            <lg n="2">
+               <l n="1">i gloriosi poeti e i vecchi saggi,</l>
+               <l n="2">e gli eroi che tornavano di mete</l>
+               <l n="3">lontane dopo immortali viaggi,</l>
+               <l n="4">e forse in sue secrete</l>
+               <l n="5">leggi, nella giustizia sua, l'Eterno,</l> 
+               <l n="6">sentono come me, che non discerno</l> 
+               <l n="7">fra il pensato ed il vero.</l>
+               <l n="8">E chi sa che a sua immagine il pensiero</l> 
+               <l n="9">non muti fino le cose passate,</l>
+               <l n="10">quando con cuore e con labbra agitate</l> 
+               <l n="11">dici la tua menzogna, e con l'ardore</l>
+               <l n="12">di chi chiede ai suoi santi suoi perdoni,</l> 
+               <l n="13">che grazia impetra con sante orazioni.</l></lg>
+            <lg n="3">
+               <l n="1">Or tu dunque rallegrati: io credo</l> 
+               <l n="2"><mod change="#strato-0"><hi rend="underline">solo</hi></mod> alle tue bugie;</l> 
+               <l n="3">la tua voce ha le vie</l>
+               <l n="4">del mio cuore, nè in te ricerco traccia</l> 
+               <l n="5">di colpa, anzi più pura</l>
+               <l n="6">ti vedono, nel male, gli occhi miei.</l>
+               <l n="7">Ch'altro dirti poss'io, se da natura</l> 
+               <l n="8">fatta così femminilmente sei?</l></lg>
+         </div>
+         
+         
+         <div n="MalinconiaAmorosa5versi">
+               <gap quantity="6" unit="line" rend="erasure"/>
+                  <delSpan spanTo="#p108_malinconia_l5"/> 
+                  <metamark rend="line" place="below"/> 
+                  <l n="1">Malinconia amorosa</l>
+                  <l n="2">del nostro cuore,</l>
+                  <l n="3">come una mesto secreto ed un fervore</l>
+                  <l n="4">solitario più sempre intima e cara;</l>
+                  <l n="5">per te un dolce pensiero ad un'amara </l><anchor xml:id="p108_malinconia_l5"/>
+            </div>
+            
+
+         
+         <div n="Carmen"> <!-- Castellani 206 
+                          3-4, 6-11, 13-18, 20-27 | su quattro ritagli incollati = #strato-a ?? 
+                          3  | a[l]  ricalcato su  i 
+                          12 | su rasura
+                          29 | primo  ho  ricalcato su   o   -->
+            <lb/>
+            <pb n="109" facs="109.jpg"/> <!-- titolo corrente cancellato con foglietto attaccato = pecetta tratta dal medesimo quaderno -->
+            <lb/>
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_9"/>       <!-- oppure gap rend=pecetta ?? -->
+            <anchor xml:id="pecetta_9"/>
+            
+            <head>Carmen</head>
+            <metamark rend="line" place="below"/> 
+            
+            <lg n="1">
+               <l n="1">Torna la mia disperazione a te.</l> 
+               <l n="2">Dopo aver tanto errato, oggi il mio amore</l>
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_10"/>
+               <l n="3">torna <mod change="#strato-a"><subst><del instant="true">i</del><add instant="true">a</add></subst></mod>l tuo fiero mutevole ardore;</l>           <!-- #strato-a -->
+               <l n="4">più nulla chiede che la tua onestà.</l></lg>
+            <anchor xml:id="pecetta_10"/>
+            <lg n="2">               
+               <l n="1">In queste lunghe giornate d'affanno,</l>
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_11"/>
+               <l n="2">che senza lotta e senza pace vanno,</l>            
+               <l n="3">e senza la tua gaia crudeltà;</l> 
+               <l n="4">con la mia solitaria anima invisa,</l>  
+               <l n="5">con l' immagine tua dovunque incisa,</l>  
+               <l n="6">ho sognato pur io d'averti uccisa,</l>  
+               <l n="7">pel conforto di piangere su te.</l></lg>
+               <anchor xml:id="pecetta_11"/>
+            <lg n="3">
+               <l n="1"><mod change="#strato-0"><subst><del><gap rend="erasure"/></del><add place="inspace">Or incolpabile amica, austera figlia</add></subst></mod></l> 
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_12"/>
+               <l n="2">d'amore, se la vita oggi n'esigila,</l>  
+               <l n="3">con la musica ancora vieni a me.</l>  
+               <l n="4">Geloso sono non di don Josè,</l> 
+               <l n="5">non d'Escamillo; di chi prima un canto</l>  
+               <l n="6">sciolse alla tua purezza, ed al tuo santo</l>  
+               <l n="7">coraggio incontro alla tua verità.</l></lg>
+               <anchor xml:id="pecetta_12"/>
+            <lg n="4">
+               <l n="1">Nè tu forse da me vivi lontana.</l> 
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_13"/>
+               <l n="2">Se a te, se all'amor tuo faccio ritorno,</l>      
+               <l n="3">io non cerco <app><lem varSeq="2"><mod change="#strato-a"><subst><add place="above">a</add><del rend="strikethrough">in</del></subst></mod></lem><rdg varSeq="1">in</rdg></app> <placeName>Siviglia</placeName> il tuo soggiorno</l>  
+               <l n="4">Solo vagavo, il mattino d'un giorno</l> 
+               <l n="5">di festa; e tra la folla oscura e vana</l>  
+               <l n="6">tu m'apparivi in una popolana</l> 
+               <l n="7">delle nostre; la tua mano era stesa</l>  
+               <l n="8">a sollevar le tende d'una chiesa,</l> 
+               <l n="9">le gialle e rosse tende in sull'entrata.</l></lg>
+               <anchor xml:id="pecetta_13"/>
+            <lg n="5">   
+               <l n="1">D'altre vesti in men fiera foggia ornata,</l> 
+               <l n="2">non t'<mod change="#strato-0"><subst><del instant="true">o</del><add instant="true">ho</add></subst></mod> riconosciuta io che t'ho amata.</l></lg>  
+            <lg n="6">   
+               <l n="1">Io che a fatica ho rattenuto un grido</l> 
+               <l n="2">mi sono meritato un tuo sorriso.</l></lg>
+            
+         </div>
+         
+         <div n="DopoLaTristezza"> <!-- Castellani 208 
+                          14 | c[hi]  ricalcato su   m   -->
+             
+            <pb n="110" facs="110.jpg"/> 
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_14"/>       <!-- oppure gap rend=pecetta ?? -->
+            <anchor xml:id="pecetta_14"/>
+            
+            <head>Dopo la tristezza</head>
+            <metamark rend="line" place="below"/>  
+            
+            <lg n="1">
+               <l n="1">Questo pane ha il sapore d'un ricordo,</l> 
+               <l n="2">mangiato in questa povera osteria,</l>
+               <l n="3">dov'è più abbandonato e ingombro il porto.</l></lg>
+            <lg n="2">
+               <l n="1">E della birra mi godo l'amaro,</l>
+               <l n="2">seduto del ritorno a mezza via;</l>
+               <l n="3">in faccia ai monti minacciosi e al faro.</l></lg>
+            <lg n="3">
+               <l n="1">L'anima mia, che una sua pena ha vinta,</l> 
+               <l n="2">con occhi nuovi nell'antica sera,</l> 
+               <l n="3">guarda un pilota con la moglie incinta;</l></lg>
+            <lg n="4">
+               <l n="1">e un bastimento, di che il vecchio legno</l> 
+               <l n="2">luccica al sole, e con la ciminiera</l>
+               <l n="3">lunga quanto i due alberi, è un disegno</l></lg>
+            <lg n="5">
+               <l n="1">fanciullesco, che ho fatto or son vent'anni.</l> 
+               <l n="2">E <mod change="#strato-0"><subst><del instant="true">m</del><add instant="true">ch</add></subst></mod>i mi avrebbe detto la mia vita</l>
+               <l n="3">così bella, con tanti dolci affanni,</l></lg>
+            <lg n="6">
+               <l n="1">e tanta beatitudine romita?</l></lg>
+         </div>
+         
+         <div n="TreVie"> <!-- Castellani 209
+                          5-17 ; 20-34 | su due ritagli incollati, con parti finali di alcuni vv, mutili per il taglio, riscritta sulla pagina
+                          34  |  punto non riscritto -->
+            
+            <pb n="111" facs="111.jpg"/> <!-- titolo corrente Coi miei occhi -->
+            <metamark function="transposition" place="margin-left" change="#strato-3" rend="cross" xml:id="A_p111" corresp="#A_p115" /> <!-- metamark: da capire la sua @function #ASTERISCO_111_115 > -->
+            
+            <head>Tre vie</head>
+            <metamark rend="line" place="below"/> 
+            
+            <lg n="1">
+                  <l n="1">C'è a Trieste una via dove mi specchio,</l>  
+                  <l n="2">nei lunghi giorni di chiusa tristezza:</l>  
+                  <l n="3">si chiama Via del Lazzaretto Vecchio.</l>  
+                  <l n="4">Tra case come ospizi antiche uguali,</l>  
+                  <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_15"/>
+                  <l n="5">ha una nota, una sola, d' allegrezza,</l> 
+                  <l n="6">il mare in fondo alle sue laterali.</l> 
+                  <l n="7">Odorata di droghe e di catrame,</l>  
+                  <l n="8">dai magazzini desolati a fronte,</l>  
+                  <l n="9">fa commercio di reti, di cordame</l> 
+                  <l n="10">per le navi: un negozio ha per inseg<!--sulla pagina = #strato-0-->na</l> 
+                  <l n="11">una bandiera; nell'interno, volte</l> 
+                  <l n="12">contro il passante, che raro le degn<!--sulla pagina = #strato-0-->a</l>  
+                  <l n="13">d'uno sguardo, coi volti stanchi e <!--sulla pagina = #strato-0-->prone</l> 
+                  <l n="14">sui colori di tutte le nazioni,</l> 
+                  <l n="15">le lavoranti scontano la pena</l> 
+                  <l n="16">della vita; innocenti prigioniere</l> 
+                  <l n="17">cuciono tetre le allegre bandier<!--sulla pagina = #strato-0-->e.</l></lg> 
+                  <anchor xml:id="pecetta_15"/>
+             <lg n="2">
+                  <l n="1">A Trieste ove son bellezze molte</l> 
+                  <l n="2">(d'orizzonti bellezze e di contrada),</l>
+                <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_16"/>
+                <l n="3">c'è un'erta che si chiama Via de<!--sulla pagina = #strato-0-->l Monte.</l>  <!-- inizio #strato-a -->
+                <l n="4">Incomincia con una sinagog<!--sulla pagina = #strato-0-->a</l> 
+                <l n="5">e termina ad un chiostro: a me<!--sulla pagina = #strato-0-->zza strada</l>  
+                <l n="6">c'è una cappella; indi la nera <!--sulla pagina = #strato-0-->foga</l>  
+                <l n="7">della vita scoprire puoi da un p<!--sulla pagina = #strato-0-->rato</l> 
+                <l n="8">e il mare con le navi e il prom<!--sulla pagina = #strato-0-->ontorio,</l> 
+                <l n="9">e la folla e le tende del mercat<!--sulla pagina = #strato-0-->o.</l>  
+                <l n="10">Pure, a fianco dell'erta, è un ca<!--sulla pagina = #strato-0-->mposanto</l>  
+                <l n="11">abbandonato, ove nessun mor<!--sulla pagina = #strato-0-->torio</l>  
+                <l n="12">entra, non si sotterra più, per <!--sulla pagina = #strato-0-->quanto</l>  
+                <l n="13">io mi ricordi; il vecchio cim<!--sulla pagina = #strato-0-->itero</l>  
+                <l n="14">degli ebrei, così caro al mio pe<!--sulla pagina = #strato-0-->nsiero</l> 
+                <l n="15">se vi penso quei vecchi, dopo ta<!--sulla pagina = #strato-0-->nto</l>  
+                <l n="16">penare e mercatare, là sepolti;</l> 
+                <l n="17">simili tutti d'animo e di volti.</l></lg>
+               <anchor xml:id="pecetta_16"/>
+              <lg n="3">
+                  <l n="1">Via del Monte è la via dei santi affetti,</l>  
+                  <l n="2">ma la via della gioia e dell'amore,</l> 
+               
+              <pb n="112" facs="112.jpg"/> <!-- titolo corrente Coi miei occhi -->
+               
+                  <l n="3">è sempre Via Domenico Rossetti.</l>  
+                  <l n="4">Questa verde contrada suburbana,</l> 
+                  <l n="5">che perde dì per dì del suo colore,</l> 
+                  <l n="6">che è sempre più città, meno campagna,</l>  
+                 <l n="7">serba il fascino ancora dei suoi <mod change="#strato-0"><subst><del instant="true" rend="strikethrough">prati</del><add instant="true" place="inline">belli</add></subst></mod></l> 
+                  <l n="8">anni, delle sue prime ville sperse,</l> 
+                  <l n="9">dei suoi radi filari d'alberelli.</l> 
+                  <l n="10">Chi la passeggia in queste ultime sere</l>  
+                  <l n="11">d'estate, quando tutte sono aperte</l> 
+                  <l n="12">le finestre, e ciascuna è un belvedere,</l>  
+                  <l n="13">dove agucchiando o leggendo si aspetta,</l> 
+                  <l n="14">pensa che forse qui la sua diletta</l>  
+                  <l n="15">rifiorirebbe all' antico piacere</l> 
+                  <l n="16">di vivere, di amare lui, lui solo;</l> 
+                  <l n="17">e a più rosea salute il suo figliolo.</l></lg>
+         </div>
+         
+         <div n="ViaDellaPietà"> <!-- Castellani 212 -->
+            
+            <head>Via della Pietà</head>
+            <metamark rend="line" place="below"/> 
+            <lg n="1">
+               <l n="1">Era un nome, un aspetto di sventura,</l> 
+               <l n="2">sì lunga e stretta come una barella;</l>  
+               <l n="3">hanno abbattute le sue vecchio mura,</l>  
+               <l n="4">e di qualche ippocàstano s'abbella.</l></lg> 
+            <lg n="2">
+               <l n="1">Ma ognor di sè l'attrista l'ospedale,</l> 
+               <l n="2">che in lei le sue finestre apre, e la porta,</l>  
+               <l n="3">dove, per visitar la gente morta,</l> 
+               <l n="4">preme il volgo e s'affolla; e come fuori</l>  
+               <l n="5">dei teatri carrozze in riga nera,</l>  
+               <l n="6">sempre fermo ci vedo un funerale.</l>  
+               <l n="7">Cerei sinistri odori</l> 
+               <l n="8">vengon dalla Cappella; e se non posso</l>  
+               <l n="9">rattristarmi, pensare il giorno estremo,</l>  
+               <l n="10">l'eterno addio alle cose, di cui temo</l>  
+               <l n="11">perdere sola un'ora, è perchè il rosso</l> 
+               <l n="12">d'una cresta si muove fra un pò d'erba,</l>  
+               <l n="13">cresciuta lungo gli arboscelli, in breve</l>  
+               <l n="14">zolla; quel rosso in me speranza e fede</l>  
+               <l n="15">ravviva, come in campo una bandiera.</l></lg>
+            <lg n="3">
+               <l n="1">La gallinella che ancor qui si duole,</l>  
+               <l n="2">e raspa presso alla porta funesta,</l>  
+               <l n="3">mi fa vedere dietro alla sua cresta</l>  
+               <l n="4">tutta una fattoria piena di sole.</l></lg> 
+            
+         </div>
+         
+         <div n="IntornoAdUnaCasaInCostruzione"> <!-- Castellani 214 
+                                                  16 | correzione a matita = #strato-2
+                                                  26 | e angusta più    su rasura
+                                                  28 | virgolette omesse  -->
+            
+            <pb n="113" facs="113.jpg"/> <!-- titolo corrente Coi miei occhi -->
+            
+            <head>Intorno ad una casa in costruzione</head>
+            <metamark rend="line" place="below"/> 
+            
+            <lg n="1">
+               <l n="1">I comignoli rosa e il cielo azzurro</l> 
+               <l n="2">sono pur belli a riguardarsi: intanto</l> 
+               <l n="3">l'opera ferve, che la casa accanto</l> 
+               <l n="4">pose fra una partenza ed un ritorno</l>
+               <l n="5">di me, che se la guardo al nuovo giorno,</l> 
+               <l n="6">poi alla sera è in vista più fornita.</l> 
+               <l n="7">Dicono che nessuna, nuova o antica,</l> 
+               <l n="8">come questa offrirà grato ricetto,</l>
+               <l n="9">in sua barbara mole ai cittadini.</l>
+               <l n="10">Fino di Semiramide i giardini</l>
+               <l n="11">le ombreggieranno il tetto.</l></lg>
+           <lg n="2">
+               <l n="1">Or ti domando, anima mia, che abbozzi</l> 
+              <l n="2">un sorriso che tu <app><lem varSeq="2"><mod change="#strato-0"><subst><add place="above">speri</add><del rend="strikethrough">credi</del></subst><metamark rend="arrow"/></mod></lem><rdg varSeq="1">credi</rdg></app> beffardo;</l> 
+               <l n="3">nel tempo in cui molti artefici rozzi</l> 
+               <l n="4">a ornar la brutta casa davan mano,</l>
+              <l n="5">fra partenze e ritorni, e sogni, e <app><lem varSeq="2"><mod change="#strato-2"><subst><add place="margin-top">il</add><del rend="strikethrough">un</del></subst><metamark rend="arrow"/></mod></lem> <rdg varSeq="1">un</rdg></app> vano sperare, a disperar subito poi;</l> 
+               <l n="6">cosa che valga questa, a cui riguardo</l>
+               <l n="7">solo ostilmente, edificammo in noi?</l>
+               <l n="8">La tua risposta, io ben lo so, l'orgoglio</l> 
+               <l n="9">ti detta; è quale da lui prego e voglio!</l></lg>
+           <lg n="3">
+               <l n="1">"I comignoli rosa e il cielo azzurro,</l> 
+               <l n="2">ed il mio verso, valgono la casa,</l> 
+               <l n="3">che del suo sfarzo deturpa la strada</l>
+               <l n="4">soleggiata, con qualche albero in fiore,</l>
+               <l n="5">popolosa ogni giorno e angusta più,</l>
+               <l n="6">dov'era così dolce in gioventù</l>
+              <l n="7">fare all'amore.</l></lg>  <!-- mancano le virgolette chiuse -->
+         </div>
+         
+         <div n="OraNostra"> <!-- Castellani 216
+                              3-9 | su ritagio incollato = #strato-a ??  -->
+            
+            <head>L'ora nostra</head>
+            <metamark rend="line" place="below"/> 
+            <lg n="1">
+               <l n="1">Sai un'ora del giorno che più bella</l> 
+               <l n="2">sia della sera? .. tanto</l>
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_17"/>
+               <l n="3">più bella e meno amata? ... È quella</l> 
+               <l n="4">che di poco i suoi sacri ozi precede;</l> 
+               <l n="5">l'ora che intensa è 'opera, o si vede</l>
+               <l n="6">la gente mareggiare nelle strade:</l> 
+               <l n="7">sulle moli quadrate delle case</l>
+               <l n="8">una luna sfumata, una che appena</l> 
+               <l n="9">discerni nell'aria serena.</l></lg>
+               <anchor xml:id="pecetta_17"/>
+                           
+            <pb n="114" facs="114.jpg"/> <!-- titolo corrente Coi miei occhi -->
+            <lg n="2">               
+               <l n="1">È l'ora che tu lasci la campagna</l> 
+               <l n="2">per goderti la tua cara città;</l>
+               <l n="3">dal golfo luminoso alla montagna</l> 
+               <l n="4">varia d'aspetti in sua bella unità;</l> 
+               <l n="5">l'ora che la mia vita in piena va,</l>
+               <l n="6">come un fiume al suo mare;</l>
+               <l n="7">e il mio pensiero, il lesto camminare</l> 
+               <l n="8">della folla, gli artieri in cima all'alta</l> 
+               <l n="9">scala, il fanciullo che correndo salta</l>
+               <l n="10">sul carro fragoroso, tutto appare</l> 
+               <l n="11">fermo nell'atto, tutto questo andare</l> 
+               <l n="12">ha una parvenza d'immobilità;</l></lg>
+           <lg n="3">
+               <l n="1">è l'ora grande, l'ora che accompagna</l> 
+               <l n="2">meglio la nostra vendemmiante età.</l></lg>
+
+            <milestone n="1" unit="section" type="ritaglio" spanTo="#ritaglio_1"/>
+            <metamark change="#strato-3" rend="asterisk" place="bottom-right" function="transposition" xml:id="A_p114" corresp="#A_p103" />
+            <anchor xml:id="ritaglio_1"/>  <!-- ASTERISCO DI RICHIAMO per pagina ms 103 #asterisco103_114 -->
+
+         </div>
+         
+         <div n="MalinconiaAmorosa"> <!-- Castellani 228
+                              26-27 > 26: 28 ss. > 27 ss
+                              1-24 | su ritagio incollato = foglio del mesedimo quaderno e #strato-0  -->
+            
+            <pb n="115" facs="115.jpg"/> <!-- titolo corrente cancellato con rasura --> 
+            <gap rend="erasure"></gap>
+            
+            <head>La malinconia amorosa</head>   
+            <metamark rend="line" place="below"/> 
+            
+            <lg n="1">
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_18"/>
+               <l n="1">Malinconia amorosa</l>
+               <l n="2">del nostro cuore,</l>
+               <l n="3">come una mesto secreto ed un fervore</l> 
+               <l n="4">solitario più sempre intima e cara;</l> 
+               <l n="5">per te un dolce pensiero ad un'amara</l> 
+               <l n="6">rimembranza si sposa;</l>
+               <l n="7">discaccia il tedio che dentro ristagna,</l>
+               <l n="8">e poi tutta la vita n'accompagna.</l></lg>
+           <lg n="2">
+               <l n="1">Malinconia amorosa</l>
+               <l n="2">nel giovane, ch<damage agent="glue">e <unclear>s</unclear>i</damage>ede</l>
+              <l n="3">dietro un banco, <damage agent="glue">ch</damage>e vede</l>
+               <l n="3">sulle sue stoffe chine le più belle</l> 
+               <l n="4">donne della città; tormento oscuro</l> 
+               <l n="5">nel sognatore,</l>
+               <l n="6">che accendendosi già le prime stelle,</l> 
+               <l n="7">qualche lume per via,</l>
+               <l n="8">sale, pensoso di chi sa che amore</l>
+               <l n="9">e che strazio, la lunga erta sassosa</l> 
+               <l n="10">della collina,</l>
+               <l n="11">dove le case con la chiesa in cima</l> 
+               <l n="12">paion balocchi; la città operosa</l> 
+               <l n="13">sfuma nell'orizzonte ancora acceso;</l>
+               <l n="14">ed il suo orgoglio ingigantisce, leso</l> 
+               <l n="15">dalla vita, vicino alla follia.</l></lg>
+               <anchor xml:id="pecetta_18"/>
+         <lg n="3">
+            <l n="1">Malinconia amorosa,</l>   
+               <l n="2">che di te la mia vita si colora,</l>
+               <l n="3">chi a cogliere i tuoi frutti</l>
+               <l n="4">ama l'ombre calanti, i luoghi oscuri,</l> 
+               <l n="5">lento cammina, rasentante i muri;</l> 
+               <l n="6">non vede quello che vedono tutti,</l>
+               <l n="7">e quello che nessuno vede adora.</l></lg>
+
+            <metamark function="transposition" place="margin-right" change="#strato-3" rend="cross" xml:id="A_p115" corresp="#A_p111" />   <!-- #ASTERISCO_111_115 201221 -->
+         </div>
+         
+         
+         
+         <div n="Fanciullo"> <!-- Castellani 218 -->
+            
+            <pb n="116" facs="116.jpg"/> <!-- titolo corrente Coi miei occhi --> 
+            
+            <head>Il fanciullo</head>
+            <metamark rend="line" place="below"/>
+      
+            <metamark function="editorial" place="inspace"><mod change="strato-r"><seg style="writing-mode: vertical-lr; text-orientation: sideways-left; float: left; margin-right: 1em; margin-left: 0.5em;">
+            <lb n="1"/>Una pagina sola per questa poesia<metamark rend="arrow"/> <lb n="2"/>Il poeta e Pomeriggio d'autunno <del instant="true" rend="strikethrough">devono stare</del><subst><del instant="true">ne</del><add instant="true" rend="superscript">a</add></subst>lla pagina seguente</seg></mod></metamark>  
+            <!-- metamark > indicazione editoriale, di messa in pagina; il valore inspace va bene? 28.11 manca variante in <mod>  a me pare che c'è 101221 -->
+<lg n="1">
+   <l n="1">Di vagare non mai sazio e di luce,</l>
+   <l n="2">tutto nel letto il chiaro estivo giorno</l>
+   <l n="3">rivivo, e d'un fanciullo oggi è il ricordo</l>
+   <l n="4">che a star desto m'induce.</l></lg>
+<lg n="2">
+   <l n="1">Come d’un balzo arrovesciata preda,</l>
+   <l n="2">nell'ora che più l'uomo affretta il passo,</l>
+   <l n="3">di sè ingombrava un angolo di via.</l>
+   <l n="4">Non cercava al suo gioco compagnia,</l>
+   <l n="5">ed il suo gioco era trarre dal sasso</l>
+   <l n="6">schegge e scintille a colpi di scarpello.</l>
+   <l n="7">Io pensavo Alcibiade monello,</l>
+   <l n="8">che in altri tempi e più gentil contrada,</l>
+   <l n="9">non guarda se di lì altri lo scacci,</l>
+   <l n="10">non teme il carrettiere con la frusta</l>
+   <l n="11">alzata contro i suoi nudi polpacci;</l>
+   <l n="12">ma si getta bocconi nella via,</l>
+   <l n="13">e ride, ed i cavalli fa impennare.</l>
+   <l n="14">Senza voce la folla il suo daffare</l>
+   <l n="15">lascia, e par solo quel periglio veda.</l>
+   <l n="16">Il bel fanciullo il suo periglio gusta.</l></lg>
+<lg n="3">
+   <l n="1">Nel chiaro giorno, se ho vagato assai,</l>
+   <l n="2">poco rinvenni più fraterno e grato</l>
+   <l n="3">d’un fanciullo, nei cui gesti ho ascoltato</l>
+   <l n="4">i miei pensieri reconditi e gai.</l></lg>
+   
+   </div>
+         
+         
+         
+         <div n="Poeta"> <!-- Castellani 220 -->
+            
+            <head>Il poeta</head>
+            <metamark rend="line" place="below"/>
+<lg n="1">
+   <l n="1">Il poeta ha le sue giornate</l> 
+   <l n="2">contate</l>
+   <l n="3">(come tutti gli uomini) ma quanto,</l>
+   <l n="4">quanto variate!</l>
+   <l n="5">L'ore del giorno e le quattro stagioni,</l>
+   <l n="6">un po' meno di sole o più di vento,</l>
+   <l n="7">sono lo svago e l'accompagnamento,</l>
+   <l n="8">sempre diverso, per le sue passioni,</l>
+   <l n="9">sempre le stesse, ed il tempo che fa</l>
+   <l n="10">quando si leva, è il grande avvenimento</l>
+   <l n="11">del giorno, la sua gioia appena desto.</l>
+   <l n="12">Più d'ogni aspetto lo rallegra questo</l>
+   
+<pb n="117" facs="117.jpg"/> <!-- titolo corrente Coi miei occhi --> 
+   
+   <l n="13">d'avverse luci, le belle giornate</l> 
+   <l n="14">movimentate,</l>
+   <l n="15">come la folla in una lunga istoria,</l>
+   <l n="16">dove azzurro e tempesta poco dura,</l>
+   <l n="17">e s'alternano messi di sventura</l> 
+   <l n="18">e di vittoria.</l>
+   <l n="19">Con un rosso di sera fa ritorno,</l>
+   <l n="20">e con le nubi cangia di colore</l> 
+   <l n="21">la sua felicità,</l>
+   <l n="22">se non cangia il suo cuore.</l>
+   <l n="23">Il poeta ha le sue serate</l>
+   <l n="24">contate</l>
+   <l n="25">(come tutti gli uomini) ma quanto,</l>
+   <l n="26">quanto beate!</l></lg>
+         </div>
+         
+         
+         <div> <!-- Castellani 222 = Il pomeriggio
+                11 | correzione a matita = strato ??? ho messo #strato-5 ma non sono sicura -->
+            
+            <head>Pomeriggio d'autunno</head>
+            <metamark rend="line" place="below"/>
+            
+<lg n="1">
+   <l n="1">Nei colori di questo pomeriggio</l> 
+   <l n="2">troppo bello, ho sofferto i primi fasti</l> 
+   <l n="3">dell'autunno, la voce ammonitrice</l> 
+   <l n="4">della stagione che i rimorsi arreca,</l> 
+   <l n="5">ed il rimpianto al mal fatto misura.</l></lg>
+<lg n="2">   
+   <l n="1">Il cielo è azzurro come il primo cielo</l> 
+   <l n="2">che Dio inarcava sulla terra nuova;</l>
+   <l n="3">e il mare, appena benedetto, è un liscio</l> 
+   <l n="4">specchio all'azzurro di tutto quel cielo.</l> 
+   <l n="5">Poche foglie sugli alberi hanno il verde</l> 
+   <l n="6">dei vivaci acqu<app><lem varSeq="2"><mod change="#strato-5"><subst><add place="overwritten">e</add><del>a</del></subst></mod></lem><rdg varSeq="1"></rdg></app>relli dei fanciulli,</l>
+   <l n="7">mostrano l'altre un rosso di passione.</l> 
+   <l n="8">Casa e campagna, tutto il mondo è come</l>
+   <l n="9">creato or ora; e tanto bello attrista,</l>
+   <l n="10">tanto che agli occhi è soverchio, e non dura.</l></lg>
+<lg n="3">
+   <l n="1">Chi dal travaglio si riposa, e ascolta,</l>
+   <l n="2">ode il monito grave, ode la voce</l>
+   <l n="3">che viene dalle cose e dal profondo;</l> 
+   <l n="4">dalle prime speranze che ha deluse,</l> 
+   <l n="5">da un bel principio che più il fine oscura.</l></lg>
+         </div>
+         
+         <div n="VersiAllaLuna"> <!-- Castellani 224 
+                                 10 | tolto, ma non è corretta l'interpunzione
+                                 1-25 , 26-40 | su due ritagli incollati
+                                 parole in fine v. 5 e 29 cadute col taglio e riscritte sulla pagina 
+                                 correzioni a matita violetta = #strato-3 -->
+            
+            <pb n="118" facs="118.jpg"/> <!-- titolo corrente Coi miei occhi --> 
+            
+            <head><mod change="#strato-3"><del rend="stiketrought">Nuovi</del></mod> 
+                  <app>
+                     <lem varSeq="2"><mod change="#strato-3"><add place="above">V</add></mod></lem>
+                     <rdg varSeq="1"><mod change="#strato-3"><del>v</del></mod></rdg></app>ersi alla luna</head>     <!-- da rivedere -->
+            <metamark rend="line" place="below"/>
+            
+     <lg n="1">
+        <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_19"/>
+        <l n="1">La luna si è nascosta fra le nubi</l>  
+        <l n="2">di madreperla;</l> 
+        <l n="3">dopo che in me, a vederla,</l> 
+        <l n="4">vecchi fantasmi nacquero e follia.</l></lg> 
+   <lg n="2">
+      <l n="1">La luna nel suo argento ha impr<!--sulla pagina = #strato-0-->esse sante</l> 
+      <l n="2">immagini: la vergine Maria,</l> 
+      <l n="3">che il dolce figlio ha in grembo; ed ecco: il Cri<!--sulla pagina = #strato-0-->sto</l> 
+      <l n="4">diventa un guardinfante,</l> 
+      <l n="5">la vergine un ritratto di te, zia <mod change="#strato-3"><metamark function="textConnection" place="margin-right" rend="arrow" target="11"/></mod></l> <!-- https://hannah-arendt-edition.net/docs/pdf/richtlinienArendtEditionApr182020.pdf p. 41, textConnection -->
+      <l n="6"><mod change="#strato-3"><del rend="stikethrought">Regina.</del></mod></l> 
+        <l n="7">di te che in altra gonna vivi ancora;</l> 
+        <l n="8">ed il mio cuore (io non so come) adora</l>  
+        <l n="9">con fedeltà, come un guerriero il vecchio</l>  
+        <l n="10">sovrano; e molto meno amo lo specchio</l>  
+        <l n="11">celeste, se mi riflette Maria.</l> 
+        <l n="12">La luna non mi pare come l'occhio</l>  
+        <l n="13">del sole, l'accecante occhio, che tutto</l>  
+        <l n="14">vede, ma non discerne e non ricorda;</l>  
+        <l n="15">ella sa le presenti e le passate</l> 
+        <l n="16">cose, e per quelle che saranno porta</l> 
+        <l n="17">un finissimo intuito; ed anche ha un certo</l>  
+        <l n="18">fare, austero e materno,</l> 
+        <l n="19">ch'io la riguardo come il bimbo, tolta</l>  
+        <l n="20">del suo fallo la traccia,</l> 
+      <l n="21">scruta furtivo la marmorea faccia</l>
+      <anchor xml:id="pecetta_19"/>
+      <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_20"/>
+      <l n="22">della madre, la sua bocca che tace,</l>   
+        <l n="23">un sorriso indicibile, che toglie</l> 
+        <l n="24">ogni sua pace.</l></lg>
+           <lg n="3">
+              <l n="1">La luna è uscita ignuda dalle <!--sulla pagina = #strato-0-->nubi</l> 
+        <l n="2">di madreperla;</l> 
+        <l n="3">affacciato a vederla,</l> 
+        <l n="4">penso che innamorata sia d'un barbaro;</l>  
+        <l n="5">penso una spiaggia ove al suo lume sbarcano</l>  
+        <l n="6">quelli eroi sanguinosi, che l'infanzia</l> 
+        <l n="7">del mio cuore, e del mondo, ha tanto amato;</l> 
+        <l n="8">rientro, amareggiato</l> 
+        <l n="9">da lei, che vergognosi sentimenti</l>  
+        <l n="10">m'infligge, di puerili eroiche imprese,</l>  
+        <l n="11">di guerre a vendicar l'amico intese,</l>  
+              <l n="12">di flotte naviganti a lumi spenti.</l></lg> 
+            <anchor xml:id="pecetta_20"/>
+            
+         </div>
+         
+         <div n="LaPasseggiata"> <!-- Castellani 235 = Dopo una passeggiata 
+                                 2-12, 14-21 su due ritagli incollati
+                                 20-21 | aggiunti sul ritaglio in inchiostro blu = #strato-0 ?????
+                                 9 | prima lezione solo iniziata con   ad  -->
+            
+            <pb n="119" facs="119.jpg"/> <!-- titolo corrente cancellato con peccetta di carta extra strong cfr Castellani Tipo VIII --> 
+           
+            <note resp="#US" place="top-left" type="transposition"><mod change="#strato-3">
+               <lb/><hi rend="underline">La moglie</hi>
+            </mod></note>
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_21"/>      <!-- gap rend=pecetta? -->
+            <anchor xml:id="pecetta_21"/>
+            
+            <head>La passeggiata</head>
+            <metamark rend="line" place="below"/>
+
+            <lg n="1">
+               <l n="1">Quando fino ad un colle o lungo il mare</l> 
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_22"/>
+               <l n="2">noi pure usciamo nelle belle sere</l>  
+               <l n="3">a passeggiare,</l> 
+               <l n="4">vedo che a tutti appare</l> 
+               <l n="5">cosa fraterna l'alleanza nostra.</l> 
+               <l n="6">Noi, cui la vita tanto sangue costa</l> 
+               <l n="7">e tanta inusitata gioia rende,</l> 
+               <l n="8">nulla abbiamo che in vista il volgo offende;</l> 
+               <l n="9">siamo <mod change="#strato-a"><del instant="true">ad</del></mod> a tutti due buoni, due tranquilli</l> 
+               <l n="10">cittadini, a cui mèta è un buon bicchiere.</l> 
+               <l n="11">Solo nei cuori rispondono squilli,</l> 
+               <l n="12">si spiegano al vento bandiere.</l></lg>
+               <anchor xml:id="pecetta_22"/>
+            <lg n="2">
+               <l n="1">E nei giorni di festa, se pur tanto</l>
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_23"/>
+               <l n="2">v'ha di strano, che cerco il più deserto</l>
+               <l n="3">dei sobborghi, chi mai vedrebbe in noi</l> 
+               <l n="4">altro che due che cenano all'aperto<retrace cause="unclear">?</retrace></l> 
+               <l n="5">Un marito che già ostenta un rimpianto</l> 
+               <l n="6">di libertà, la sua moglie <app><lem varSeq="2"><mod change="#strato-3"><subst><add rend="superscript">golosa</add><del>gelosa</del></subst></mod></lem><rdg varSeq="1">gelosa</rdg></app>;</l> 
+               <l n="7">non v'ha, dico, una cosa</l>  
+               <l n="8">che dai molti distingua, amica, noi,</l></lg>  <!-- #strato-0 -->
+           <lg n="3">
+              <l n="1">noi che rechiamo in cuore</l>  <!-- #strato-0 -->
+              <anchor xml:id="pecetta_23"/>
+              <l n="2">i nostri due avversi destini</l> 
+              <l n="3">d'arte e d'amore.</l></lg>
+         </div>
+         
+         <div n="IlBelPensiero"> <!-- Castellani 223 
+                                 5  e 10 | corretti a matita violetta ( = #strato-3 )
+                                 15 | lo invoco > su rasura  -->
+     
+                  <head>Il bel pensiero</head>
+                  <metamark rend="line" place="below"/>
+                 
+                  <lg n="1">
+                     <l n="1">Avevo un bel pensiero e l'ho perdu<retrace>to;</retrace></l>
+                     <l n="2">uno di quei pensieri che, tra il sonno</l>
+                     <l n="3">e la veglia, deliziano le caste</l>
+                     <l n="4">adolescenze, e ben di rado poi</l>
+                     <l n="5">
+                        <app>
+                           <lem varSeq="2">
+                              <mod change="#strato-5">
+                                 <add place="margin-left">fanno</add>
+                                 <del rend="strikethrough">tornan</del>
+                              </mod>
+                           </lem> 
+                           <rdg varSeq="1">tornan</rdg>
+                        </app>
+                        fra noi 
+                        <app>
+                           <lem varSeq="2">
+                              <mod change="#strato-3">
+                                 <del rend="strikethrough">perversi.</del>
+                                 <add place="margin-right">ritorno.</add>
+                              </mod>
+                           </lem>
+                           <rdg varSeq="1">ritorno.</rdg>
+                        </app></l>
+                  </lg>
+                  <lg n="2">
+                     <l n="1">Io perseguivo il mio pensiero come</l>
+                     <l n="2">si persegue una bella creatura,</l>
+                     <l n="3">che ne conduce ove a lei piace, quando</l>
+                     <l n="4">perdi per sempre la sua leggiadria,</l>
+                     <l n="5">dove 
+                        <app>
+                           <lem varSeq="2">
+                              <mod change="#strato-3">
+                                 <add rend="inline">la via ha uno svolto.</add>
+                                 <del rend="strikethrough">ha la via una svolta.</del>
+                              </mod>
+                           </lem>
+                           <rdg varSeq="1">ha la via una svolta.</rdg>
+                        </app></l>
+                  </lg>
+                  <lg n="3">
+                     <l n="1">Una voce profana, un importuno</l>
+                     <l n="2">richiamo il bel pensiero in fuga han messo.</l>
+                     <l n="3">Or lo cerco per questi labirinti</l>
+                     <l n="4">d’inferno, e so ch’esser non può lontano,</l>
+                     <l n="5">
+                        <app>
+                           <lem varSeq="2">
+                              <mod change="#strato-0">
+                                 <add place="below">ma che</add>
+                                 <del rend="strikethrough">s'anche</del>
+                              </mod>
+                           </lem>
+                           <rdg varSeq="1">s'anche</rdg>
+                        </app>invano io 
+                        <subst><del><gap rend="erasure"/></del><add place="inspace">lo invoco.</add></subst></l></lg>      
+         </div>
+         
+
+         
+         <div n="Soli"> <!-- Castellani 237 = Più soli -->
+            
+            
+            <pb n="120" facs="120.jpg"/> 
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_24"/>
+            <anchor xml:id="pecetta_24"/> <!-- titolo corrente cancellato con peccetta di carta extra strong cfr Castellani Tipo VIII ; n paginazione parzialmente su pecetta --> 
+            
+            <head>Soli</head>
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">Giungemmo dove si ritrova il mare,</l>
+               <l n="2">con spiagge solitarie, onde turchine;</l>
+               <l n="3">dai due arsenali, da tante officine,</l>
+               <l n="4">da Trieste che amiamo attraversare</l></lg>
+            <lg n="2">
+               <l n="1">tutta al ritorno, sempre più lontani,</l>
+               <l n="2">e più nostri, in più tacita riviera.</l>
+               <l n="3">Sopra uno scoglio, nella rossa sera,</l>
+               <l n="4">seduti appresso, non l'abbandonava</l>
+               <l n="5">io, con lo sguardo, ma sempre <app><lem varSeq="2"><mod change="#strato-0"><subst><add rend="overwritten">l</add><del>m</del></subst></mod></lem><rdg varSeq="1">m</rdg></app>'affondava,</l>
+               <l n="6">sempre più invano, nei suoi occhi strani</l>
+               <l n="7">di luna che tra le nubi viaggia;</l>
+               <l n="8">che mentre intorno a un'anima selvaggia</l>
+               <l n="9">e ad una bella persona m’affanno,</l>
+               <l n="10">i suoi pensieri chi sa dove vanno!</l></lg>
+            <lg n="3">
+               <l n="1">Da una nave con poche altre ormeggiata.</l>
+               <l n="2">venne un suon di fanfara e si distese;</l>
+               <l n="3">nei suoi occhi una lacrima s’accese,</l>
+               <l n="4">rifulse sulla guancia imporporata.</l></lg>
+            
+         </div>
+         
+         <div n="LaMoglie">  <!-- Castellani 226  
+                             lirica su ritaglio incollato | preso dal quaderno medesimo, quindi #strato-0 -->
+            
+            <pb n="121" facs="121.jpg"/>
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_25"/>
+            
+            <head>La moglie</head>
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">Quando triste rincaso, e lei m'aspetta</l> 
+               <l n="2">alla finestra, se la bella e cara</l>
+               <l n="3">moglie ad un gesto il mio male sospetta,</l>
+               <l n="4">se il disgusto mi legge, od altro, in faccia,</l> 
+               <l n="5">tosto al mio collo le amorose braccia,</l> 
+               <l n="6">come due serpi vigorose, getta:</l>
+               <l n="7">me solo accusa la sua voce amara.</l></lg>
+           <lg n="2">
+               <l n="1">"È così — dice — è così che mi torni.</l> 
+               <l n="2">Non un bacio per me, non un sorriso</l>
+               <l n="3">per tua figlia; stai li, muto, in disparte;</l> 
+               <l n="4">si direbbe, a vederti, che tu hai l'arte</l>
+               <l n="5">di distruggerti. Ed io ... guardami in viso,</l> 
+               <l n="6">guarda, se alle parole mie non credi,</l> 
+               <l n="7">questi solchi che m'ha lasciato il pianto.</l> 
+               <l n="8"><retrace cause="unclear">E</retrace>ro qui sola ad aspettarti, e intanto</l> 
+               <l n="9">la nostra casa io l'ho rimessa - vedi? -</l>
+               <l n="10">come nel primo giorno.</l>
+               <l n="11">Ma tu già non mi ascolti... Oh che passione,</l> 
+               <l n="12">e che rabbia mi fai;</l>
+               <l n="13">non s'ha il diritto, sai,</l>
+               <l n="14">quando si vive con altre persone,</l>
+               <l n="15">di tenere per sè le proprie pene;</l>
+               <l n="16">raccontarle bisogna, farne parte</l>
+               <l n="17">ai nostri cari, che vivono in noi,</l>
+              <l n="18">e di noi."</l></lg>                  
+          <lg n="3">
+               <l n="1">"Quanto, quanto m'annoi",</l>          
+               <l n="2">io le rispondo (fra me stesso); e penso:</l> 
+               <l n="3">come farà il mio angelo a capire</l>
+               <l n="4">che non v'ha cosa al mondo cui partire</l> 
+               <l n="5">con essa io non vorrei, tranne quest'una,</l> 
+               <l n="6">questa muta tristezza; e che i miei mali</l> 
+               <l n="7">sono miei, son dell'anima mia sola;</l>
+               <l n="8">non li cedo per moglie e per figliola,</l> 
+               <l n="9">non ne faccio ai miei cari parti uguali.</l></lg>
+            
+            <anchor xml:id="pecetta_25"/>
+         </div>
+         
+         
+         <div n="FanciulloBersagliere"> <!-- Castellani 204
+                                        11-18  e  20-27 | su due ritagli incollati = #strato-a
+                                        18 | punto omeso
+                                        19 | daremmo :: noi > su rasura; correzione a matita violetta = #strato-3 -->
+            
+            <pb n="122" facs="122.jpg"/> <!-- titolo corrente Coi miei occhi --> 
+            
+            <head>Il fanciullo e il bersagliere</head>
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">Avessi l'occhio felice ed ingenuo</l>  
+               <l n="2">di quel fanciullo, che rapito guarda</l>  
+               <l n="3">quel bersagliere.</l> 
+               <l n="4">Nella via fiorentina, ov'è un piacere</l>  
+               <l n="5">vivere tra la folla che si attarda</l> 
+               <l n="6">pure in sua fretta, e se v'ha cosa bella</l> 
+               <l n="7">si mostra in tutto il suo fulgore, quella</l>  
+               <l n="8">che più in' alletta, che dà il suo colore</l> 
+               <l n="9">ai desideri, è ancor quell'occhio ingenuo.</l></lg>
+             <lg n="2">
+               <l n="1">È pur bello, per me, quell'occhio gaio</l>
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_26"/>
+               <l n="2">e innamorato, quel suo tutto e solo</l>     
+               <l n="3">tendere alla sua preda.</l> 
+               <l n="4">Par che invano la vita passi e chieda</l> 
+               <l n="5">pur quello specchio: lenta passa o a volo,</l>  
+               <l n="6">nè la sua cara immagine gli offusca.</l> 
+               <l n="7">Un soldataccio dalla grazia brusca,</l>  
+               <l n="8">dal cappello piumato, affama e sazia</l>  
+                <l n="9">quell'occhio, senza fine ingenuo e gaio.</l></lg>
+               <anchor xml:id="pecetta_26"/>
+            <lg n="3">
+               <l n="1">Or cosa non daremmo, <app><lem varSeq="2"><mod change="#strato-3"><subst><add place="margin-right">uomini,</add><del rend="strikethrough">cosa</del></subst><metamark rend="line"/></mod></lem> <rdg varSeq="1">cosa</rdg></app>, noi,</l>  
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_27"/>
+               <l n="2">per poter spalancare nel profondo</l>          
+               <l n="3">tale un occhio e vedere;</l> 
+               <l n="4">perchè, come al fanciullo il bersagliere,</l> 
+               <l n="5">ne apparisse, sì a un tratto, il nostro mondo?</l> 
+               <l n="6">Con quel lume d' aurora in un sì esperto</l> 
+               <l n="7">sguardo, su quello che più giova aperto,</l>  
+               <l n="8">che non faremm<retrace>o</retrace>, con una sì nuova</l> 
+               <l n="9">forza in sì antiche mani, uomini, noi!</l></lg>
+            <anchor xml:id="pecetta_27"/>
+         </div>
+
       </body>
    </text>
 </TEI>
