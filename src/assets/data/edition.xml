@@ -9330,6 +9330,677 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
                <anchor xml:id="p165_l1"/>
          </div>
 
+         <div>
+            <pb n="167" facs="167.jpg"/>
+            <lg n="1">
+               <l n="1">Nuovi versi militari</l>
+               <l n="2">Intermezzo quasi giapponese</l>
+               <l n="3">Tutto il mondo * ultime poesie</l>
+               <l n="4"> (1915 * 1919) </l>
+            </lg>
+         </div>
+         <div>
+        <pb n="168" facs="168.jpg"/>  
+         <witDetail wit="#peccette"></witDetail>
+            <head>La Sveglia</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">"Per vederti, o divina,</l>
+               <l n="2">a un balcone apparire,</l>
+               <l n="3">ogni giorno, all' uscire</l>
+               <l n="4">dalla scuola, più in fretta andavo, e solo;</l>
+               <l n="5">
+                  <app>
+                     <lem varSeq="2">
+                        <mod change="#strato-2"><add place="above">e</add></mod>
+                     </lem>
+                     <rdg varSeq="1">
+                        <mod change="#strato-0"><del rend="strikethrough">già</del></mod>
+                     </rdg>
+                  </app> lasciavo la via della marina </l>
+               <l n="6">per il nero chiassuolo.</l>
+               <l n="7">Dove abitavi (grande oscura casa)</l>
+               <l n="8">c'erano molte donne alle finestre,</l>
+               <l n="9">donne e bimbi in istrada.</l>
+               <l n="10">Tu mi piacevi, mi piacevi assai</l>
+               <l n="11">più di mia madre, più d'ogni altra donna.</l>
+               <l n="12">Mi sembravi - mi sembri - una Madonna:</l>
+               <l n="13">io il tuo nome non so, ti il mio non sai."</l>
+            </lg>
+            <lg n="2">
+               <l n="1">Dopo vent'anni, a chi in un sogno intatta</l>
+               <l n="2">m'arride, dico amoroso parole.</l>
+               <l n="3">Batte sulla risata guancia il sole,</l>
+               <l n="4">e un po' la mano il liscio n'accarezza.</l>
+               <l n="5">"No, non dirmi chi sei, mia prima ebbrezza;</l>
+               <l n="6">- dicevo in sogno - lascia quest'amaro,</l>
+               <l n="7">questa söavità che a te mi serra;</l>
+               <l n="8">a chi parte, già vecchio, per la guerra,</l>
+               <l n="9">taci, come hai taciuto al buon scolaro."</l>
+               <l n="10">E temevo, seguivo là con gli occhi</l>
+               <l n="11">il suo sguardo, lo vidi farsi bieco,</l>
+               <l n="12">mentre balzava sopra i miei ginocchi,</l>
+               <l n="13">fissar qualcuno, un infermo, un seduto,</l>
+               <l n="14">in noi rivolto, senza un gesto, muto.</l>
+               <l n="15">„È nulla" — disse. „È mio marito cieco."</l>
+            </lg>
+            </div>
+         <div>
+            <lg n="3">
+               <l n="1">
+                  <mod change="#strato-2"><add place="bottom">Suonò la sveglia; alla fatica
+                        pronte</add></mod></l>
+               <pb n="169" facs="169.jpg"/>
+               <l n="2">trovai le membra; balzai su beato,</l>
+               <l n="3">ben che sempre al soldato</l>
+               <l n="4">più chiudere che aprire gli occhi alletta,</l>
+               <l n="5">che ha i piedi infermi ed il cuore malato.</l>
+               <l n="6">„Sveglia — gridava il mio compagno — sveglia,</l>
+               <l n="7">che andiamo al fronte".</l>
+               <l n="8">Ma più per celia gridava, per gioco,</l>
+               <l n="9">perché ogni sera io gli diceva: „Picco,</l>
+               <l n="10">sei consegnato."</l>
+            </lg>
+         </div>
+
+         
+         <div>
+            <head>Addio ai compagni</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">Voi quasi m'odiavate, ed io v'amavo,</l>
+               <l n="2">cari compagni.</l>
+               <l n="3">Un soldato, lo so, non sono bravo</l>
+               <l n="4">come voi, io da voi troppo diverso,</l>
+               <l n="5">troppo fuori dei ranghi.</l>
+               <l n="6">M'odiavate per questo, ed io v'amavo</l>
+               <l n="7">quali siete: uno solo siete in tanti.</l>
+               <l n="8">Così oggi, alla sveglia, a veder vuota</l>
+               <l n="9">la camerata;</l>
+               <l n="10">pensando voi verso la meta ignota</l>
+               <l n="11">(che dove fosse solo Iddio sapeva,</l>
+               <l n="12">Iddio e il Maggiore);</l>
+               <l n="13">sì, lo confesso, nel mio vecchio cuore,</l>
+               <l n="14">uso ad ogni triestezza, ad ogni sgombro,</l>
+               <l n="15">ebbi quasi un dolore.</l>
+            </lg>
+            <lg n="2">
+               <l n="1">Anch'io parto, domani.</l>
+               <l n="2">Troverò, dov'io giunga, altro più nulla</l>
+               <l n="3">che voi, del Carso dentro l'arse forre,</l>
+               <l n="4">ove son morti di Trieste in vista,</l>
+               <l n="5">non la chiese, e dà il sangue alla conquista</l>
+               <l n="6">il buon guerriero che la guerra abborre.</l>
+               <l n="7">Là un ugual grigio verde, uguali faccie [SIC],</l>
+               <l n="8">ed il cannone, mi darà l'oblio</l>
+               <l n="9">d'altre assai, torrà in me le vostre traccie.</l>
+               <l n="10">Oggi ancora, al fanciullo appena grato,</l>
+               <pb n="170" facs="170.jpg"/>
+               <l n="11">ed al vecchio che incontro le s'affanna,</l>
+               <l n="12">porgo la mia pagnotta, la più bella.</l>
+               <l n="13">Addio cucine, dove non mai stanchi</l>
+               <l n="14">aspettavano un osso i miei soldati</l>
+               <l n="15">con occhi luccicanti;</l>
+               <l n="16">quel gran ragù, cui vigilava - oh Dio! —</l>
+               <l n="17">con baionetta in canna,</l>
+               <l n="18">la sentinella.</l>
+            </lg>
+            <lg n="3">
+               <l n="1">Ma ch'io viva, ch'io giunga alla più stanca</l>
+               <l n="2">vecchiezza, o in tanti morti un morto io sia,</l>
+               <l n="3">Picco, di te non mi potrò scordare;</l>
+               <l n="4">scorda forse chi amò l'anima mia?</l>
+               <l n="5">Eri un uomo, il più degno eri d'affetto,</l>
+               <l n="6">tu così lungo, così magro e nero,</l>
+               <l n="7">che mettevi paura — oh, ma davvero! —</l>
+               <l n="8">al fanciulletto.</l>
+               <l n="9">Or sei partito, senza me partito</l>
+               <l n="10">sei per l'ignoto.</l>
+               <l n="11">Piazza d'Armi ricordo, l'ufficiale</l>
+               <l n="12">che dai ranghi ti trasse, e per mia gioia</l>
+               <l n="13">(forse non disse male)</l>
+               <l n="14">disse: „Il soldato Picco</l>
+               <l n="15">è peggio d'una serva.</l>
+               <l n="16">Chi la memoria di quel punto serba,</l>
+               <l n="17">di te, del tuo rancore ancor sorride;</l>
+               <l n="18">e meno ti vorrebbe esser lontano.</l>
+               <l n="19">Nato a <hi>L</hi>ucca, così come l'ulivo,</l>
+               <l n="20">come il fiasco del Chianti eri toscano.</l>
+               <l n="21">E t'amavano tutti, anche una bimba,</l>
+               <l n="22">la mia, che sempre ti diceva „Buto",</l>
+               <l n="23">e alzava contro te l'esile mano;</l>
+               <l n="24">quando: „E' partito - le dissi - non torna",</l>
+               <l n="25">stette un poco fra sè, già lacrimosa</l>
+               <l n="26">corse alla mamma, lo si strinse accanto,</l>
+               <l n="27">dette a terra in un pianto,</l>
+               <l n="28">quel pianto, sai, lungo filato uguale.</l>
+            </lg>
+         </div>
+         <div>
+            <pb n="171" facs="171.jpg"/>
+            <witDetail wit="#peccette"></witDetail>
+            <head>Vita di Guarnigione</head>
+            <lg n="1">
+               <l n="1">Picco scrive dal fronte:</l>
+               <l n="2">„Molto freddo, molti soldati,</l>
+               <l n="3">molto rumore di cannonate".</l>
+               <l n="4">Ed io son qui, sono a Casalmaggiore, </l>
+               <l n="5">e ci devo restare,</l>
+               <l n="6">devo ancora pensare</l>
+               <l n="7">alla guerra: ci penso a lungo, e dico:</l>
+               <l n="8">Aver forse paura e non fuggire,</l>
+               <l n="9">saper uccidere, saper morire,</l>
+               <l n="10">Dio sa quest'arte ov'io l'apprenderò.</l>
+               <l n="11">Vigilare ora devo sul nemico</l>
+               <l n="12">che ad Ala, a Redipuglia, a Doberdò</l>
+               <l n="13">i miei bravi compagni han disarmato;</l>
+               <l n="14">ne ascolto i canti, ne placo le beghe.</l>
+               <l n="15">„<foreign xml:lang="deu">Wie geht's lhnen, Colleghe?"</foreign></l>
+               <l n="16">la parola così mi fu rivolta</l>
+               <l n="17">(un poco io ne sorrisi) da una faccia </l>
+               <l n="18">che sorrideva entro la barba folta.</l>
+               <l n="19">No, non son pago, no, una prova manca</l>
+               <l n="20">alla mia vita, che non chiedon gli altri.</l>
+               <l n="21">„Meglio che al fronte", e s'ammiccano scaltri;</l>
+               <l n="22">vita di guarnigione non gli stanca,</l>
+               <l n="23">di poco onoro, di nessuna pace.</l>
+               <l n="24">Vino buono e a buon prezzo (a me non piace),</l>
+               <l n="25">belle ragazze, schive coi borghesi,</l>
+               <l n="26">ma per noi militari lungo il fiume,</l>
+               </lg>
+               </div>
+                <div>
+                    <witDetail wit="#peccette"></witDetail>
+                    <lg n="1">
+                      <l n="27">o in qualunque osteria molto cortesi,</l>
+                      <l n="28">molto invero disposte a far piacere</l>
+                      <l n="29">a <mod change="#strato-0"><del rend="strikethrough">un</del></mod>Sancio
+                          Panza, che ha messo le piume</l>
+                      <l n="30">di bersagliere.</l>
+                    </lg>
+                </div>
+            <div>
+            <lg n="2">
+               <l n="1"><mod change="#strato-2"><add place="bottom">Le mie mani non sono ancora
+                        rosse</add></mod></l>
+               </lg>
+               </div>
+         <div>
+               <pb n="172" facs="172.jpg"/>
+               <witDetail wit="#peccette"></witDetail>
+            <lg n="2">
+               <l n="2">di sangue, son d' inchiostro ancora nere,</l>
+               <l n="3">la baionetta è nel fodero ancora.</l>
+               <l n="4">In piazza d'Armi mi trova l'Aurora,</l>
+               <l n="5">passo al Corpo di Guardia le mie sere;</l>
+               <l n="6">ed altro mai... Perchè mai altro fosse,</l>
+               <l n="7">perchè ucciso dal tedio io le sia reso,</l>
+               <l n="8">dove c'è un altarino, un lume è acceso,</l>
+               <l n="9"><mod change="#strato-3"><add place="above">un'immagine c'è della
+                        Madonna,</add></mod></l>
+               <l n="10">prega per me una donna.</l>
+               <l n="11">Ogni soldato ha una donna che prega;</l>
+               <l n="12">e l'Iddio degli eserciti, il Signore,</l>
+               <l n="13">che più a fondo punisce chi pià ama,</l>
+               <l n="14">per ogni dieci in cui l'istessa brama</l>
+               <l n="15">
+                  <app>
+                     <lem varSeq="2"><mod change="#strato-3"><add place="above"
+                        >discopre</add></mod></lem>
+                     <rdg varSeq="1"><mod change="#strato-0"><del rend="strikethrough">si
+                              legge</del></mod></rdg>
+                  </app>, e l'ansia <app>
+                     <lem varSeq="2"><mod change="#strato-3"><add place="above">tua
+                           stessa</add></mod></lem>
+                     <rdg varSeq="1"><mod change="#strato-0"/><del rend="strikethrough">onde
+                           soffrì</del></rdg>
+                  </app> nel cuore, </l>
+               <l n="16">una <app>
+                     <lem varSeq="2"><mod change="#strato-3"><add place="above"
+                        >n'elegge</add></mod></lem>
+                     <rdg varSeq="1"><mod change="#strato-0"><del rend="strikethrough">ne
+                              sceglie</del></mod></rdg>
+                  </app> ... a lei la grazia nega. </l>
+               <l n="17">Parte allora un soldato per il fronte;</l>
+               <l n="18">le scrive : „T'amo. Siamo già sul monte....</l>
+               <l n="19">Abbi cura di te, non darti pena:</l>
+               <l n="20">fa un poco come noi, pensaci appena."</l>
+               <l n="21">Altro un giorno le scrive, un po' più in fretta:</l>
+               <l n="22">„Sei troppo buona.... se per caso.... ascolta;</l>
+               <l n="23">occhio ai figli; per essi hai da campare."</l>
+               <l n="24">E: „Gli Austriaci perderanno le gare."</l>
+               <l n="25">Non scrive: Desto per l'ultima volta,</l>
+               <l n="26">(stavo nella trincea ghiacciata e stretta</l>
+               <l n="27">come tomba: <app>
+                     <lem varSeq="2"><mod change="#strato-3"><add place="above">sognavo
+                           la</add></mod></lem>
+                     <rdg varSeq="1"><mod change="#strato-0"><del rend="strikethrough">pensavo
+                              alla</del></mod></rdg>
+                  </app> famiglia): </l>
+               <l n="28">vidi presso la vampa alle mie ciglia;</l>
+               <l n="29">corsi al fucile...... ora, chi giace giace,</l>
+               <l n="30">chi vive si <mod change="#strato-0"><hi rend="underline">dia</hi></mod> pace.</l>
+            </lg>
+            </div>
+         <div>
+            <lg n="3">
+               <l n="1">Faccio in armo dei versi;</l>
+               <l n="2">per te li ho fatti, per una gentile</l>
+               <l n="3">non ha sparato ancora sui tedeschi,</l>
+               <l n="4">ma il soldato va dove altri lo manda,</l>
+               <l n="5">e deve il suo saluto a chi comanda.</l>
+               <pb n="173" facs="173.jpg"/>
+               <l n="6">Non può dire un soldato: "Mi fa freddo</l>
+               <l n="7">sui monti, anche il nemico è un valoroso,</l>
+               <l n="8">non quanto i nostri, ma di più su, non visto,</l>
+               <l n="9">fulmina, ed io non voglio morir qui."</l>
+               <l n="10">E nemmeno può dire: „Meglio il freddo</l>
+               <l n="11">d'alta montagna, anche un pensiero, si,</l>
+               <l n="12">anche un pensiero di morte, che l'ore,</l>
+               <l n="13">lunghe a Casalmaggiore,</l>
+               <l n="14">con un nemico accanto a te senz'armi,</l>
+               <l n="15">che più t'odia, e per farsi</l>
+               <l n="16">perdonare ti fa il saluto al modo</l>
+               <l n="17">d'Italia... Meglio che l'aspetto tristo</l>
+               <l n="18">di Sancio Panza, e poi con lui di guardia</l>
+               <l n="19">montar la sera, e portar zaino il giorno,</l>
+               <l n="20">meglio prender con voi senza ritorno</l>
+               <l n="21">la via di Trento; oh tu, che là ti struggi</l>
+               <l n="22">d'essere a casa, e non sei meno un prode,</l>
+               <l n="23">se tanto ti lamenti, e mai non fuggi."</l>
+               <l n="24">Tante cose non può dirle un soldato;</l>
+               <l n="25">le pensa, e dura al posto che gli è dato.</l>
+               <l n="26">Ma tu, che di volermi bene dici,</l>
+               <l n="27">se del <mod change="#strato-3"><del rend="strikethrough"
+                  >tuo</del></mod>vero <app>
+                     <lem varSeq="2"><mod change="#strato-3"><add place="below"
+                        >mio</add></mod></lem>
+                     <rdg varSeq="1"><mod change="#strato-0"><del rend="strikethrough"
+                           >tuo</del></mod></rdg>
+                  </app> bene il tuo cuor gode, </l>
+               <l n="28">non ch'io viva o ch'io muoia, altro, o mia Lina,</l>
+               <l n="29">altro chiedi per me alla Madonnina.</l>
+            </lg>
+         </div>
+         <div>
+            <pb n="174" facs="174.jpg"/>
+            <head>Il trombettiere della territoriale</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">O trombettiere che suoni l'Avanti,</l>
+               <l n="2">uomo già grigio, uomo che in casa attende</l>
+               <l n="3">tra gli altri grandicelli un sempre in pianti;</l>
+            </lg>
+            <lg n="2">
+               <l n="1">come a gloria m'innalzi il caro suono!</l>
+               <l n="2">Vuoi di corsa gli eroi fuor delle tende?</l>
+               <l n="3">Sei tu Mercurio quando spicca il volo?</l>
+            </lg>
+            <lg n="3">
+               <l n="1">Dai la libera uscita, o a morir chiami,</l>
+               <l n="2">la vecchia giardia? Al fuoco, amico, vai?</l>
+               <l n="3">Quel punto, ch'è da te temuto assai,</l>
+               <l n="4">si direbbe, ad udirti, che assai l'ami.</l>
+            </lg>
+         </div>
+         <div>
+            <head>Accompagnando un prigioniero</head>
+            <lb/>
+            </div>
+            <div>
+               <witDetail wit="#peccette"></witDetail>
+            <lg n="1">
+               <l n="1">La piazza del paese a mezzo il giorno,</l>
+               <l n="2">come una stampa, pur nuova, d'antico;</l>
+               <l n="3">io che cammino, di <choice><sic>scolta</sic><corr>scorta</corr></choice> a un nemico,</l>
+               <l n="4">e i ragazzi, si sa, dietro e d'intorno.</l>
+            </lg>
+            <lg n="2">
+               <l n="1">Dal Caffè l'ozïoso, esce dal forno</l>
+               <l n="2">il panettiere: tra la piazza e il vico</l>
+               <l n="3">lascia il suono, la man ritrae il mendico.</l>
+               <l n="4">Così all'andata, così nel ritorno.</l>
+            </lg>
+            <lg n="3">
+               <l n="1">Mi fa il saluto, io glielo rendo, e vedo</l>
+               <l n="2">che gli occhi pone al deschetto e il pensiero,</l>
+               <l n="3">su cui, come Hans Sachs, non canta, io credo;</l>
+            </lg>
+            <lg n="4">
+               <l n="1">vestito è un anno, armato a tanta offesa,</l>
+               <l n="2">vecchio buon ciabattino, prigioniero</l>
+               <l n="3">di guerra, foglia nel turbine presa.</l>
+            </lg>
+         </div>
+         <div>
+            <pb n="175" facs="175.jpg"/>
+            <witDetail wit="#peccette"></witDetail>
+            <head>Partendo per la zona di guerra</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">"Addio Casalmaggiore,</l>
+               <l n="2">città dell'allegria".</l>
+               <l n="3">Così la compagnia</l>
+               <l n="4">canta: e in riga è per là dove si muore.</l>
+            </lg>
+            <lg n="2">
+               <l n="1">Le donne alle finestre ed i bambini,</l>
+               <l n="2">guardan con occhi di pianto per via</l>
+               <l n="3">passar, sotto allo zaino, i fantaccini.</l>
+               <l n="4">Strani pensieri fa l'anima mia:</l>
+            </lg>
+            <lg n="3">
+               <l n="1">E' un debito che si deve pagare,</l>
+               <l n="2">una pena che si deve espiare,</l>
+               <l n="3">una gloria che si deve acquistare.</l>
+            </lg>
+         </div>
+         <div>
+            <pb n="176" facs="176.jpg"/>
+            <head>Dialogo</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">Ch'io leggessi, vorresti, nel futuro,</l>
+               <l n="2">e l'ora e il giorno della sospirata</l>
+               <l n="3">pace. „Una guerra - tu dici - chiamata</l>
+               <l n="4">per uccider noi popolo. Sicuro."</l>
+            </lg>
+            <lg n="2">
+               <l n="1">Ah, tu sei l'innocente ; tu sei puro</l>
+               <l n="2">di quel sangue che spargi. E altrove ho amata,</l>
+               <l n="3">ma più docile, un poco spaventata</l>
+               <l n="4">l'anima tua: nel mio cane. Sicuro.</l>
+            </lg>
+            <lg n="3">
+               <l n="1">Un dì, ricordo, io ti diceva (or quelli</l>
+               <l n="2">sembran già tempi lontani) „Un soldato</l>
+               <l n="3">come te non è mai triste, Monbelli.".</l>
+            </lg>
+            <lg n="4">
+               <l n="1">Oh, gli occhi grandi che su me hai levato!</l>
+               <l n="2">„Io mi chiamo Mom-belli, non Monbelli.<choice><sic/><corr>"</corr></choice></l>
+               <l n="3">Sicuro. Ed ogni giorno più arrabbiato.</l>
+            </lg>
+         </div>
+         <div>
+            <pb n="177" facs="177.jpg"/>
+            <witDetail wit="#peccette"></witDetail>
+            <head>Nino</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">Quando vedo un soldato, una ga<mod change="#strato-3"><del
+                        rend="strikethrough">r</del></mod>retta,</l>
+               <l n="2">un giovane soldato, che con gli occhi</l>
+               <l n="3">mi segue, e splende al sol la baionetta,</l>
+               <l n="4">sì presso al volto della sentinella;</l>
+               <l n="5">e „coscritto" - par dicano - „cappella"</l>
+               <l n="6">i compagni che fuori escono a crocchi,</l>
+               <l n="7">a bere, a condolersi, a far l'amore,</l>
+               <l n="8">stringe un' angoscia, un rimorso il mio cuore;</l>
+               <l n="9">penso ad un altro coscritto, a te, Nino</l>
+               <l n="10">Tibaldi, che non torni a chi t'aspetta,</l>
+               <l n="11">che non torni dal Monte Sabotino.</l>
+            </lg>
+            <lg n="2">
+               <l n="1">Ti vidi quando già verso i confini</l>
+               <l n="2">partivano, la notte, i reggimenti.</l>
+               <l n="3">Non volevi la guerra; pei vicini</l>
+               <l n="4">di branda eri di risa e frizzi obbietto,</l>
+               <l n="5">qua e là balzavi, facevi il capretto,</l>
+               <l n="6">e il tuo plotone era già sull' attenti.</l>
+               <l n="7">„Tibaldi al posto, non fare il buffone</l>
+               <l n="8">— fu chi disse — ti sgnacco alla prigione."</l>
+               <l n="9">Sorrise poi, ti <app>
+                     <lem varSeq="2"><mod change="#strato-0"><add place="above"
+                        >ammonì</add></mod></lem>
+                     <rdg varSeq="1"><mod change="#strato-0"><del rend="strikethrough"
+                           >parlò</del></mod></rdg>
+                  </app> con amore; </l>
+               <l n="10">nè sul volto ti vid<app>
+                  <lem varSeq="2"><mod change="#strato-0"><add rend="overwritten">e</add></mod></lem>
+                  <rdg varSeq="1"><mod change="#strato-0"><del rend="overwritten">i</del></mod></rdg>
+               </app>, ai nuovi accenti,</l>
+               <l n="11">correre quasi un virgineo rossore.</l>
+            </lg>
+            <lg n="3">
+               <l n="1">Non volevi la guerra, e si l'hai fatta.</l>
+               <l n="2">Eri un bravo, e scrivevi: „Mamma, quando</l>
+               <l n="3">finirà questa vitta disperatta [SIC]?"</l>
+               <l n="4">E scrivevi ai fratelli come a figli;</l>
+               <l n="5">aspri rimbrotti, amorosi consigli.</l>
+               <l n="6">„Qui non torna nessuno; il babbo è un santo</l>
+               </lg>
+               </div>
+            <div>
+               <pb n="178" facs="178.jpg"/>
+               <witDetail wit="#peccette"></witDetail>
+               <lg n="3">
+               <l n="7">per noi ; vi ho dato solo che dolori: perdonatemi,</l>
+               <l n="8">cari genitori."</l>
+               <l n="9">E smanïavi, avevi in te un affanno;</l>
+               <l n="10">pensavi a quelli che han gridato tanto</l>
+               <l n="11">„Viva la guerra", e alla guerra non vanno.</l>
+            </lg>
+            <lg n="4">
+               <l n="1">„Figlio" — ti dice ora tua madre in sogno;</l>
+               <l n="2">che ad un bacio per via t'offre la buona</l>
+               <l n="3">guancia, la vizza guancia di cotogno —</l>
+               <l n="4">Io t' aspetto... e tu giri per Milano";</l>
+               <l n="5">e nell' angoscia di quel bacio vano</l>
+               <l n="6">sembra che per picchiarti a sè ti stringa.</l>
+               <l n="7">Tu la guardi, e rispondi: „<mod change="#strato-0"><hi rend="underline">Podi minga.</hi></mod></l>
+               <l n="8">Vengo il giorno a Milano, a notte in zona</l>
+               <l n="9">di guerra, giù in trincea devo tornare.</l>
+            </lg>
+            <lg n="5">
+               <l n="1">Per me ho finito: adesso hai tu bisogno</l>
+               <l n="2">di pace, resti tu, mamma, a penare.</l>
+               <l n="3">Dice il babbo, e una lacrima ha versato,</l>
+               <l n="4">una sola per te, eh'eri il suo primo:</l>
+               <l n="5">„È morto bene, è morto da soldato.<choice><sic/><corr>"</corr></choice></l>
+               <l n="6">E Baldino, quel prode fanciulletto,</l>
+               <l n="7">quel sempre in alto come L'uccelletto,</l>
+               <l n="8">il tuo più caro fratello Baldino,</l>
+               <l n="9">che un tempo, se di te lo richiedeva,</l>
+               <l n="10">sempre: „E' in Austria, in trincea" mi rispondeva;</l>
+               <l n="11">or la vita, l'oblio di noi l'afferra;</l>
+               <l n="12">dimentico di chi su tutti ha amato,</l>
+               <l n="13">gioca alla guerra, coi morti per terra.</l>
+            </lg>
+            <lg n="6">
+               <l n="1">Ecco: nell' aria è ancora primavera,</l>
+               </lg>
+               </div>
+            <div>
+               <pb n="179" facs="179.jpg"/>
+               <lg n="6">
+               <l n="2">ferve nei cuori una strana ebbrietà.</l>
+               <l n="3">venuto appena di Carrè in licenza,</l>
+               <l n="4">pian piano feci, che mamma non senta,</l>
+               <l n="5">non senta la <mod change="#strato-0"><hi rend="underline">p<hi>e</hi>dana </hi></mod>d'un soldà;</l>
+               <l n="6">che Picco è a Col di Lana, e per te manda</l>
+               <l n="7">a Monte Sabotino una ghirlanda.</l>
+               <l n="8">Addio piccolo, ai rischi eletto, e al lancio</l>
+               <l n="9">delle bombe, onde hai fatto aspra querela:</l>
+               <l n="10">„Mamma, la base principale è il rancio.<choice><sic/><corr>"</corr></choice></l>
+            </lg>
+         </div>
+         <div>
+            <head>Per la morte d'un volontario: Enrico Elia</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">Non per Trento sei morto e per Trieste;</l>
+               <l n="2">non per sperdere in error chiuse tempeste,</l>
+            </lg>
+            <lg n="2">
+               <l n="1">tu che lieto guardavi in te e nel mondo,</l>
+               <l n="2">sulle spalle assumevi il grave pondo.</l>
+            </lg>
+            <lg n="3">
+               <l n="1">Nessuno a tanto si chiamava, Elia,</l>
+               <l n="2">per solo amore ti sei messo in via,</l>
+            </lg>
+            <lg n="4">
+               <l n="1">per far più bella e più <app>
+                     <lem varSeq="2"><mod change="#strato-0"><add place="above"
+                        >nostra</add></mod></lem>
+                     <rdg varSeq="1"><mod change="#strato-0"><del rend="strikethrough"
+                           >grande</del></mod></rdg>
+                  </app> la vita</l>
+               <l n="2">così prima di sera l'hai fornita.</l>
+            </lg>
+            <lg n="5">
+               <l n="1">L'idee che le son state di te ladre,</l>
+               <l n="2">chi secondo la carne era tua madre,</l>
+            </lg>
+            <lg n="6">
+               <l n="1">gli amici accusa, e fa querela e grida;</l>
+               <l n="2">e ch'altro vede in te che un suicida;</l>
+            </lg>
+            <lg n="7">
+               <l n="1">in te, il cui solo peccato, e mortale,</l>
+               <l n="2">fu amar tutta la vita, anche il suo male.</l>
+            </lg>
+         </div>
+         <pb n="180" facs="180.jpg"/>
+         <div>
+            <head>Il soldato che va a Salonicco</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">E'l'Italia che in te, fratello, adoro.</l>
+               <l n="2">Ti vedo in nave, ti vedo sbarcare.</l>
+               <l n="3">Pensi: Il giro del mondo ci fan fare.</l>
+               <l n="4">Pensi: Tuo se ritorno, tuo se moro.</l>
+            </lg>
+            <lg n="2">
+               <l n="1">Il tuo campo non scordi tu, il tesoro</l>
+               <l n="2">del solco a tutto il nuovo che t'appare.</l>
+               <l n="3">Vedi la prima volta il vasto mare,</l>
+               <l n="4">il mare azzurro con fremiti d' oro.</l>
+            </lg>
+            <lg n="3">
+               <l n="1">Musiche, plausi all'approdo... son meno</l>
+               <l n="2">d'un gioco. Quanto atteso "a braccia aperte",</l>
+               <l n="3">quando sarai - come tu dici - :"in seno</l>
+            </lg>
+            <lg n="4">
+               <l n="1">della mia cara ed amata famiglia";</l>
+               <l n="2">le cose che hai vedute, che hai sofferte</l>
+               <l n="3">racconterai.... ma senza meraviglia.</l>
+            </lg>
+         </div>
+         <pb n="181" facs="181.jpg"/>
+         <div>
+            <head>La stazione</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">La stazione ricordi, a notte, piena</l>
+               <l n="2">d'ultimi addii, di mal frenati pianti,</l>
+               <l n="3">che la tradotta in partenza affollava?</l>
+               <l n="4">Una trombetta giù in fondo suonava</l>
+               <l n="5">l'Avanti;</l>
+               <l n="6">ed il tuo cuore, il tuo cuore aghiacciava.</l>
+            </lg>
+         </div>
+         <pb n="182" facs="182.jpg"/>
+         <div>
+            <witDetail wit="#peccette"></witDetail>
+            <head>Il piantone</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">Dove il rombo non giunge del cannone,</l>
+               <l n="2">e l’aria è grave di nuvole basse,</l>
+               <l n="3">c’è una noia<mod change="#strato-0"><retrace>:</retrace></mod> la noia del <mod change="#strato-0"><hi rend="underline">piantone</hi></mod></l>
+               <witDetail wit="#strato-0"></witDetail>
+               <l n="4">Di pensarmi, di leggere son stanco.</l>
+               <l n="5">Davanti a me, sulla tavola, in bianco</l>
+               <l n="6">guardo un foglio di carta.</l>
+               <l n="7">E se un Dio m'ispirasse?</l>
+               <l n="8">Se la mano, la <mod change="#strato-0"><hi rend="underline">mia</hi></mod> mano tracciasse,</l>
+               <l n="9">proprio qui, proprio qui,</l>
+               <l n="10">su questo foglio protocollo, in questa</l>
+               <l n="11">ora grigia di noia,</l>
+               <l n="12">senza gioia o terrore</l>
+               <l n="13">(come chi ha carta e matita fa un fiore,</l>
+               <l n="14">una casina),</l>
+               <l n="15">poche parole, ma non dette ancora:</l>
+               <l n="16"><mod change="#strato-0"><hi rend="undeline">il perché della vita</hi></mod>?</l>
+               <l n="17">rivelassi il mistero,</l>
+               <l n="18">quello d'oggi e di sempre,</l>
+               <l n="19">che l'uomo chiama del dolore umano?</l>
+               <l n="20">Che direbbe il sergente?</l>
+               <l n="21">E quell'altro piantone,</l>
+               <l n="22">quel che ha solo paura</l>
+               <l n="23">d’andare al fronte, e dice di star qui:</l>
+               <l n="24">"come in villeggiatura"?</l>
+               <l n="25">Sì, che direbbe dopo d’aver letto?</l>
+               <l n="26">Diventerebbe smorto?</l>
+               <l n="27">Mi darebbe un buffetto</l>
+               <l n="28">sulle guance, tornando alla canzone</l>
+               <l n="29">che gli è tanto – Dio mio! – tanto gradita?</l>
+               <l n="30">"Passeggiando in un giardino,</l>
+               <l n="31">ino,</l>
+               <l n="32">un grazioso soldatino ....."?</l>
+            </lg>
+         </div>
+         <pb n="183" facs="183.jpg"/>
+         <div>
+            <head>In treno</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">I miei occhi s'allietano nel volto</l>
+               <l n="2">d'un giovane soldato, d'un coscritto.</l>
+               <l n="3">Come sorride! Com'è ancora molto,</l>
+               <l n="4">ah sì, molto bambino!</l>
+            </lg>
+            <lg n="2">
+               <l n="1">Come parla, egli solo, e non s'attrista,</l>
+               <l n="2">non se il trano fra i canti fugge via,</l>
+               <l n="3">non se un Draken laggiù – la guerra – è in vista.</l>
+               <l n="4">Viene quasi, a guardarlo,</l>
+            </lg>
+            <lg n="3">
+               <l n="1">d'accarezzarlo sulla testa bionda;</l>
+               <l n="2">di chiedergli: Oh tua madre? T'ama troppo?</l>
+               <l n="3">"Che corpo sei?" gli domando. "Seconda</l>
+               <l n="4">compagnia lanciafiamme"<choice><sic/><corr>"</corr></choice>.</l>
+            </lg>
+         </div>
+         <pb n="184" facs="184.jpg"/>
+         <div>
+            <witDetail wit="#peccette"></witDetail>
+            <head>Primavera <mod change="#strato-3"><del rend="strikethrough"
+               >del</del></mod>1917</head>
+            <lb/>
+            <lg n="1">
+               <l n="1">Dove al mondo m'ha messo, e ben non fece</l>
+               <l n="2">(ma son trent'anni e più) la madre mia,</l>
+               <l n="3">che ci vò a far nella città natia?</l>
+               <l n="4">Così vestito, da fante italiano,</l>
+            </lg>
+            <lg n="2">
+               <l n="1">son là, in quel sogno sanguinoso e strano.</l>
+               <l n="2">"Pare – dice la gente – che non sia</l>
+               <l n="3">dei nostri": ad uno fa cenni per via,</l>
+               <l n="4">vestito <mod change="#strato-0"><hi rend="underline">quasi</hi></mod> come me, ma invece...</l>
+            </lg>
+            <lg n="3">
+               <l n="1">Forse nulla che amai vivo è laggiù.</l>
+               <l n="2">Perduta anch'essa la <app>
+                  <lem varSeq="2"><mod change="#strato-0"><add place="superscript">città</add></mod></lem>
+                  <rdg varSeq="1"><mod change="#strato-0"><del rend="overwritten">mia</del></mod></rdg>
+               </app> di Lina!</l>
+               <l n="3">Cose a pensarvi di un mondo che fu,</l>
+            </lg>
+            <lg n="4">
+               <l n="1">entro, e un toscano a scegliermi, in Cantina.</l>
+               <l n="2">Solo un soldato v'é, del Sessantotto.</l>
+               <l n="3">Mangia insalata e beve vino rosso.</l>
+            </lg>
+         </div>
+
+         
+
       </body>
    </text>
 </TEI>
