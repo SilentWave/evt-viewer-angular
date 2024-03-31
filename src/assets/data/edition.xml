@@ -9862,8 +9862,8 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
                <l n="2">fu amar tutta la vita, anche il suo male.</l>
             </lg>
          </div>
-         <pb n="180" facs="180.jpg"/>
          <div>
+            <pb n="180" facs="180.jpg"/>
             <head>Il soldato che va a Salonicco</head>
             <lb/>
             <lg n="1">
@@ -9889,8 +9889,8 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
                <l n="3">racconterai.... ma senza meraviglia.</l>
             </lg>
          </div>
-         <pb n="181" facs="181.jpg"/>
          <div>
+            <pb n="181" facs="181.jpg"/>
             <head>La stazione</head>
             <lb/>
             <lg n="1">
@@ -9902,8 +9902,8 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
                <l n="6">ed il tuo cuore, il tuo cuore aghiacciava.</l>
             </lg>
          </div>
-         <pb n="182" facs="182.jpg"/>
          <div>
+            <pb n="182" facs="182.jpg"/>
             <witDetail wit="#peccette"></witDetail>
             <head>Il piantone</head>
             <lb/>
@@ -9943,8 +9943,8 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
                <l n="32">un grazioso soldatino ....."?</l>
             </lg>
          </div>
-         <pb n="183" facs="183.jpg"/>
          <div>
+            <pb n="183" facs="183.jpg"/>
             <head>In treno</head>
             <lb/>
             <lg n="1">
@@ -9966,8 +9966,8 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
                <l n="4">compagnia lanciafiamme"<choice><sic/><corr>"</corr></choice>.</l>
             </lg>
          </div>
-         <pb n="184" facs="184.jpg"/>
          <div>
+            <pb n="184" facs="184.jpg"/>
             <witDetail wit="#peccette"></witDetail>
             <head>Primavera <mod change="#strato-3"><del rend="strikethrough"
                >del</del></mod>1917</head>
@@ -9999,7 +9999,840 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
             </lg>
          </div>
 
+          <div>
+            
+            <lb/>
+            <pb n="185" facs="185.jpg"/>
+            <lb/>
+            
+            <head>Intermezzo quasi giapponese</head>
+            <metamark rend="line" place="below"/>
          
+          </div>
+         
+          <div n="Dedica">  
+            <head>Dedica</head>
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">Carcerato alla vita militare,</l>
+               <l n="2">contro il tedio che tanto la molesta,</l>
+               <l n="3">fec<app><lem varSeq="2"><mod change="#strato-0"><subst><add rend="superscript">e</add><del>i</del></subst></mod></lem><rdg varSeq="1">i</rdg></app>, per non aver altro da fare,</l>
+               <l n="4">strani versetti l'anima mia mesta.</l>
+               <l n="5">Ne fo un mazzo per te, per la tua festa.</l></lg>
+            
+            </div>
+            
+         <note resp="#US" place="margin-left" change="#strato-r">Un po' più <lb/> di spazio fra <lb/>queste 2 poesie</note><metamark rend="curly-bracket" place="inline"/>
+            
+            <div n="Pioggia">
+               
+               <head>Pioggia</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1"><app><lem varSeq="2"><mod change="#strato-0"><subst><add place="above">E sempre</add><del rend="strikethrough">Ancora</del></subst></mod></lem><rdg varSeq="1">Ancora</rdg></app> pioggia! Il male che mi fa,</l>
+                  <l n="2">come parrebbe, il mio brivido, strano,</l>
+                  <l n="3">lì alle rane, che dentro al loro pantano</l>
+                  <l n="4">gracidan forte, di felicità.</l></lg>
+            
+            </div>
+            
+            <div n="vicino-branda">
+               
+               <head>Vicino di branda</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Anche dopo il silenzio il mio compagno</l>
+                  <l n="2">fa un lungo chiacchiericcio, un ci ci ci;</l>
+                  <l n="3">che non lo fa così</l>
+                  <l n="4">l'uccelletto sul ramo.</l></lg>
+            
+            </div>
+            
+            <div n="temperanza">
+               
+               <head>Invito alla temperanza</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Quei che han vinta la guerra a Porto Arturo</l>
+                  <l n="2">(un giorno tu, per meraviglia scemo)</l>
+                  <l n="3">li hai veduti con noi sul Carso Duro,</l>
+                  <l n="4">bevono (pensi: "Forse vino almeno!")</l>
+                  <l n="5">bevono <hi rend="underline">l'acqua</hi> del saluto estremo.</l></lg>
+            
+            </div>
+            
+            <div n="morte-soldato">
+               <lb/>
+               <pb n="186" facs="186.jpg"/>
+               <lb/>
+               
+               <head>Per la morte d'un <app><lem varSeq="2"><mod change="#strato-0"><subst><add place="above">soldato</add><del rend="strikethrough">bersagliere</del></subst></mod></lem><rdg varSeq="1">bersagliere</rdg></app> porta ordini</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Nell'ora che sui morti in onda nera</l>
+                  <l n="2">calano i corvi, egli fu messo in via,</l>
+                  <l n="3">di corsa... si smarrì: dalla trincera</l>
+                  <l n="4">nemica, quanto ben sentì dov'era,</l>
+                  <l n="5">s'udii un grido (poi nulla): "Mamma mia!"</l></lg>
+            
+            </div>
+            
+            <div n="Paura">
+               
+               <head>Paura</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Nel mio cuor dubitoso</l>
+                  <l n="2">sento bene una voce che mi dice:</l>
+                  <l n="3">"Veramente potresti esser felice."</l>
+                  <l n="4">Lo potrei, ma non oso.</l></lg>
+            
+            </div>
+            
+            <div n="Cocomero">
+               
+               <head>Cocomero</head>
+               <metamark rend="line" place="below"/>
+            
+              <lg n="1">
+                  <l n="1">Ogni estate ti mangio, e al tuo rossore</l>
+                  <l n="2">(io non so cosa sia)</l>
+                  <l n="3">sento quest'anno, a quel tuo dolce, in cuore</l>
+                  <l n="4">crescer malinconia.</l></lg>
+            
+            </div>
+            
+            <div n="Millenovecentodiciassette">
+               
+               <head>Millenovecentodiciassette</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Per ogni via un soldato - un fante - zoppo,</l>
+                  <l n="2">va poggiato pian piano al suo bastone,</l>
+                  <l n="3">e nella mano libera ha un fagotto.</l></lg>
+            
+            </div>
+            
+            <div n="partenza-aeroplani">
+               
+               <head>Partenza d'aeroplani</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Vanno su, dove il cielo è azzurro netto,</l>
+                  <l n="2">dove le nubi si vedon di sotto.</l>
+                  <l n="3">Chi resta a terra agita il fazzoletto.</l></lg>
+            
+            </div>
+            
+            <div n="buon-guerriero">
+               
+               <lb/>
+               <pb n="187" facs="187.jpg"/>
+               <lb/>
+               
+               <head>Il buon guerriero</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Dove corre il mio cane, che sì ratto</l>
+                  <l n="2">non andrebbe se amor là lo chiamasse?</l>
+                  <l n="3">Gonfio ha veduto e teso ad arco un gatto.</l></lg>
+            
+            </div>
+            
+            <div n="campana">
+               
+               <head>La campana</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Se <app><lem varSeq="2"><mod change="#strato-0"><subst><add place="superscript">all'</add><del>al</del></subst></mod></lem><rdg varSeq="1">al</rdg></app> <app><lem varSeq="2"><mod change="#strato-0"><add place="above">infanzia</add></mod></lem><rdg varSeq="1"><mod change="#strato-0"><del rend="strikethrough">mio sogno</del></mod></rdg></app> ripenso, e a cosa in via,</l>
+                  <l n="2">cosa ho perduto, e ascolto una campana,</l>
+                  <l n="3">sento che suona sulla mia agonia.</l></lg>
+            
+            </div>
+            
+            <div n="stanchezza">
+               
+               <head>Stanchezza</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Io sono stanco, ed una cosa voglio,</l>
+                  <l n="2">si, una sola: morire!</l>
+                  <l n="3">E il mio lavoro? il mio di padre orgoglio.</l></lg>
+            
+            </div>
+            
+            <div n="De-Profundis">  <!-- secondo De Profundis, sezione diversa -->
+               
+               <head><subst><del><gap rend="erasure"/></del><add place="inspace">De profundis</add></subst></head>
+               <metamark rend="line" place="below"/>
+               
+              <lg n="1">
+                  <l n="1"><subst><del><gap rend="erasure"/></del><add place="inspace">Della tomba nell'ultimo refugio</add></subst></l>
+                  <l n="2"><subst><del><gap rend="erasure"/></del><add place="inspace">talor mi penso, alla mia terra in seno.</add></subst></l>
+                  <l n="3">E vedo (per non so quale perfugio)</l>
+                  <l n="4">più verde il prato, il cielo più sereno,</l>
+                  <l n="5">tutto della mia pace il giorno pieno.</l></lg>
+            
+            </div>
+            
+            <div n="Merlo">
+               
+               <head>Merlo</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Passeggiar in un tacito sentiero;</l>
+                  <l n="2">udii un canto su me dolce e severo.</l>
+                  <l n="3">Colto d'ascosi miei pensieri in fallo,</l>
+                  <l n="4">alzo gli occhi... e lo vedo nero nero,</l>
+                  <l n="5">col becco giallo.</l></lg>
+            
+            </div>
+            
+            <div n="Guardando-fanciulli-giocare">
+               <lb/>
+               <pb n="188" facs="188.jpg"/>
+               <lb/>
+               
+               <milestone n="1" unit="section" type="pecetta" spanTo="#pecetta_1"/>
+               <head>Guardando i fanciulli giocare</head>   
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Audacie di guerrieri senza paura</l>
+                  <l n="2">vedi tu nei maschietti, che divisi</l>
+                  <l n="3">rissano dalle bimbe: là sorrisi</l>
+                  <l n="4">di madri, affetti ingenui di natura:</l>
+                  <l n="5">io la plebe ventura.</l></lg>
+            
+            </div>
+            
+            <div n="mendico">
+               
+               <head>Il mendico</head>
+               <metamark rend="line" place="below"/>
+                  
+               <lg n="1">
+                  <l n="1">Non fu sempre un mendico... Ebbe (e ne tiene</l>
+                  <l n="2">lungo discorso) ebbe fino una schiava.</l>
+                  <l n="3">Tutto il giorno su lui steso agitava</l>
+                  <l n="4">il ventaglio, e diceva anche: "Va bene</l>
+                  <l n="5">così, mio signore?"</l></lg>
+            
+               <anchor xml:id="pecetta_1"/>
+            </div>      
+            
+            <div n="vecchio-artista">
+               
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_2"/>
+               <head><retrace>D</retrace>'un vecchio artista</head>     
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Questi, che per compagno ebbe il dolore,</l>
+                  <l n="2">e quasi un sole di sue luci abbaglia,</l>
+                  <l n="3">qualunque cosa mai dipinse: in fiore</l>
+                  <l n="4">ramoscelli, d'armati una battaglia,</l>
+                  <l n="5">dipinse solo la felicità.</l></lg>  
+            
+               <anchor xml:id="pecetta_2"/>
+            </div>               
+            
+         <note resp="#US" change="#strato-r" place="margin-left" type="structure">Un po' più <lb/>di spazio fra <lb/>queste 2 poesie</note><metamark rend="curly-bracket" place="inline"/>
+            
+            <div n="Viaggio-Giappone">
+               
+               <head>Viaggio in Giappone</head>
+               <metamark rend="line" place="below"/>
+               
+               <lg n="1">
+                  <l n="1">Nell'antico Giappone (io mi diceva)</l>
+                  <l n="2">son gli stessi viali che ho lasciato</l>
+                  <l n="3">là, in Europa... Due passi, e al luogo amato</l>
+                  <l n="4">parmi d'essere. E c'ero infatti. Avevo</l>
+                  <l n="5">d'esser lungi sognato.</l></lg>   
+            
+            </div>
+         
+         <div n="Dormiveglia">
+            <lb/>
+            <pb n="189" facs="189.jpg"/>
+            <lb/>
+            
+            <milestone n="3" unit="section" type="pecetta" spanTo="#pecetta_3"/>
+            <head>Dormiveglia</head>   
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">"E' qui un soldato che ha nome Leschiutta?"</l>
+               <l n="2">Io volevo dir "sì"; ma come fare,</l>
+               <l n="3">se tutta aveva il dormiveglia, tutta</l></lg> 
+            
+            <lg n="2">
+               <l n="1">l'anima mia nell'incanto allettata;</l>
+               <l n="2">lei che già navigava in strano mare,</l> 
+               <l n="3">da dolcezze indicibili cullata?</l></lg>
+            
+            <lg n="3">
+               <l n="1">Chiudevo gli occhi nel sonno, ed un volto</l> 
+               <l n="2">balenò innanzi a me, baciato un tempo</l> 
+               <l n="3">con amore, tra i vermi oggi sepolto.</l></lg>
+            
+            <lg n="4">
+               <l n="1">Vive a tratti il passato, e si colora:</l>
+               <l n="2">e mi chieggo: Quant'è che vivo e penso?</l>
+               <l n="3">Trent'anni o trenta secoli?... Più ancora!</l></lg>
+            
+            <lg n="5">
+               <l n="1">E un'ansia ho in petto, un' angoscia affannosa.</l> 
+               <l n="2">Quindi (ogni dolce par che in sè riassuma)</l> 
+               <l n="3"><app><lem varSeq="2"><mod instant="true" change="#strato-0"><add place="inline">ancor sul</add></mod></lem><rdg varSeq="1"><mod change="#strato-0"><del resp="strikethrough">su[l]</del></mod></rdg></app> colle, ancor di me pensosa,</l></lg>
+            
+            <lg n="6">
+               <l n="1">la casa della mia nutrice fuma.</l></lg>    
+            
+            <anchor xml:id="pecetta_3"/>
+            
+         </div> 
+         
+         <div n="germe">
+            <lb/>
+            <pb n="190" facs="190.jpg"/>
+            <lb/>
+            
+            <metamark change="#strato-2" function="deletion" rend="line"/>
+            <delSpan spanTo="#p190_l1"/>
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_4"/>
+            <head>Il germe</head>    
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">Quand'era un bimbo la sua mamma aveva,</l>
+               <l n="2">cui nulla di più sacro era nel mondo,</l>
+               <l n="3">e seco ai campi per man lo traeva.</l></lg>
+            
+            <lg n="2">
+               <l n="1">Il germe (o forse l'illudeva amore)</l>
+               <l n="2">di quel piccolo petto nel profondo</l>
+               <l n="3">giaceva d'un meraviglioso fiore.</l></lg>
+            
+            <lg n="3">
+               <l n="1">Altro disse il destino; e non la gloria</l>
+               <l n="2">venne per l'uomo; a sè fatto inimico,</l>
+               <l n="3">anche il vinto su lui trasse vittoria.</l></lg>
+            
+            <lg n="4">
+               <l n="1">Che fu poi la sua vita? Un d'ora in ora</l>
+               <l n="2">scender più al basso; andar per via mendico</l>
+               <l n="3">o forse fu felice <hi rend="underline">solo</hi> allora?</l></lg>
+            
+            <lg n="5">
+               <l n="1">Oggi è morto: è una salma alla cappella,</l>
+               <l n="2">un triste agli occhi del volgo detrito.</l>
+               <l n="3">Ma morte ancor quel germe non cancella;</l></lg>
+            
+            <lg n="6">
+               <l n="1">là, in un estremo sorriso, ha fiorito.</l></lg>
+            
+            <anchor xml:id="p190_l1"/>
+            
+            <anchor xml:id="pecetta_4"/>
+         </div>  
+         
+         <div n="cena">
+            <lb/>
+            <pb n="191" facs="191.jpg"/>
+            <lb/>
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_5"/>
+            <head>La cena</head>  
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">Venne infine <hi rend="underline">quel</hi> pesce; ed ecco c'era,</l> 
+               <l n="2">fra la dolcezza dell'aria e gli sgombri,</l> 
+               <l n="3">odor di mare, odor di primavera:</l></lg>
+            
+            <lg n="2">
+               <l n="1">tutta un'aria per me di nostalgia;</l>
+               <l n="2">ma chi lascia ogni giorno i vani ingombri</l> 
+               <l n="3">della tristezza fuor d'ogni osteria:</l></lg>
+            
+            <lg n="3">
+               <l n="1">"Comprendere - gridava — a me non riesce,</l>
+               <l n="2">che cosa al mondo più di un buon sapore</l>
+               <l n="3">si può provare, mangiando un buon pesce."</l></lg> 
+            
+            <lg n="4">
+               <l n="1">Ed avendo la testa all'amorosa</l>
+               <l n="2">mi strinse (or come non risi?) al suo cuore.</l> 
+               <l n="3">Rise invece Leschiutta, e disse: "A cosa</l></lg>
+            
+            <lg n="5">
+               <l n="1">pensi?" — "A nulla." - E pensavo e a Caporetto,</l> 
+               <l n="2">all'altra sponda, al paese natio;</l>
+               <l n="3">fra quei soldati italiani a banchetto,</l></lg> 
+            
+            <lg n="6">
+               <l n="1">il buon vino, <app><lem><mod change="#strato-a"><subst><del rend="erasure">gli allegri</del><add place="overwritten">i felici</add></subst></mod></lem></app> "Oh porco Dio!"</l></lg>    
+         
+            <anchor xml:id="pecetta_5"/>
+         </div>
+         
+         <div n="tutto-mondo">
+            <lb/>
+            <pb n="192" facs="192.jpg"/>
+            <lb/>
+            
+            <head>Tutto il mondo</head>   
+            <metamark rend="line" place="below"/>
+            
+            <p>I</p>
+            <lg n="1">
+               <l n="1">Piccola è all'uomo la Terra, col mare,</l> 
+               <l n="2">con tanti strani paesi. "Al mio andare</l>
+               <l n="3">poco — dice — è ancor ciò."</l>
+               <l n="4">Ma sempre troppo lo spazio a me pare.</l>
+               <l n="5">Chiudo gli occhi, e a giacer sull'erba sto.</l></lg>
+            
+            <p>II</p>
+            <lg n="2">
+               <l n="1">Rado ai più vecchi, rado ai libri chiesi</l>
+               <l n="2">qualche lume. Se bene <mod change="#strato-a"><del rend="strikethrough"></del></mod> un giorno spesi,</l> <!-- del unclear -->
+               <l n="3">se fra i ciechi mortali</l>
+               <l n="4">alcun poco discerno, è <app><lem varSeq="2"><mod change="#strato-0"><subst><add rend="above">da che</add><del rend="strikethrough">quando</del></subst></mod></lem><rdg varSeq="1">quando</rdg></app> appresi</l> 
+               <l n="5">coi fanciulli a parlar, con gli animali.</l></lg>
+            
+            <p>III</p>
+            <lg n="3">
+               <l n="1">Ecco: gli Dei son morti; anche il buon Dio.</l> 
+               <l n="2">Pena alcuna ha da questo il viver mio?</l>
+               <l n="3">o speranze? o conforti?</l>
+               <l n="4">Empio l'empio è rimasto, e buono il pio.</l>
+               <l n="5">Nulla ai vivi è di nuovo... E nulla ai morti.</l></lg>
+            
+            <p>IV</p>
+            <lg n="4">
+               <l n="1">Di te, Fano, mi sono rammentato,</l>
+               <l n="2">oggi, al destarmi. La sveglia ha suonato</l>
+               <l n="3">nel tuo nome, stamane.</l>
+               <l n="4">Da me appena le coltri ebbi gettato,</l> 
+               <l n="5">tante mattine ripensai, lontane;</l></lg>
+               
+         
+         <lb/>
+         <pb n="193" facs="193.jpg"/>
+         <lb/>
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_6"/>
+            <p>V</p> 
+            <lg n="5">
+               <l n="1"><app><lem varSeq="2"><mod change="#strato-c"><subst><add rend="above">Tante</add><del rend="strikethrough">Certe</del></subst></mod></lem><rdg varSeq="1">Certe</rdg></app> mattine (or mi sembrano ieri)</l>
+               <l n="2">che buon nemico io ti cercava, ed eri</l> 
+               <l n="3">tu<mod change="#strato-a"><add rend="inline">...</add></mod> l' orror d'ogni madre.</l>
+               <l n="4">Chi più amavi? Il coraggio o i tuoi pensieri.</l> 
+               <l n="5">Chi più dicevi d'odiare?... Tuo padre.</l></lg>
+            
+            <p>VI</p>
+            <lg n="6">
+               <l n="1">Strano imberbe filosofo, parlavi</l>
+               <l n="2">come un cinico; gran cose negavi,</l>
+               <l n="3">e tra queste il dolore.</l>
+               <l n="4">Agli atti, ai detti, un brigante sembravi.</l>
+               <l n="5">Di que<app><lem varSeq="2"><mod change="#strato-a"><subst><add rend="superscript">l</add><del rend="strikethrough">g</del></subst></mod></lem><rdg varSeq="1">g</rdg></app>li anni il profumo oggi ho nel cuore.</l></lg>
+            
+            <p>VII</p>
+            <lg n="7">
+               <l n="1">Tanta vita passata (e tanta morte!)</l> 
+               <l n="2">non l'ha spento; anzi odora in me più forte,</l> 
+               <l n="3">come più il tempo vola.</l>
+               <l n="4">Grandi d'allora verità tu hai scorte.</l> 
+               <l n="5">Io... del dubbio fò l'ultima parola.</l></lg>
+            
+            <p>VIII</p>
+            <lg n="8">
+               <l n="1">Beve il sangue de<app><lem varSeq="2"><mod change="#strato-a"><add place="above">gli uomini</add><del>i giovani</del></mod></lem><rdg varSeq="1">i giovani</rdg></app> la terra:</l>
+               <l n="2">vien dai monti clamor d'atroce guerra.</l> 
+               <l n="3">Che ha mutato ciò in noi?</l>
+               <l n="4">Con pronta mano il desiderio afferra</l>
+               <l n="5">la sua preda.... e il lontano scorda e il poi.</l></lg>
+               <anchor xml:id="pecetta_6"/>
+            
+            <lb/>
+            <pb n="194" facs="194.jpg"/>
+            <lb/>
+            
+            <p>IX</p>
+            <lg n="9">
+               <l n="1">V'ha chi scruta il mister dell'universo;</l> 
+               <l n="2">ma più cielo del suo non specchia il terso</l> 
+               <l n="3">sguardo d' un bimbo e gaio?</l>
+               <l n="4">Chi può rider di me, di me che immerso</l> 
+               <l n="5">nello studio mi godo del pollaio?</l></lg>
+            
+            <p>X</p>
+            <lg n="10">
+               <l n="1">Dove il gallo, magnifico sultano,</l>
+               <l n="2">le sue femmine ha intorno, io dell'umano</l> 
+               <l n="3">tutto ad apprender seggo.</l>
+               <l n="4">Dove fanciulli giocano, il più sano</l>
+               <l n="5">trionfar, dar tutti al più debole veggo.</l></lg>
+            
+            <p>XI</p>
+            <lg n="11">
+               <l n="1">Molto, <app><lem varSeq="2"><mod change="#strato-0"><subst><add rend="above">in</add><del rend="strikethrough">a</del></subst></mod></lem><rdg varSeq="1">a</rdg></app> quel tempo di baldanza pieno,</l> 
+               <l n="2">di <hi rend="underline">guarire</hi> parlammo, di veleno</l> 
+               <l n="3">che nell'attimo sana.</l>
+               <l n="4">Poi, se tutto all' intorno ne vien meno,</l> 
+               <l n="5">stia la morte da noi, se vuol, lontana.</l></lg>
+            
+            <p>XII</p>
+            <lg n="12">
+               <l n="1">A chi, come un falchetto <mod instant="true" change="#strato-0"><del rend="strikethrough"><gap reason="cancelled"/></del></mod> in ciel sue prede,</l>  
+               <l n="2">sempre il vero persegue, a chi mai chiede:</l> 
+               <l n="3">"Perchè nacqui, perchè?"</l> 
+               <l n="4">solo un' ora è immancabile; succede</l>
+               <l n="5">come al popolo suo errante a Mosè.</l></lg>
+            
+            <p>XIII</p>
+            <lg n="13">
+               <l n="1">Oltre il mare, oltre il monte, del turchino</l>
+               <l n="2">fra le nubi, va l'uomo. Io qui supino</l>
+               <l n="3">le sue ali non bramo.</l>
+               <l n="4">Ozio ha nome il pensoso mio vicino.</l>
+               <l n="5">Lieto in sua cara compagnia m'infamo.</l></lg>
+         
+            <lb/>
+            <pb n="195" facs="195.jpg"/>
+            <lb/>
+          
+             <p>XIV</p>
+             <lg n="14">
+               <l n="1">Mentre ascoltavo l' allodola, ed era</l>
+               <l n="2">pieno il villaggio, la mia vita intera,</l>
+               <l n="3">di cose buone e liete,</l>
+               <l n="4">un'antica menzogna, la più nera,</l>
+               <l n="5">passò: nel chiaro mezzogiorno un prete.</l></lg>
+             
+             <p>XV</p>
+             <lg n="15">
+                <l n="1">Di premer la sua erba inoperoso,</l>
+                <l n="2">con quelli sguardi che mi lancia iroso,</l> 
+                <l n="3">il colono m'accusa.</l>
+                <l n="4">"Fratello — potrei dirgli — sto in riposo.</l>
+                <l n="5">Strani ortaggi coltivo, che non s'usa.</l></lg>
+         
+         </div>
+         
+         <div n="Ricordo-zona-guerra">
+            <lb/>
+            <pb n="196" facs="196.jpg"/>
+            <lb/>
+        
+            <head>Ricordo della zona di guerra</head>   
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_7"/>
+               <l n="1">Sognavo, al suol prostrato, un bene antico.</l> 
+               <l n="2">Ero a Trieste, nella mia stanzetta:</l> 
+               <l n="3">guardavo in alto; rosea nuvoletta</l> 
+               <l n="4">veleggiar, scolorando, il ciel turchino.</l></lg>
+            
+            <lg n="2">
+               <l n="1">Ella in aere sfacevasi, al destino</l>
+               <l n="2">suo m'ammoniva in una pia strofetta;</l>
+               <l n="3">quindi "Mamma - diceva - io sorto" e in fretta</l> 
+               <l n="4">a leggerla n'andava al caro amico.</l></lg>
+            
+            <lg n="3">
+               <l n="1">"Che fai, carogna?" E mi svegliò una mano.</l>
+               <l n="2">E vidi, come al cielo gli occhi apersi,</l>
+               <l n="3">tra fumo e scoppi, su noi l'aeroplano.</l></lg>
+            
+            <lg n="4">
+               <l n="1">Vidi macerie di case in rovina;</l>
+               <l n="2">correr soldati, come in fuga sporsi;</l> 
+               <l n="3">e lontano lontano la marina.</l></lg>
+         
+            <anchor xml:id="pecetta_7"/>
+         </div>
+         
+         <div n="mozzo">
+            <lb/>
+            <pb n="197" facs="197.jpg"/>
+            <lb/>
+         
+         <head>Il mozzo</head>   
+         <metamark rend="line" place="below"/>
+            
+            <note change="#strato-5" rend="strikethrough">Ad Ugo Foscolo</note>     
+         
+            <lg n="1">
+               <l n="1">Bevvi. Mi parve giovane tornare,</l>
+               <l n="2">e l'arte in un, la saggezza serbare.</l></lg>
+            <lg n="2">
+               <l n="1">Come, al ricordo del passato male,</l>
+               <l n="2">godevo agli altri mozzi esser l'uguale.</l></lg>
+            <lg n="3">
+               <l n="1">Poi ch'ero un mozzo, una fulgente aurora;</l>
+               <l n="2">e a te scrivevo, a te mia Lina (ancora!);</l></lg>
+            <lg n="4">
+               <l n="1">che ai versi miei rispondevi beata:</l>
+               <l n="2">"Io ne restai tutta meravigliata."</l></lg>
+            <lg n="5">
+               <l n="1">Pien d'immota letizia il for profondo,</l>
+               <l n="2">della lunga campagna intorno al mondo,</l></lg> 
+            <lg n="6">
+               <l n="1">dolersi udivo i miei compagni, ed io</l>
+               <l n="2">ne sorrideva, mi <hi rend="underline">sentiva</hi> un Dio.</l></lg>
+            <lg n="7">
+               <l n="1">Or son desto, e del cor le acute pene</l>
+               <l n="2">dicon: morire è quel che ti conviene.</l></lg>
+         
+         </div>
+         
+         <div n="Estate-1918">
+            
+            <metamark change="#strato-2" function="deletion" rend="cross"/>
+            <delSpan spanTo="#p197_l1"/>
+            
+            <head>Estate 1918</head>      
+            <metamark rend="line" place="below"/>
+            
+            <note change="#strato-5"><hi rend="strikethrough">Due</hi> ombre</note> 
+            
+            <lg n="1">
+               <l n="1">Verrò, quel giorno, quell'ora verrà</l>
+               <l n="2">(che a me giunga del tutto io non dispero)</l>
+               <l n="3">che il cuore come in gioventù leggero,</l> 
+               <l n="4">fra i miei monti entrerò alla mia città.</l></lg>
+            <lg n="2">
+               <l n="1">E sarà un' ora di felicità</l>
+               <l n="2">(non la prima) al dolente mio pensiero.</l> 
+               <l n="3">Faccia Dio che poi tosto il cimitero</l>
+               <l n="4">m'accolga, ove la vera pace sta.</l></lg>
+            <lg n="3">
+               <l n="1">Ma i dolci amici vorrei prima certo</l>
+               <l n="2">salutar, cui pensando il libro scrissi.</l>
+               <l n="3">Se: "Dove vai — mi dicessero — Umberto;</l></lg>
+            <lg n="4">
+               <l n="1">Tu a noi non parli, come usavi, aperto."</l> 
+               <l n="2">"Abbastanza — potrei risponder — vissi.</l>
+               <l n="3">Fu breve e necessario il mal che ho inferto.</l></lg> 
+            <anchor xml:id="p197_l1"/>
+            
+            <metamark change="#strato-5" rend="vertical-lines" place="margin-right"/>
+            
+         </div>
+         
+         <div n="Ugo-Foscolo">
+            <lb/>
+            <pb n="198" facs="198.jpg"/>
+            <lb/>
+            
+            <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_8"/>
+            
+            <head>Ad Ugo Foscolo</head>      
+            <metamark rend="line" place="below"/>
+            
+             <lg n="1">
+                <l n="1">E' sì dolce per me, Ugo, il tuo canto;</l> 
+                <l n="2">di sì accesi color tua notte splende,</l>
+                <l n="3">ch'io penso l'abbi da un fraterno pianto</l> 
+                <l n="4">tratto, ed uno sia il Fato che n'offende.</l></lg>
+             
+             <lg n="2">
+                <l n="1">Sanguineo no, me grigioverde manto</l> 
+                <l n="2">me ancor riveste; e non mobili tende</l>
+                <l n="3">oggi è la guerra, ma trincea nel fango.</l> 
+                <l n="4">Quante vite - a qual meta? - il secol spende!</l></lg>
+             
+             <lg n="3">
+                <l n="1">D'eccelse case in sui frontoni estremo</l> 
+                <l n="2">raggio di sol chiusa mestizia induce.</l> 
+                <l n="3">Per te penso a quel raggio e d'ansia fremo.</l></lg>
+             
+             <lg n="4">
+                <l n="1">Fra il mio labile verso ed il tuo eterno,</l> 
+                <l n="2">(dove un mondo s'innova, un'alba luce)</l> 
+                <l n="3">ascose altrui, care assonanze io scerno.</l></lg>      
+            
+            <anchor xml:id="pecetta_8"/>
+         
+         </div>
+         
+         <div n="Zaccaria">
+            <lb/>
+            <pb n="199" facs="199.jpg"/>
+            <lb/>
+            
+            <head change="#strato-2">Zaccaria</head>   
+            <metamark rend="line" place="below"/>
+         
+            <lg n="1">
+               <milestone n="2" unit="section" type="pecetta" spanTo="#pecetta_9"/>
+               <l n="1">La vacca, l'asinello, la <hi rend="underline">manzetta</hi>,</l>  
+               <l n="2">al bimbo avvolto in scompagnati panni</l> 
+               <l n="3">erano stufa nell'inverno; i danni</l>
+               <l n="4">ristorava dei morbi una capretta.</l></lg>
+            
+            <lg n="2">
+               <l n="1">La sua mamma, che pace in cielo aspetta,</l> 
+               <l n="2">sei gli dava, nel giro di sei anni,</l>
+               <l n="3">sei fratellini: pur, fra pianti e affanni,</l> 
+               <l n="4">due volte il dì fumava la casetta.</l></lg>
+            
+            <lg n="3">
+               <l n="1">Là crebbe: e come sognava bambino,</l> 
+               <l n="2">poco ai campi lo vide il paesello;</l> 
+               <l n="3">volle d' agricoltor farsi operaio.</l></lg>
+            
+            <lg n="4">
+               <l n="1">Or — tra gli altri feriti — il tempo gaio</l> 
+               <l n="2">della pace ricorda: sul cappello</l>
+               <l n="3">ha una penna, l' orgoglio dell'Alpino.</l></lg>
+            
+            <lg n="5">
+               <l n="1">E narra come, il braccio al collo, prima</l>
+               <l n="2">tornò alla casa, per la guerra mesta.</l> 
+               <l n="3">Nella corte una bimba s' alzò lesta,</l>
+               <l n="4">dette un grido... Egli: "Zitta — disse — Mima.</l></lg>
+            
+            <lg n="6">
+               <l n="1">Dov'è mia madre?" Della scala in cima</l> 
+               <l n="2">l'abbracciò, nè il vedersi fu una festa.</l>
+               <l n="3">"Questa — piangeva — di mio figlio è questa</l>
+               <l n="4">la faccia?" — "Uguale — rispose — di prima."</l></lg>
+            
+            <lg n="7">
+               <l n="1">"Il braccio?.. Poco ci mette a guarire.</l> 
+               <l n="2">Coraggio, mamma, su vi dico, buona."</l>
+               <l n="3">E tace, e poi che ha più nulla da dire:</l></lg>   
+               <anchor xml:id="pecetta_9"/>
+            
+            <lg n="8">    
+               <l n="1">"Fermati, Austria, ch'io sto per morire";</l> 
+               <l n="2">e del caduto la canzone intona,</l>
+               <l n="3">che il pugnale su lei vede brandire.</l></lg>
+            
+            <lb/>
+            <pb n="200" facs="200.jpg"/>
+            <lb/>
+            
+            <lg n="9">
+               <l n="1">O narra quando per tutti di Santa</l> 
+               <l n="2">Genoveffa la pia storia leggeva.</l>
+               <l n="3">Se a tanti casi il pianto non teneva,</l> 
+               <l n="4">lei, sulla sedia assisa la più alta<app><lem varSeq="2"><mod change="#strato-0"><subst><add place="superscript">:</add><del>;</del></subst></mod></lem><rdg varSeq="1">;</rdg></app></l></lg>
+            
+            <lg n="10">
+               <l n="1">"Zaccaria — comandava — o leggi o salta</l>
+               <l n="2">per questa"... e in mano la bacchetta aveva.</l> 
+               <l n="3">Sul grandicello una lucerna ardeva,</l>
+               <l n="4">gialla; ogni bestia riposava affranta.</l></lg>
+            
+            <lg n="11">
+               <l n="1">Ma se in casa indugiava ai suoi lavori,</l> 
+               <l n="2">seco gli amici attendevano, o un suono</l> 
+               <l n="3">gli mandavano, acuto, dalla via.</l></lg>
+            
+            <lg n="12">
+               <l n="1">Ne a feste andavan senza Zaccaria;</l>
+               <l n="2">sì che di sè scriver fu visto: <hi rend="underline">Io sono</hi></l> 
+               <l n="3"><hi rend="underline">un</hi> <hi rend="underline">quore</hi> <hi rend="underline">che</hi> <hi rend="underline">con</hi> <hi rend="underline">cquista</hi> <hi rend="underline">molti</hi> <hi rend="underline">quori</hi>.</l></lg>
+         
+         </div>
+         
+         <div n="Due-ombre">
+            
+            <head change="#strato-2">Due ombre</head>   
+            <metamark rend="line" place="below"/>
+            
+            <note resp="#US" change="#strato-5" place="margin-left" type="metatextual">Nino<lb/>per la<lb/>morte<lb/>d'un volonta<lb/>rio</note>
+            
+            <lg n="1">
+               <l n="1">In una zona del Carso, al chiarore</l>
+               <l n="2">lunare, ho in sogno due ombre avvertite.</l> 
+               <l n="3">Poi che in silenzio, di sotterra uscìte,</l>
+               <l n="4">s'ammirarono a lungo, con stupore:</l></lg>
+            <lg n="2">
+               <l n="1">"Chi sei?" con voce parlò di rancore,</l>
+               <l n="2">una di quelle parvenze di vite;</l>
+               <l n="3">l'altra, che in testa aveva sue ferite,</l> 
+               <l n="4">e sulle labbra un sorriso d'amore:</l></lg>
+            <lg n="3">
+               <l n="1">"Tu sei Nino" rispose. "Ed innocente</l> 
+               <l n="2">sono morto. Ma tu, tu così strano.</l>
+               <l n="3">Hai gli occhiali. Sei forse uno studente?"</l></lg>
+            <lg n="4">
+               <l n="1">"E volontario". — Or poi che a lor silente</l> 
+               <l n="2">m' appressava (a baciarti, Elia, la mano)</l> 
+               <l n="3">dal sonno a un tratto mi svegliai piangente.</l></lg>
+         
+         </div>
+         
+         <div n="vino">
+            <lb/>
+            <pb n="201" facs="201.jpg"/>
+            <lb/>
+            
+            <head change="#strato-2">Il vino</head>   
+            <metamark rend="line" place="below"/>
+            
+            <lg n="1">
+               <l n="1">Lascia ch'io vuoti la bottiglia, e troppo</l> 
+               <l n="2">non adirarti. Una tristezza avevo,</l> 
+               <l n="3">grave, e alla gola mi faceva groppo:</l></lg>
+            <lg n="2">
+               <l n="1">or è sparita. Or <hi rend="underline">sento</hi> che la terra</l> 
+               <l n="2">ha piacevoli cose; io ne sapevo</l> 
+               <l n="3">prima il nome, ora tutte il cor le serra.</l></lg>
+            <lg n="3">
+               <l n="1">Fingi adirarti.... e mi sorridi invece;</l> 
+               <l n="2">piena di vezzi, Donna, mi sorridi.</l> 
+               <l n="3">Ma chi fu che <retrace>così cara</retrace> ti fece?</l></lg>
+            <lg n="4">
+               <l n="1">Tua madre? O forse il padre tuo?... Profondo</l> 
+               <l n="2">è quel sorriso: ai labbri tuoi lo vidi</l>
+               <l n="3">d'assai lontano giungermi, dal mondo</l></lg>
+            <lg n="5">
+               <l n="1">che fu, da una saggezza <hi rend="underline">molto</hi> antica.</l>
+               <l n="2">Delle selve, ove ai tuoi pronto un nepente</l> 
+               <l n="3">mescevi, oscuri in noi ricordi, amica,</l></lg>
+            <lg n="6">
+               <l n="1">fanno ai rapidi oblii te riverente.</l></lg>
+         
+         </div>
+         
+         <div n="Congedo">
+            <lb/>
+            <pb n="202" facs="202.jpg"/>
+            <lb/>
+            
+            <head change="#strato-2">Congedo</head>   
+            <metamark rend="line" place="below"/>
+            
+             <lg n="1">
+                <l n="1">Della pace agli annuncii benedetti</l>
+                <l n="2">si vedono fuor della trincea gli elmetti</l>
+                <l n="3">uscir - quanti! – dal suolo;</l>
+                <l n="4">volare nelle retrovie i berretti:</l>
+                <l n="5">e meco in guerra rimaner io solo.</l></lg>
+            
+         </div>
 
       </body>
    </text>
