@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   })
 
   export class VceditorComponent implements OnInit {
-    sampleTerm:term = {
+    sampleTerm:Term = {
       "params": {
           "title": "Omelia I",
           "taxonomy": "Texts",
@@ -41,7 +41,7 @@ import { HttpClient } from '@angular/common/http';
           ]
       }};
   
-    sampleSide = {sidedata: {"params": {
+    sampleSide:Vceside = {sidedata: {"params": {
       "page_number": "",
       "texture": "",
       "image": {
@@ -54,7 +54,7 @@ import { HttpClient } from '@angular/common/http';
     "parentOrder": 1},
     terms: []};
   
-    sampleLeaf:vceleaf = {leafdata: {
+    sampleLeaf:Vceleaf = {leafdata: {
       "params": {
           "folio_number": "1",
           "material": "None",
@@ -72,7 +72,7 @@ import { HttpClient } from '@angular/common/http';
     memberverso: this.sampleSide,
     terms: []};
   
-    sampleQuire:vcequire = {quiredata: {
+    sampleQuire:Vcequire = {quiredata: {
       "params": {
         "type": "Quire",
         "title": "Default",
@@ -99,27 +99,35 @@ import { HttpClient } from '@angular/common/http';
     terms: []};
 
 
-    leaves : Array<vceleaf> = [];
-    quires : Array<vcequire> = [];
-    rectos : Array<vceside> = [];
-    versos: Array<vceside> = [];
-    terms: Array<term> = [];
+    leaves : Array<Vceleaf> = [];
+    quires : Array<Vcequire> = [];
+    rectos : Array<Vceside> = [];
+    versos: Array<Vceside> = [];
+    terms: Array<Term> = [];
     Data: any;
     
-    constructor(private http: HttpClient) { }
+    constructor(
+      private http: HttpClient
+      ) {
+
+      }
     
     takeData() {
       let observable = this.http.get('./assets/data/visColl.json');
       observable.subscribe({next: (data:any)=> {
       this.Data=data;
-      }
-    });
-      observable.subscribe(() => this.assignmentcycle());
+      this.assignmentcycle();
+      console.log(this.quires);
+      console.log(this.leaves);
+      console.log(this.Data.Leafs);
+      console.log(this.Data.Terms);
+    }});
     }
     
     assignmentcycle() {
+
       for (let rectocounter in this.Data.Rectos) {
-        let side=JSON.parse(JSON.stringify(this.sampleSide));
+        let side=JSON.parse(JSON.stringify(this.sampleSide)); //without double encoding, this would modify sampleSide
         side.sidedata=JSON.parse(JSON.stringify(this.Data.Rectos[rectocounter]));
         this.rectos.push(side);
       }
@@ -133,11 +141,11 @@ import { HttpClient } from '@angular/common/http';
       for (let leafcounter in this.Data.Leafs) {
         let leaf=JSON.parse(JSON.stringify(this.sampleLeaf));
         leaf.leafdata=JSON.parse(JSON.stringify(this.Data.Leafs[leafcounter]));
-        leaf.memberrecto=this.rectos.filter(recto => (recto.sidedata.parentOrder == Number(leafcounter)));
-        leaf.memberverso=this.versos.filter(verso => (verso.sidedata.parentOrder == Number(leafcounter)));
+        leaf.memberrecto=this.rectos.find(recto => (recto.sidedata.parentOrder == Number(leafcounter))); //find for the first matching element; filter would return an array
+        leaf.memberverso=this.versos.find(verso => (verso.sidedata.parentOrder == Number(leafcounter)));
         this.leaves.push(leaf);
       }
-       
+
       for (let groupcounter in this.Data.Groups) {
         let group=JSON.parse(JSON.stringify(this.sampleQuire));
         group.quiredata=JSON.parse(JSON.stringify(this.Data.Groups[groupcounter]));
@@ -148,18 +156,16 @@ import { HttpClient } from '@angular/common/http';
     
       for (let termcounter in this.Data.Terms) {
         let term=JSON.parse(JSON.stringify(this.sampleTerm));
-        term=JSON.parse(JSON.stringify(this.Data.Terms[termcounter]));
+        term=this.Data.Terms[termcounter];
         this.terms.push(term);
 
         for (let quirenumber in term.objects.Group) {
           this.quires[Number(term.objects.Group[quirenumber])-1].terms.push(term);
         };
 
-
         for (let leafnumber in term.objects.Leaf) {
           this.leaves[Number(term.objects.Leaf[leafnumber])-1].terms.push(term);
         };
-      
       
         for (let rectonumber in term.objects.Recto) {
           this.rectos[Number(term.objects.Recto[rectonumber])-1].terms.push(term);
@@ -177,50 +183,47 @@ import { HttpClient } from '@angular/common/http';
     }
   }
 
-  export class vceside {
-    sidedata:sidedataType;
-    terms:Array<term>;
-    constructor(){}
+  export class Vceside {
+    sidedata:SidedataType;
+    terms:Array<Term>;
   }
 
-  export class vcequire {
-    quiredata:quiredataType;
-    memberleaves:Array<vceleaf>;
+  export class Vcequire {
+    quiredata:QuiredataType;
+    memberleaves:Array<Vceleaf>;
     quireImg:string;
-    terms:Array<term>;
-    constructor(){}
+    terms:Array<Term>;
   }
-  export class vceleaf {
-      leafdata:leafdataType;
-      memberrecto:vceside;
-      memberverso:vceside;
-      terms:Array<term>;
-      constructor(){}
+  export class Vceleaf {
+      leafdata:LeafdataType;
+      memberrecto:Vceside;
+      memberverso:Vceside;
+      terms:Array<Term>;
   }
-  export class term {
-    params: termParamsType;
-    objects: termObjectsType;
+  export class Term {
+    params: TermParamsType;
+    objects: TermObjectsType;
   }
-  export interface quiredataType {
-    params: quiredataParamsType;
+  export interface QuiredataType {
+    params: QuiredataParamsType;
     tacketed: Array<string>;
     sewing: Array<string>;
     parentOrder: number;
     memberOrders:Array<string>;
   }
-  export interface quiredataParamsType {
+  export interface QuiredataParamsType {
     type: string;
     title: string;
     nestLevel: number;
   }
-  export interface leafdataType {
-    params: leafdataParamsType;
+  export interface LeafdataType {
+    params: LeafdataParamsType;
     conjoined_leaf_order: number;
     parentOrder: number;
     rectoOrder: number;
     versoOrder: number
   }
-  export interface leafdataParamsType{
+  export interface LeafdataParamsType{
     folio_number: number|string;
     material: string|boolean;
     type: string;
@@ -229,28 +232,28 @@ import { HttpClient } from '@angular/common/http';
     stub: string|boolean;
     nestLevel: number;
   }
-  export interface sidedataType {
-    params: sidedataParamsType;
+  export interface SidedataType {
+    params: SidedataParamsType;
     parentOrder: number;
   }
-  export interface sidedataParamsType{
+  export interface SidedataParamsType{
     page_number: string;
     texture: string;
-    image: imageType;
+    image: ImageType;
     script_direction: string;
   }
-  export interface imageType{
+  export interface ImageType{
     manifestID: string;
     label: string;
     url: string;
   }
-  export interface termParamsType {
+  export interface TermParamsType {
     title: string;
     taxonomy: string;
     description: string;
     show: boolean;
   }
-  export interface termObjectsType {
+  export interface TermObjectsType {
     Group: Array<number>;
     Leaf: Array<number>;
     Recto: Array<number>;
