@@ -959,6 +959,11 @@ export class StyleDefDecl extends GenericElement {
     schemeVersion: string;
 }
 
+export class VariantEncoding extends GenericElement {
+    method: string;
+    location: string;
+}
+
 export class EncodingDesc extends GenericElement {
     structuredData: boolean;
     projectDesc: ProjectDesc[];
@@ -972,6 +977,7 @@ export class EncodingDesc extends GenericElement {
     unitDecl: Array<ParseResult<GenericElement>>; // TODO: Add specific type when unitDecl is handled
     schemaSpec: Array<ParseResult<GenericElement>>; // TODO: Add specific type when schemaSpec is handled
     schemaRef: Array<ParseResult<GenericElement>>; // TODO: Add specific type when schemaRef is handled
+    variantEncoding: VariantEncoding;
 }
 
 export class ProjectDesc extends GenericElement {
