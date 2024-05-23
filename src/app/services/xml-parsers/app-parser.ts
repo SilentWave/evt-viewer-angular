@@ -17,6 +17,8 @@ export class RdgParser extends EmptyParser implements Parser<XMLElement> {
             id: getID(rdg),
             attributes: this.attributeParser.parse(rdg),
             witIDs: this.parseReadingWitnesses(rdg) || [],
+            readingType: rdg.getAttribute('type'),
+            cause: rdg.getAttribute('cause'),
             content: this.parseAppReadingContent(rdg),
             significant: this.isReadingSignificant(rdg),
             class: rdg.tagName.toLowerCase(),

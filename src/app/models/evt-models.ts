@@ -237,6 +237,8 @@ export class Analogue extends GenericElement {
 export class Reading extends GenericElement {
     id: string;
     witIDs: string[];
+    readingType: string;
+    cause: string;
     significant: boolean;
 }
 
