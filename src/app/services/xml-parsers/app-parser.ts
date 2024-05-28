@@ -80,6 +80,24 @@ export class AppParser extends EmptyParser implements Parser<XMLElement> {
         };
     }
 
+    private extractReadingsFromGroup(rdgGrp: XMLElement): Reading[]{
+        const nextRdgGrps = Array.from(rdgGrp.querySelectorAll<XMLElement>(':scope > rdgGrp'));
+        if(nextRdgGrps.length > 0){
+            return Array.from(rdgGrp.querySelectorAll<XMLElement>(`:scope > ${this.readingTagName}`)).map(this.rdgParser.parse);
+        }
+
+        const type = rdgGrp.getAttribute('type');
+        const cause = rdgGrp.getAttribute('cause');
+
+        return nextRdgGrps
+            .map(this.extractReadingsFromGroup)
+            .flat()
+            .map((el) => ({
+                ...el,
+                cause: el.cause || cause,
+                readingType: el.readingType || type,
+            }));
+    }
     private getNestedAppsIDs(app: XMLElement): string[] {
         const nesApps = app.querySelectorAll('app');
 
@@ -100,8 +118,11 @@ export class AppParser extends EmptyParser implements Parser<XMLElement> {
     }
 
     private parseReadings(appEntry: XMLElement): Reading[] {
-        return Array.from(appEntry.querySelectorAll(`${this.readingTagName}`))
+        const readingsUnderGroup = this.extractReadingsFromGroup(appEntry);
+
+        return Array.from(appEntry.querySelectorAll(`:scope > ${this.readingTagName}`))
             .filter((el) => el.closest(this.appEntryTagName) === appEntry)
-            .map((rdg: XMLElement) => this.rdgParser.parse(rdg));
+            .map((rdg: XMLElement) => this.rdgParser.parse(rdg))
+            .concat(readingsUnderGroup);
     }
 }
