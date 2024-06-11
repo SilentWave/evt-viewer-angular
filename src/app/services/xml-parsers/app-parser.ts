@@ -60,6 +60,7 @@ export class AppParser extends EmptyParser implements Parser<XMLElement> {
     private appEntryTagName = 'app';
     private readingTagName = 'rdg';
     private lemmaTagName = 'lem';
+    private readingGroupTagName = 'rdgGrp';
 
     attributeParser = createParser(AttributeParser, this.genericParse);
     noteParser = createParser(NoteParser, this.genericParse);
@@ -81,16 +82,18 @@ export class AppParser extends EmptyParser implements Parser<XMLElement> {
     }
 
     private extractReadingsFromGroup(rdgGrp: XMLElement): Reading[]{
-        const nextRdgGrps = Array.from(rdgGrp.querySelectorAll<XMLElement>(':scope > rdgGrp'));
-        if(nextRdgGrps.length > 0){
-            return Array.from(rdgGrp.querySelectorAll<XMLElement>(`:scope > ${this.readingTagName}`)).map(this.rdgParser.parse);
+        const nextRdgGrps = Array.from(rdgGrp.querySelectorAll<XMLElement>(':scope > ' + this.readingGroupTagName));
+        if(nextRdgGrps.length === 0 && rdgGrp.tagName === this.readingGroupTagName){
+            const readings = Array.from(rdgGrp.querySelectorAll<XMLElement>(`:scope > ${this.readingTagName}`));
+
+            return readings.map((el) => this.rdgParser.parse(el));
         }
 
         const type = rdgGrp.getAttribute('type');
         const cause = rdgGrp.getAttribute('cause');
 
         return nextRdgGrps
-            .map(this.extractReadingsFromGroup)
+            .map((grp) => this.extractReadingsFromGroup(grp))
             .flat()
             .map((el) => ({
                 ...el,
