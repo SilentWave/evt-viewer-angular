@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AppConfig } from '../../app.config';
-import { EditionStructure, GenericElement, OriginalEncodingNodeType, Page, XMLElement } from '../../models/evt-models';
+import { EditionStructure, GenericElement, OriginalEncodingNodeType, Page, VariantEncoding, XMLElement } from '../../models/evt-models';
 import { createNsResolver, getElementsBetweenTreeNode, isNestedInElem } from '../../utils/dom-utils';
+import { queryAndParseElement } from './basic-parsers';
 import { GenericParserService } from './generic-parser.service';
 import { getID, ParseResult } from './parser-models';
 
@@ -94,32 +95,90 @@ export class StructureXmlParserService {
   // lbId = '';
   // quando trovi un lbId allora lbId = 'qualcosa'
 
+  private isDEPA(doc: Document): boolean{
+    const variantEncoding = queryAndParseElement<VariantEncoding>(doc.firstElementChild as XMLElement, 'variantEncoding', true);
+
+    return variantEncoding?.method === 'double-end-point' && variantEncoding?.location === 'external';
+  }
+
+  private getAppFromSet(doc: Document): Set<string>{
+    const fromSet = new Set<string>();
+    Array.from(doc.querySelectorAll<XMLElement>('app'))
+      .filter((el) => el.getAttribute('from') !== null)
+      .forEach((app) => fromSet.add(app.getAttribute('from').replace('#', '')));
+
+    return fromSet;
+  }
 
   parsePageContent(doc: Document, pageContent: OriginalEncodingNodeType[]): Array<ParseResult<GenericElement>> {
+        const isDEPA = this.isDEPA(doc)
+        let fromSet : Set<string>;
+        if(isDEPA){
+          fromSet = this.getAppFromSet(doc);
+        }
+
     return pageContent
-      .map((node) => {
+          .map((node) => {
 
-        const origEl = getEditionOrigNode(node, doc);
+            const origEl = getEditionOrigNode(node, doc);
 
-        if (origEl.nodeName === this.frontTagName || isNestedInElem(origEl, this.frontTagName)) {
-          if (this.hasOriginalContent(origEl)) {
-            return Array.from(origEl.querySelectorAll(`[type=${this.frontOrigContentAttr}]`))
-              .map((c) => this.genericParserService.parse(c as XMLElement));
-          }
-          if (this.isMarkedAsOrigContent(origEl)) {
+            if(isDEPA && origEl.querySelectorAll){
+                const words = Array.from(origEl.querySelectorAll('w'));
+                const wordsToDelete = new Set();
+                words.forEach((w) => {
+                  const xmlID = w.getAttribute('xml:id');
+                  if(xmlID !== null && fromSet.has(xmlID)){
+
+                    Array.from(doc.querySelectorAll(`app[from="#${xmlID}"]`)).forEach((app) => {
+                      wordsToDelete.add(w);
+                      const range = new Range();
+                      const toID = app.getAttribute('to');
+                      let endW: XMLElement;
+                      if(toID !== null){
+                        range.setStart(w, 0);
+                        endW = doc.querySelector(`[*|id="${toID.replace('#', '')}"]`);
+                        range.setEnd(endW, endW.childNodes.length);
+                      }else{
+                        range.selectNode(w);
+                      }
+                      const text = range.toString();
+                      console.log(text)
+                      const lem = document.createElement('lem');
+                      lem.textContent = text;
+                      app.appendChild(lem);
+                      w.parentNode?.insertBefore(app, w);
+
+                      if(toID !== null){
+                        getElementsBetweenTreeNode(w, endW).forEach((el) => el.parentNode.removeChild(el));
+                      }else{
+                        w.remove();
+                      }
+                    })
+
+                  }
+                })
+            }
+
+
+            if (origEl.nodeName === this.frontTagName || isNestedInElem(origEl, this.frontTagName)) {
+              if (this.hasOriginalContent(origEl)) {
+                return Array.from(origEl.querySelectorAll(`[type=${this.frontOrigContentAttr}]`))
+                  .map((c) => this.genericParserService.parse(c as XMLElement));
+              }
+              if (this.isMarkedAsOrigContent(origEl)) {
+                return [this.genericParserService.parse(origEl)];
+              }
+
+              return [] as Array<ParseResult<GenericElement>>;
+            }
+
+            if (origEl.tagName === 'text' && origEl.querySelectorAll && origEl.querySelectorAll(this.frontTagName).length > 0) {
+              return this.parsePageContent(doc, Array.from(origEl.children) as HTMLElement[]);
+            }
+
             return [this.genericParserService.parse(origEl)];
-          }
-
-          return [] as Array<ParseResult<GenericElement>>;
-        }
-
-        if (origEl.tagName === 'text' && origEl.querySelectorAll && origEl.querySelectorAll(this.frontTagName).length > 0) {
-          return this.parsePageContent(doc, Array.from(origEl.children) as HTMLElement[]);
-        }
-
-        return [this.genericParserService.parse(origEl)];
-      })
-      .reduce((x, y) => x.concat(y), []);
+          })
+          .reduce((x, y) => x.concat(y), []);
   }
 
   hasOriginalContent(el: XMLElement): boolean {
