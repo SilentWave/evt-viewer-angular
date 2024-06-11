@@ -14,7 +14,7 @@ let totIdsGenerated = 0;
  *
  * @returns Whether the given element is nested in a node with given TagName or not
  */
-export function isNestedInElem(element, parentTagName: string, attributes?: Array<{ key: string, value }>): boolean {
+export function isNestedInElem(element: Element, parentTagName: string, attributes?: Array<{ key: string, value }>): boolean {
   return !!element && isNodeNestedInElem(element, parentTagName, false, attributes);
 }
 /**
@@ -25,7 +25,7 @@ export function isNestedInElem(element, parentTagName: string, attributes?: Arra
  *
  * @returns Whether the given element is nested in a node with given TagName or not
  */
-export function isDirectlyNestedInElem(element, parentTagName: string, attributes?: Array<{ key: string, value }>): boolean {
+export function isDirectlyNestedInElem(element: Element, parentTagName: string, attributes?: Array<{ key: string, value }>): boolean {
   return isNodeNestedInElem(element, parentTagName, true, attributes);
 }
 
@@ -39,26 +39,26 @@ export function isDirectlyNestedInElem(element, parentTagName: string, attribute
  * @returns Whether the given element is nested in a node with given TagName or not
  */
 export function isNodeNestedInElem(
-  element,
+  element: Element,
   parentTagName: string,
   directCheck: boolean,
   attributes?: Array<{ key: string, value }>,
 ): boolean {
-  if (element.parentNode !== null) {
-    if (element.parentNode.tagName === 'text') {
+  if (element.parentElement !== null) {
+    if (element.parentElement.tagName === 'text') {
       return false;
     }
-    if (parentTagName === '' || element.parentNode.tagName === parentTagName || element.parentNode.nodeName === parentTagName) {
+    if (parentTagName === '' || element.parentElement.tagName === parentTagName || element.parentNode.nodeName === parentTagName) {
       if (!attributes || attributes.length === 0) {
         return true;
       }
-      if (!element.parentNode.attributes || element.parentNode.attributes.length === 0) {
+      if (!element.parentElement.attributes || element.parentElement.attributes.length === 0) {
         return false;
       }
       let matchingAttr = 0;
       attributes.forEach((attr) => {
-        if (element.parentNode.attributes[attr.key] &&
-          element.parentNode.attributes[attr.key].value === attr.value) {
+        if (element.parentElement.attributes[attr.key] &&
+          element.parentElement.attributes[attr.key].value === attr.value) {
           matchingAttr++;
         }
       });
@@ -66,10 +66,10 @@ export function isNodeNestedInElem(
         return true;
       }
 
-      return directCheck ? false : isNestedInElem(element.parentNode, parentTagName, attributes);
+      return directCheck ? false : isNodeNestedInElem(element.parentElement, parentTagName, directCheck, attributes);
     }
 
-    return directCheck ? false : isNestedInElem(element.parentNode, parentTagName, attributes);
+    return directCheck ? false : isNodeNestedInElem(element.parentElement, parentTagName, directCheck, attributes);
   }
 
   return false;
