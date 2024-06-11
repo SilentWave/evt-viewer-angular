@@ -1031,11 +1031,11 @@ export class MsDescParser extends MsPartParser implements Parser<XMLElement> {
         this.msDescCounter++;
         if (ms.msIdentifier.idnos.length > 0) {
             const item = ms.msIdentifier.idnos[0].filter((el: Text) => el.text?.trim() || el.content?.length > 0);
-            if (item[0].text) {
+            if (item.length > 0 && item[0].text) {
                 return item[0].text.trim();
             }
 
-            if (item[0].content.length > 0){
+            if (item.length > 0 && item[0].content.length > 0){
                 return (item[0].content[0].text);
             }
         }
