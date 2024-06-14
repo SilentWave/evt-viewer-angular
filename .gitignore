@@ -49,3 +49,6 @@ Thumbs.db
 
 # Compodoc Documentation
 /documentation
+
+# IDE - VisualStudio
+.vs/*

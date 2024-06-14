@@ -14,6 +14,12 @@ export class AppConfig {
     private readonly fileConfigUrl = 'assets/config/file_config.json';
     private readonly editionConfigUrl = 'assets/config/edition_config.json';
     private readonly editorialConventionsConfigUrl = 'assets/config/editorial_conventions_config.json';
+    private readonly allowedUrlPrefixes: string[] = [
+        "https://dev.digitalphilology.org",
+        "https://www.digitalphilology.org",
+        "http://localhost:4205",
+        "http://localhost:4200",
+    ];
 
     constructor(
         public translate: TranslateService,
@@ -22,7 +28,15 @@ export class AppConfig {
 
     load() {
         return new Promise<void>((resolve) => {
-            this.http.get<FileConfig>(this.fileConfigUrl).pipe(
+            const params = new URLSearchParams(window.location.search)
+            const url = params.get("url") ?? this.fileConfigUrl;
+            console.log("url param:" + url)
+            
+            const prefixesMatched = this.allowedUrlPrefixes.filter(x => url.includes(x))
+            console.log("matched prefix: " + prefixesMatched)
+            if(!prefixesMatched.length) throw new Error(url + " not allowed");
+            
+            this.http.get<FileConfig>(url).pipe(
                 switchMap((files: FileConfig) => forkJoin([
                     this.http.get<UiConfig>(files.configurationUrls?.ui ?? this.uiConfigUrl),
                     this.http.get<EditionConfig>(files.configurationUrls?.edition ?? this.editionConfigUrl),
