@@ -117,10 +117,6 @@ import { HttpClient } from '@angular/common/http';
       observable.subscribe({next: (data:any)=> {
       this.Data=data;
       this.assignmentcycle();
-      console.log(this.quires);
-      console.log(this.leaves);
-      console.log(this.Data.Leafs);
-      console.log(this.Data.Terms);
     }});
     }
     
