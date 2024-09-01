@@ -37,7 +37,7 @@ export interface EditionStructure {
 }
 
 export type ViewModeId = 'imageOnly' | 'imageImage' | 'readingText' | 'imageText' | 'textText' |
-'collation' | 'textSources' | 'textVersions' | 'documentalMixed';
+'collation' | 'textSources' | 'textVersions' | 'documentalMixed' | 'synopsis';
 
 export interface ViewMode {
     id: ViewModeId;

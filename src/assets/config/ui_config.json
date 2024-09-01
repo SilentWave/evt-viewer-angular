@@ -62,6 +62,13 @@
 			"id": "documentalMixed",
 			"label": "Documental",
 			"enable": true
+		},
+		{
+			"icon": "documix",
+			"iconSet": "evt",
+			"id": "synopsis",
+			"label": "Synopsis",
+			"enable": true
 		}
 	],
 	"localization": true,
