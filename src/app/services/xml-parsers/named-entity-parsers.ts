@@ -14,7 +14,8 @@ export const namedEntitiesListsTagNamesMap: { [key: string]: string } = {
     places: 'listPlace',
     organizations: 'listOrg',
     events: 'listEvent',
-    occurrences: 'persName[ref], placeName[ref], orgName[ref], geogName[ref], event[ref]',
+    objects: 'listObject',
+    occurrences: 'persName[ref], placeName[ref], orgName[ref], geogName[ref], event[ref], objectName[ref]', 
 };
 
 export function getListType(tagName): NamedEntityType {
@@ -101,6 +102,7 @@ export class NamedEntityRefParser extends EmptyParser implements Parser<XMLEleme
             persname: 'person',
             orgname: 'org',
             event: 'event',
+            objectname: 'object',
         };
 
         return {
@@ -237,6 +239,16 @@ export class OrganizationParser extends EntityParser {
         return {
             ...super.parse(xml),
             label: textLabel('orgName', xml),
+        };
+    }
+}
+
+@xmlParser('object', ObjectParser)
+export class ObjectParser extends EntityParser {
+    parse(xml: XMLElement): NamedEntity {
+        return {
+            ...super.parse(xml),
+            label: textLabel('objectName', xml),
         };
     }
 }

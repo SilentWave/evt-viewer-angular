@@ -148,6 +148,7 @@ export interface EditionConfig {
         organizations: NamedEntitiesListsConfig;
         relations: NamedEntitiesListsConfig;
         events: NamedEntitiesListsConfig;
+        objects: NamedEntitiesListsConfig;
     }>;
     entitiesSelectItems: EntitiesSelectItemGroup[];
     notSignificantVariants: string[];

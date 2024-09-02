@@ -36,7 +36,7 @@ import {
 } from './msdesc-parser';
 import {
     NamedEntitiesListParser, NamedEntityRefParser, OrganizationParser,
-    PersonGroupParser, PersonParser, PlaceParser, RelationParser,
+    PersonGroupParser, PersonParser, PlaceParser, RelationParser, ObjectParser,
 } from './named-entity-parsers';
 import { QuoteParser } from './quotes-parser';
 import { AnalogueParser } from './analogue-parser';
@@ -154,6 +154,7 @@ export function ParsersDecl(declarations: Array<Type<any>>) {
     NotesStmtParser,
     ObjectDescParser,
     OrganizationParser,
+    ObjectParser,
     OrigDateParser,
     OriginParser,
     OrigPlaceParser,
