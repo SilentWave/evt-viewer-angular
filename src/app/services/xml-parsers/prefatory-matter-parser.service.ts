@@ -8,12 +8,12 @@ import { queryAndParseElement } from './basic-parsers';
   providedIn: 'root',
 })
 export class PrefatoryMatterParserService {
-  public readonly title$ = this.editionDataService.parsedEditionSource$.pipe(
+  public readonly title$ = this.editionDataService.mainEditionSource$.pipe(
     map((source) => this.parseEditionTitle(source)),
     shareReplay(1),
   );
 
-  public readonly projectInfo$ = this.editionDataService.parsedEditionSource$.pipe(
+  public readonly projectInfo$ = this.editionDataService.mainEditionSource$.pipe(
     map((source) => this.parseProjectInfo(source)),
     shareReplay(1),
   );

@@ -33,7 +33,7 @@ import { ModParserService } from './xml-parsers/mod-parser.service';
   providedIn: 'root',
 })
 export class EVTModelService {
-  public readonly editionSource$: Observable<OriginalEncodingNodeType> = this.editionDataService.parsedEditionSource$
+  public readonly editionSource$: Observable<OriginalEncodingNodeType> = this.editionDataService.mainEditionSource$
     .pipe(
       shareReplay(1),
     );

@@ -129,7 +129,7 @@ export class MainMenuComponent {
     // TODO downloadXML
     this.itemClicked.emit('downloadXML');
     if (this.fileConfig && this.fileConfig.editionUrls) {
-      this.fileConfig.editionUrls.forEach((url) => window.open(url, '_blank'));
+      this.fileConfig.editionUrls.forEach((url) => window.open(url.value, '_blank'));
     } else {
       alert('Loading data... \nPlease try again later.');
     }

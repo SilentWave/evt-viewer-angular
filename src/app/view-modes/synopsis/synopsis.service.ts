@@ -11,7 +11,7 @@ import { Attribute, SynopsisEdition } from "./synopsis.models";
     providedIn: 'root',
 })
 export class SynopsisService {
-    editions$: Observable<SynopsisEdition[]> = this.editionDataService.parsedEditionSources$.pipe(
+    readonly allEditions$: Observable<SynopsisEdition[]> = this.editionDataService.allEditionSources$.pipe(
         map(editionSources => this.mapToSynopsisEdition(editionSources)),
         shareReplay(1));
 
@@ -57,8 +57,6 @@ export class SynopsisService {
     }
 
     private mapToSynopsisEdition(editionSources: HTMLElement[]) {
-        console.warn("mapping!!!")
-
         const result = editionSources.map(source => {
             const pages = this.editionStructureParser.parsePages(source).pages;
             const editionTitle = this.prefatoryMatterParser.parseEditionTitle(source);

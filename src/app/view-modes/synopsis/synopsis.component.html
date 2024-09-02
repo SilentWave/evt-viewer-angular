@@ -1,4 +1,6 @@
-<gridster [options]="options" *ngIf="this.editions">
+<div *ngIf="this.error">{{ this.error }}</div>
+
+<gridster [options]="options" *ngIf="!this.error && this.editions">
     <gridster-item *ngFor="let edition of this.editions; let i = index;" [item]="getGridsterItemForIndex(i)">
         <evt-synopsis-text-panel [edition]="edition" (onPageChanged)="this.changePage($event)"
             (onXmlIdChanged)="this.changeXmlId($event)"></evt-synopsis-text-panel>

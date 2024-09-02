@@ -28,6 +28,7 @@ export class SynopsisComponent implements OnInit, OnDestroy {
 
   public editions: SynopsisEdition[];
   private editionsSubscription: Subscription;
+  error: string | null;
 
   constructor(
     private synopsisService: SynopsisService
@@ -35,9 +36,12 @@ export class SynopsisComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.editionsSubscription = this.synopsisService.editions$.subscribe(editions => {
-      this.editions = editions;
-      this.changeXmlId({ editionTitle: editions[0].editionTitle, xmlId: editions[0].selectedPage.selectedXmlId })
+    this.editionsSubscription = this.synopsisService.allEditions$.subscribe({
+      next: (editions) => {
+        this.editions = editions;
+        this.changeXmlId({ editionTitle: editions[0].editionTitle, xmlId: editions[0].selectedPage.selectedXmlId })
+      },
+      error: e => { this.error = e; }
     });
   }
 
