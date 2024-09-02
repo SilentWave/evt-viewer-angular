@@ -34,6 +34,8 @@ export class EditionDataService {
 
   private loadOtherEditionsData(): Observable<OriginalEncodingNodeType[]> {
     const otherUrls = this.editionUrls.filter(x => !this.isMainUrl(x)) ?? this.editionUrls.slice(1);
+    if(!otherUrls.length) return of([]);
+
     const requests = otherUrls.map(editionUrl => this.loadAndParseEditionData(editionUrl.value));
     return forkJoin(requests);
   }
