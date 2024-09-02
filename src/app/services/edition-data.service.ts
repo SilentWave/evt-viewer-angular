@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin, Observable, of } from 'rxjs';
-import { catchError, map, mergeMap, publishReplay, refCount, tap } from 'rxjs/operators';
+import { catchError, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { AppConfig } from '../app.config';
 import { OriginalEncodingNodeType } from '../models/evt-models';
 import { parseXml } from '../utils/xml-utils';
@@ -11,23 +11,26 @@ import { parseXml } from '../utils/xml-utils';
 })
 export class EditionDataService {
   private editionUrls = AppConfig.evtSettings.files.editionUrls || [];
-  public parsedEditionSource$: Observable<OriginalEncodingNodeType> = this.loadAndParseEditionData();
+  public readonly parsedEditionSources$: Observable<OriginalEncodingNodeType[]> = this.loadAndParseEditionData().pipe(
+    shareReplay(1));
+  public readonly parsedEditionSource$: Observable<OriginalEncodingNodeType> = this.parsedEditionSources$.pipe(
+    map(data => data[0]),
+    shareReplay(1));
 
   constructor(
     private http: HttpClient,
   ) {
   }
 
-  private loadAndParseEditionData() {
-    const editionUrl = this.editionUrls[0];
-
-    return this.http.get(editionUrl, { responseType: 'text' }).pipe(
-      map((source) => parseXml(source)),
-      mergeMap((editionData) => this.loadXIinclude(editionData, editionUrl.substring(0, editionUrl.lastIndexOf('/') + 1))),
-      publishReplay(1),
-      refCount(),
-      catchError(() => this.handleLoadingError()),
+  private loadAndParseEditionData(): Observable<OriginalEncodingNodeType[]> {
+    const requests = this.editionUrls.map(editionUrl =>
+      this.http.get(editionUrl, { responseType: 'text' }).pipe(
+        map((source) => parseXml(source)),
+        mergeMap((editionData) => this.loadXIinclude(editionData, editionUrl.substring(0, editionUrl.lastIndexOf('/') + 1))),
+        catchError(() => this.handleLoadingError())
+      )
     );
+    return forkJoin(requests);
   }
 
   loadXIinclude(doc: HTMLElement, baseUrlPath: string) {

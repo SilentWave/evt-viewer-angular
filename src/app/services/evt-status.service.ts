@@ -3,7 +3,7 @@ import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { BehaviorSubject, combineLatest, merge, Observable, Subject, timer } from 'rxjs';
 import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, withLatestFrom } from 'rxjs/operators';
 
-import { AppConfig, EditionLevelType } from '../app.config';
+import { AppConfig, EditionLevel, EditionLevelType } from '../app.config';
 import { ChangeLayerData, Page, ViewMode } from '../models/evt-models';
 import { EVTModelService } from './evt-model.service';
 import { deepSearch } from '../utils/dom-utils';
@@ -16,7 +16,8 @@ export type URLParams = { [T in URLParamsKeys]: string };
 })
 export class EVTStatusService {
     public availableEditionLevels = AppConfig.evtSettings.edition.availableEditionLevels?.filter(((e) => e.enable)) || [];
-    get defaultEditionLevelId(): EditionLevelType {
+
+    get defaultEditionLevel(): EditionLevel {
         const defaultConfig = AppConfig.evtSettings.edition.defaultEdition;
         const availableEditionLevels = AppConfig.evtSettings.edition.availableEditionLevels?.filter(((e) => e.enable)) ?? [];
         let defaultEdition = availableEditionLevels[0];
@@ -24,7 +25,11 @@ export class EVTStatusService {
             defaultEdition = availableEditionLevels.find((e) => e.id === defaultConfig) ?? defaultEdition;
         }
 
-        return defaultEdition?.id;
+        return defaultEdition;
+    }
+    
+    get defaultEditionLevelId(): EditionLevelType {
+        return this.defaultEditionLevel?.id;
     }
 
     get availableViewModes() {
