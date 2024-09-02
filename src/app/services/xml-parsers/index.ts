@@ -19,11 +19,11 @@ export class ParserRegister {
     }
 
     private static mapName(tagName) {
-        const nes = ['event', 'geogname', 'orgname', 'persname', 'placename'];
+        const nes = ['event', 'geogname', 'orgname', 'persname', 'placename', 'objectname' ];
         if (nes.includes(tagName)) {
             return 'evt-named-entity-parser';
         }
-        const nels = ['listPerson', 'listPlace', 'listOrg', 'listEvent'];
+        const nels = ['listPerson', 'listPlace', 'listOrg', 'listEvent', 'listObject'];
         if (nels.includes(tagName)) {
             return 'evt-named-entities-list-parser';
         }

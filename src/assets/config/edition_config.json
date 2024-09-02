@@ -49,6 +49,10 @@
     "events": {
       "defaultLabel": "Events",
       "enable": true
+    },
+    "objects": {
+      "defaultLabel": "Objects",
+      "enable": true
     }
   },
   "showLists": true,

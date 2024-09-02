@@ -85,6 +85,10 @@ export interface NamedEntities {
         lists: NamedEntitiesList[];
         entities: NamedEntity[];
     };
+    objects: {
+        lists: NamedEntitiesList[];
+        entities: NamedEntity[];
+    };
 }
 
 export interface Attributes { [key: string]: string; }
@@ -93,7 +97,7 @@ export interface OriginalEncoding {
     originalEncoding: OriginalEncodingNodeType;
 }
 
-export type NamedEntityType = 'person' | 'place' | 'org' | 'relation' | 'event' | 'generic';
+export type NamedEntityType = 'person' | 'place' | 'org' | 'relation' | 'event' | 'object' | 'generic';
 export class NamedEntitiesList extends GenericElement {
     id: string;
     label: string;
