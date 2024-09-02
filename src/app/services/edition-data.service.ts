@@ -11,6 +11,7 @@ import { parseXml } from '../utils/xml-utils';
 })
 export class EditionDataService {
   private editionUrls = AppConfig.evtSettings.files.editionUrls || [];
+
   public readonly parsedEditionSources$: Observable<OriginalEncodingNodeType[]> = this.loadAndParseEditionData().pipe(
     shareReplay(1));
   public readonly parsedEditionSource$: Observable<OriginalEncodingNodeType> = this.parsedEditionSources$.pipe(

@@ -1,1 +1,6 @@
-<p>synopsis works!</p>
+<gridster [options]="options" *ngIf="this.editions">
+    <gridster-item *ngFor="let edition of this.editions; let i = index;" [item]="getGridsterItemForIndex(i)">
+        <evt-synopsis-text-panel [edition]="edition" (onPageChanged)="this.changePage($event)"
+            (onXmlIdChanged)="this.changeXmlId($event)"></evt-synopsis-text-panel>
+    </gridster-item>
+</gridster>

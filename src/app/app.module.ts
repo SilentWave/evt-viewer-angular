@@ -146,6 +146,9 @@ import { WitnessPanelComponent } from './panels/witness-panel/witness-panel.comp
 import { XmlBeautifyPipe } from './pipes/xml-beautify.pipe';
 import { XMLParsers } from './services/xml-parsers/xml-parsers';
 import { SynopsisComponent } from './view-modes/synopsis/synopsis.component';
+import { SynopsisTextPanelComponent } from './view-modes/synopsis/synopsis-text-panel/synopsis-text-panel.component';
+import { SynopsisPageSelector } from './view-modes/synopsis/synopsis-page-selector/synopsis-page-selector.component';
+import { SynopsisXmlIdSelectorComponent } from './view-modes/synopsis/synopsis-xml-id-selector/synopsis-xml-id-selector.component';
 
 const routes: Routes = [
 ];
@@ -279,7 +282,10 @@ const DynamicComponents = [
     WitnessPanelComponent,
     XmlBeautifyPipe,
     SynopsisComponent,
+    SynopsisTextPanelComponent,
+    SynopsisPageSelector,
     ...DynamicComponents,
+    SynopsisXmlIdSelectorComponent,
   ],
   imports: [
     AppRoutingModule,

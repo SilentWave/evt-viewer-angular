@@ -1,0 +1,17 @@
+<evt-panel>
+    <div header-left>
+        <evt-synopsis-page-selector [pageList]="this.edition.selectedPage.pageSelectionList"
+            [selectedPage]="this.edition.selectedPage.pageSelectionList.selectedPage"
+            (onSelectionChanged)="this.changePage($event)"></evt-synopsis-page-selector>
+        <evt-synopsis-xml-id-selector [xmlIds]="this.edition.selectedPage.xmlIds"
+            [selectedXmlId]="this.edition.selectedPage.selectedXmlId"
+            (onXmlIdChanged)="this.changeXmlId($event)"></evt-synopsis-xml-id-selector>
+    </div>
+    <div content evtAnnotator>
+        <ng-container *ngIf="edition">
+            <evt-page *ngIf="true" [attr.data-id]="this.edition.selectedPage.page.id"
+                [data]="this.edition.selectedPage.page" [editionLevel]="edition.editionLevel" [textFlow]="false"
+                [itemsToHighlight]="[]"></evt-page>
+        </ng-container>
+    </div>
+</evt-panel>

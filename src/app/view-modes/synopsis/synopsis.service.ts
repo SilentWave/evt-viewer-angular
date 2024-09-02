@@ -5,7 +5,7 @@ import { EVTStatusService } from "../../services/evt-status.service";
 import { Page } from "../../models/evt-models";
 import { PrefatoryMatterParserService } from "../../services/xml-parsers/prefatory-matter-parser.service";
 import { EditionDataService } from "src/app/services/edition-data.service";
-import { HtmlAttribute, SynopsisEdition } from "./synopsis.models";
+import { Attribute, SynopsisEdition } from "./synopsis.models";
 
 @Injectable({
     providedIn: 'root',
@@ -47,7 +47,7 @@ export class SynopsisService {
         return page;
     }
 
-    getPageElementByAttributeOrDefault(newPage: Page, attribute: HtmlAttribute): HTMLElement | null {
+    getPageElementByAttributeOrDefault(newPage: Page, attribute: Attribute): HTMLElement | null {
         for (const element of newPage.originalContent) {
             const foundElement = this.recursiveFindElementByAttributeOrDefault(element, attribute)
             if (foundElement) return foundElement;
@@ -90,7 +90,7 @@ export class SynopsisService {
         return result;
     }
 
-    private recursiveFindElementByAttributeOrDefault(element: HTMLElement, attribute: HtmlAttribute, values: HTMLElement[] = []): HTMLElement | null {
+    private recursiveFindElementByAttributeOrDefault(element: HTMLElement, attribute: Attribute, values: HTMLElement[] = []): HTMLElement | null {
         const result = this.getAttributeOrDefault(element, attribute.key);
         if (result && result.value.includes(attribute.value)) return element;
 
@@ -105,7 +105,7 @@ export class SynopsisService {
         return null;
     }
 
-    private recursiveParseAttribute(element: HTMLElement, attributeKey: string, values: HtmlAttribute[] = []): HtmlAttribute[] {
+    private recursiveParseAttribute(element: HTMLElement, attributeKey: string, values: Attribute[] = []): Attribute[] {
         const attribute = this.getAttributeOrDefault(element, attributeKey);
         if (attribute) values.push(attribute);
 
@@ -119,7 +119,7 @@ export class SynopsisService {
         return values;
     }
 
-    private getAttributeOrDefault(element: HTMLElement, attributeKey: string): HtmlAttribute | null {
+    private getAttributeOrDefault(element: HTMLElement, attributeKey: string): Attribute | null {
         if (element.hasAttribute !== undefined && element.hasAttribute(attributeKey)) {
             const attr = element.getAttribute(attributeKey);
             return { key: attributeKey, value: attr };
