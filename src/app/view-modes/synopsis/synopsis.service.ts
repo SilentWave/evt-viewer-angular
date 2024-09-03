@@ -88,7 +88,7 @@ export class SynopsisService {
         return result;
     }
 
-    private recursiveFindElementByAttributeOrDefault(element: HTMLElement, attribute: Attribute, values: HTMLElement[] = []): HTMLElement | null {
+    public recursiveFindElementByAttributeOrDefault(element: HTMLElement, attribute: Attribute, values: HTMLElement[] = []): HTMLElement | null {
         const result = this.getAttributeOrDefault(element, attribute.key);
         if (result && result.value.includes(attribute.value)) return element;
 
@@ -96,7 +96,7 @@ export class SynopsisService {
             for (const child of Array.from(element.children)) {
                 const htmlChild = child as HTMLElement;
                 const childResult = this.recursiveFindElementByAttributeOrDefault(htmlChild, attribute, values);
-                if (childResult) return htmlChild;
+                if (childResult) return childResult;
             }
         }
 
