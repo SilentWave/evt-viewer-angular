@@ -88,7 +88,7 @@ export class SynopsisService {
         return result;
     }
 
-    public recursiveFindElementByAttributeOrDefault(element: HTMLElement, attribute: Attribute, values: HTMLElement[] = []): HTMLElement | null {
+    private recursiveFindElementByAttributeOrDefault(element: HTMLElement, attribute: Attribute, values: HTMLElement[] = []): HTMLElement | null {
         const result = this.getAttributeOrDefault(element, attribute.key);
         if (result && result.value.includes(attribute.value)) return element;
 
