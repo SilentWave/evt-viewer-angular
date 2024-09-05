@@ -39,8 +39,10 @@ export class SynopsisService {
         const page = pages.find(page => {
             const pageCorresps = page.originalContent.flatMap(x => this.recursiveParseAttribute(x, 'corresp'));
             const containsCorresp = pageCorresps.filter(corresp => {
-                const result = corresp.value.includes(xmlId);
-                return result;
+                let parts = corresp.value.split(' ').map(x => x.trim());
+                parts = parts.flatMap(x => x.split(':'));
+                parts = parts.flatMap(x => x.startsWith('#') ? x.substring(1) : x);
+                return parts.some(x => x === xmlId);
             });
             return containsCorresp.length > 0;
         });
