@@ -183,6 +183,7 @@ export interface EditionConfig {
     defaultImageZoomLevel: number;
     showSubstitutionMarker: boolean;
     multiPageEngineForCriticalEdition: boolean;
+    editionStructureSeparator: string;
 }
 
 export type EditionImagesSources = 'manifest' | 'graphics';
