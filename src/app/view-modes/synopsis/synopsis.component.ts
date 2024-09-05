@@ -14,7 +14,7 @@ export class SynopsisComponent implements OnInit, OnDestroy {
     gridType: GridType.Fit,
     displayGrid: DisplayGrid.None,
     margin: 0,
-    maxCols: 3,
+    maxCols: 5,
     maxRows: 1,
     draggable: {
       enabled: true,
