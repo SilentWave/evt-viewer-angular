@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SynopsisService } from './synopsis.service';
-import { Subscription } from 'rxjs';
+import { combineLatest, map, Subscription } from 'rxjs';
 import { PageChangedArgs, SynopsisEdition, XmlIdChangedArgs } from './synopsis.models';
-import { DisplayGrid, GridsterConfig, GridType } from 'angular-gridster2';
+import { CompactType, DisplayGrid, GridsterConfig, GridsterItem, GridType } from 'angular-gridster2';
 
 @Component({
   selector: 'evt-synopsis',
@@ -10,11 +10,28 @@ import { DisplayGrid, GridsterConfig, GridType } from 'angular-gridster2';
   styleUrls: ['./synopsis.component.scss']
 })
 export class SynopsisComponent implements OnInit, OnDestroy {
-  public readonly options: GridsterConfig = {
+  public readonly gridsterOptions: GridsterConfig = {
     gridType: GridType.Fit,
     displayGrid: DisplayGrid.None,
     margin: 0,
-    maxCols: 5,
+    maxCols: 2,
+    maxRows: 1,
+    draggable: {
+      enabled: false,
+    },
+    resizable: {
+      enabled: false,
+    },
+  };
+
+  public otherPanelGridsterItem: GridsterItem = { cols: 2, rows: 1, y: 0, x: 1 };
+
+  public otherPanelGridsterOptions: GridsterConfig = {
+    gridType: GridType.ScrollHorizontal,
+    displayGrid: DisplayGrid.None,
+    compactType: CompactType.CompactLeft,
+    scrollToNewItems: true,
+    margin: 0,
     maxRows: 1,
     draggable: {
       enabled: true,
@@ -24,9 +41,15 @@ export class SynopsisComponent implements OnInit, OnDestroy {
     resizable: {
       enabled: false,
     },
+    mobileBreakpoint: 0,
+    // itemResizeCallback: this.updateFixedColWidth.bind(this),
+    // itemChangeCallback: this.itemChange.bind(this),
   };
 
-  public editions: SynopsisEdition[];
+  public allEditions: SynopsisEdition[] = [];
+  public mainEdition: SynopsisEditionItem;
+  public otherEditions: SynopsisEditionItem[] = [];
+
   private editionsSubscription: Subscription;
   error: string | null;
 
@@ -36,19 +59,31 @@ export class SynopsisComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.editionsSubscription = this.synopsisService.allEditions$.subscribe({
-      next: (editions) => {
-        this.editions = editions;
-        this.changeXmlId({ editionTitle: editions[0].editionTitle, xmlId: editions[0].selectedPage.selectedXmlId })
-      },
-      error: e => { this.error = e; }
-    });
+    this.editionsSubscription = combineLatest([
+      this.synopsisService.allEditions$,
+      this.synopsisService.mainEdition$,
+      this.synopsisService.otherEditions$
+    ]).pipe(
+      map(([_, main, others]) => {
+        this.mainEdition = {
+          edition: main,
+          gridsterItem: { cols: 1, rows: 1, y: 0, x: 0 }
+        }
+        this.otherEditions = others.map((x, i) => ({
+          edition: x,
+          gridsterItem: { cols: 1, rows: 1, y: 0, x: i + 1 }
+        }));
+        this.allEditions = [this.mainEdition.edition, ...this.otherEditions.map(x => x.edition)]
+      })).subscribe(() => this.changeXmlId({
+        editionTitle: this.mainEdition.edition.editionTitle,
+        xmlId: this.mainEdition.edition.selectedPage.selectedXmlId
+      }));
   }
 
   changePage(args: PageChangedArgs): void {
-    const edition = this.editions.find(x => x.editionTitle === args.editionTitle);
+    const edition = this.allEditions.find(x => x.editionTitle === args.editionTitle);
     const newPage = edition.pages.find(x => x.id == args.pageId);
-    const newPageXmlIds = this.synopsisService.getXmlIdsWithCorrespInOtherEditions(this.editions.map(x => x.editionSource), newPage);
+    const newPageXmlIds = this.synopsisService.getXmlIdsWithCorrespInOtherEditions(this.allEditions.map(x => x.editionSource), newPage);
     edition.selectedPage.page = newPage;
     edition.selectedPage.xmlIds = newPageXmlIds;
 
@@ -56,11 +91,11 @@ export class SynopsisComponent implements OnInit, OnDestroy {
   }
 
   changeXmlId(args: XmlIdChangedArgs): void {
-    const edition = this.editions.find(x => x.editionTitle === args.editionTitle);
+    const edition = this.allEditions.find(x => x.editionTitle === args.editionTitle);
     const newXmlId = edition.selectedPage.xmlIds.find(x => x === args.xmlId);
     edition.selectedPage.selectedXmlId = newXmlId;
 
-    const otherEditions = this.editions.filter(x => x.editionTitle !== args.editionTitle);
+    const otherEditions = this.allEditions.filter(x => x.editionTitle !== args.editionTitle);
     for (const otherEdition of otherEditions) {
       console.group(otherEdition.editionTitle)
 
@@ -77,7 +112,7 @@ export class SynopsisComponent implements OnInit, OnDestroy {
         console.log("The corresp page found is the current one")
       }
 
-      const newPageXmlIds = this.synopsisService.getXmlIdsWithCorrespInOtherEditions(this.editions.map(x => x.editionSource), newPage);
+      const newPageXmlIds = this.synopsisService.getXmlIdsWithCorrespInOtherEditions(this.allEditions.map(x => x.editionSource), newPage);
       const element = this.synopsisService.getPageElementByAttributeOrDefault(newPage, { key: "corresp", value: newXmlId });
       const elementXmlId = element?.getAttribute("xml:id");
       console.log("Element found is", element, newXmlId, elementXmlId);
@@ -105,4 +140,9 @@ export class SynopsisComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.editionsSubscription.unsubscribe();
   }
+}
+
+export interface SynopsisEditionItem {
+  edition: SynopsisEdition;
+  gridsterItem: GridsterItem;
 }

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { map, Observable, shareReplay } from "rxjs";
+import { combineLatest, map, Observable, shareReplay } from "rxjs";
 import { StructureXmlParserService } from "../../services/xml-parsers/structure-xml-parser.service";
 import { EVTStatusService } from "../../services/evt-status.service";
 import { Page } from "../../models/evt-models";
@@ -11,8 +11,19 @@ import { Attribute, SynopsisEdition } from "./synopsis.models";
     providedIn: 'root',
 })
 export class SynopsisService {
-    readonly allEditions$: Observable<SynopsisEdition[]> = this.editionDataService.allEditionSources$.pipe(
+    readonly mainEdition$: Observable<SynopsisEdition> = this.editionDataService.mainEditionSource$.pipe(
+        map(editionSources => this.mapToSynopsisEdition([editionSources])[0]),
+        shareReplay(1));
+
+    readonly otherEditions$: Observable<SynopsisEdition[]> = this.editionDataService.otherEditionSources$.pipe(
         map(editionSources => this.mapToSynopsisEdition(editionSources)),
+        shareReplay(1));
+
+    readonly allEditions$: Observable<SynopsisEdition[]> = combineLatest([
+        this.mainEdition$,
+        this.otherEditions$,
+    ]).pipe(
+        map(([main, others]) => [main, ...others]),
         shareReplay(1));
 
     constructor(
