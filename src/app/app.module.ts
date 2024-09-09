@@ -149,6 +149,7 @@ import { SynopsisComponent } from './view-modes/synopsis/synopsis.component';
 import { SynopsisTextPanelComponent } from './view-modes/synopsis/synopsis-text-panel/synopsis-text-panel.component';
 import { SynopsisPageSelector } from './view-modes/synopsis/synopsis-page-selector/synopsis-page-selector.component';
 import { SynopsisXmlIdSelectorComponent } from './view-modes/synopsis/synopsis-xml-id-selector/synopsis-xml-id-selector.component';
+import { SynopsisEditionLevelSelectorComponent } from './view-modes/synopsis/synopsis-edition-level-selector/synopsis-edition-level-selector.component';
 
 const routes: Routes = [
 ];
@@ -284,8 +285,9 @@ const DynamicComponents = [
     SynopsisComponent,
     SynopsisTextPanelComponent,
     SynopsisPageSelector,
-    ...DynamicComponents,
     SynopsisXmlIdSelectorComponent,
+    SynopsisEditionLevelSelectorComponent,
+    ...DynamicComponents,
   ],
   imports: [
     AppRoutingModule,
