@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SynopsisEdition, PageChangedArgs, XmlIdChangedArgs } from '../synopsis.models';
+import { Subject } from 'rxjs';
+import { EntitiesSelectItem } from 'src/app/components/entities-select/entities-select.component';
 
 @Component({
   selector: 'evt-synopsis-text-panel',
@@ -11,12 +13,14 @@ export class SynopsisTextPanelComponent implements OnInit {
   @Output() onPageChanged = new EventEmitter<PageChangedArgs>();
   @Output() onXmlIdChanged = new EventEmitter<XmlIdChangedArgs>();
 
+  public itemsToHighlight$ = new Subject<EntitiesSelectItem[]>();
+  
   constructor(
   ) {
   }
 
   ngOnInit(): void {
-    console.log("ngOnInit", this.edition.editionTitle)
+
   }
 
   changePage(pageId: string): void {
@@ -24,7 +28,11 @@ export class SynopsisTextPanelComponent implements OnInit {
   }
 
   changeXmlId(xmlId: string): void {
-    this.onXmlIdChanged.emit({editionTitle: this.edition.editionTitle, xmlId: xmlId })
+    this.onXmlIdChanged.emit({ editionTitle: this.edition.editionTitle, xmlId: xmlId })
+  }
+
+  changeSelection(items: EntitiesSelectItem[]){
+    this.itemsToHighlight$.next(items)
   }
 }
 

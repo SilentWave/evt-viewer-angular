@@ -1,17 +1,40 @@
 <evt-panel>
     <div header-left>
-        <evt-synopsis-page-selector [pageList]="this.edition.selectedPage.pageSelectionList"
-            [selectedPage]="this.edition.selectedPage.pageSelectionList.selectedPage"
-            (onSelectionChanged)="this.changePage($event)"></evt-synopsis-page-selector>
-        <evt-synopsis-xml-id-selector [xmlIds]="this.edition.selectedPage.xmlIds"
-            [selectedXmlId]="this.edition.selectedPage.selectedXmlId"
-            (onXmlIdChanged)="this.changeXmlId($event)"></evt-synopsis-xml-id-selector>
+        <evt-synopsis-page-selector [pageList]="edition.selectedPage.pageSelectionList"
+            [selectedPage]="edition.selectedPage.pageSelectionList.selectedPage"
+            (onSelectionChanged)="changePage($event)"></evt-synopsis-page-selector>
+        <evt-synopsis-xml-id-selector [xmlIds]="edition.selectedPage.xmlIds"
+            [selectedXmlId]="edition.selectedPage.selectedXmlId"
+            (onXmlIdChanged)="changeXmlId($event)"></evt-synopsis-xml-id-selector>
     </div>
     <div content evtAnnotator>
         <ng-container *ngIf="edition">
-            <evt-page *ngIf="true" [attr.data-id]="this.edition.selectedPage.page.id"
-                [data]="this.edition.selectedPage.page" [editionLevel]="edition.editionLevel" [textFlow]="false"
-                [itemsToHighlight]="[]"></evt-page>
+            <evt-page *ngIf="true" [attr.data-id]="edition.selectedPage.page.id"
+                [data]="edition.selectedPage.page" [editionLevel]="edition.editionLevel" [textFlow]="false"
+                [itemsToHighlight]="itemsToHighlight$ | async"></evt-page>
         </ng-container>
+    </div>
+
+    <div footer>
+        <!-- <evt-button
+            [iconLeft]="{icon: 'search'}"
+            label="Search"
+            additionalClasses="me-1"
+            (btnClick)="toggleSecondaryContent('SEARCH_RESULTS')"
+            [active]="secondaryContent === 'SEARCH_RESULTS'">
+        </evt-button> -->
+        <evt-entities-select (selectionChange)="changeSelection($event)"></evt-entities-select>
+        <!-- <evt-button *ngIf="enableProseVersesToggler"
+            [iconLeft]="proseVersesTogglerIcon"
+            [label]="textFlow | translate"
+            additionalClasses="ms-1"
+            (btnClick)="toggleProseVerses()">
+        </evt-button>
+        <evt-button *ngIf="enableHideDeletionsToggler"
+            [iconLeft]="hideDeletionsTogglerIcon"
+            [label]="deletionsText | translate "
+            additionalClasses="ms-1"
+            (btnClick)="toggleHideDeletions()">
+        </evt-button> -->
     </div>
 </evt-panel>
