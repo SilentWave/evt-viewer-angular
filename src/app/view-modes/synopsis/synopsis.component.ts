@@ -74,9 +74,9 @@ export class SynopsisComponent implements OnInit, OnDestroy {
           gridsterItem: { cols: 1, rows: 1, y: 0, x: i + 1 }
         }));
         this.allEditions = [this.mainEdition.edition, ...this.otherEditions.map(x => x.edition)]
-      })).subscribe(() => this.changeXmlId({
+      })).subscribe(() => this.changePage({
         editionTitle: this.mainEdition.edition.editionTitle,
-        xmlId: this.mainEdition.edition.selectedPage.selectedXmlId
+        pageId: this.mainEdition.edition.selectedPage.page.id
       }));
   }
 
