@@ -83,7 +83,7 @@ export class SynopsisComponent implements OnInit, OnDestroy {
   changePage(args: PageChangedArgs): void {
     const edition = this.allEditions.find(x => x.editionTitle === args.editionTitle);
     const newPage = edition.pages.find(x => x.id == args.pageId);
-    const newPageXmlIds = this.synopsisService.getXmlIdsWithCorrespInOtherEditions(this.allEditions.map(x => x.editionSource), newPage);
+    const newPageXmlIds = this.synopsisService.getXmlIdsWithCorrespInOtherEditions(this.allEditions.map(x => x.editionSource), edition.editionSource, newPage);
     edition.selectedPage.page = newPage;
     edition.selectedPage.xmlIds = newPageXmlIds;
 
@@ -112,7 +112,7 @@ export class SynopsisComponent implements OnInit, OnDestroy {
         console.log("The corresp page found is the current one")
       }
 
-      const newPageXmlIds = this.synopsisService.getXmlIdsWithCorrespInOtherEditions(this.allEditions.map(x => x.editionSource), newPage);
+      const newPageXmlIds = this.synopsisService.getXmlIdsWithCorrespInOtherEditions(this.allEditions.map(x => x.editionSource), otherEdition.editionSource, newPage);
       const element = this.synopsisService.getPageElementByAttributeOrDefault(newPage, { key: "corresp", value: newXmlId });
       const elementXmlId = element?.getAttribute("xml:id");
       console.log("Element found is", element, newXmlId, elementXmlId);

@@ -34,13 +34,15 @@ export class SynopsisService {
     ) {
     }
 
-    getXmlIdsWithCorrespInOtherEditions(editions: HTMLElement[], page: Page): string[] {
+    getXmlIdsWithCorrespInOtherEditions(editions: HTMLElement[], editionToSkip: HTMLElement, page: Page): string[] {
         const xmlIds = page.originalContent.flatMap(x => this.recursiveParseAttribute(x, "xml:id"));
-        const corresps = editions.flatMap(x => {
-            return this.recursiveParseAttribute(x, "corresp");
-        });
+        const corresps = editions
+            .filter(x => x !== editionToSkip)
+            .flatMap(x => {
+                return this.recursiveParseAttribute(x, "corresp");
+            });
         const result = xmlIds.filter(xmlId =>
-            corresps.some(corresp => corresp.value.includes(xmlId.value)));
+            corresps.some(corresp =>  this.matchCorresp(corresp, xmlId.value)));
         return result.map(x => x.value);
     }
 
@@ -49,15 +51,17 @@ export class SynopsisService {
 
         const page = pages.find(page => {
             const pageCorresps = page.originalContent.flatMap(x => this.recursiveParseAttribute(x, 'corresp'));
-            const containsCorresp = pageCorresps.filter(corresp => {
-                let parts = corresp.value.split(' ').map(x => x.trim());
-                parts = parts.flatMap(x => x.split(':'));
-                parts = parts.flatMap(x => x.startsWith('#') ? x.substring(1) : x);
-                return parts.some(x => x === xmlId);
-            });
+            const containsCorresp = pageCorresps.filter(corresp => this.matchCorresp(corresp, xmlId));
             return containsCorresp.length > 0;
         });
         return page;
+    }
+
+    private matchCorresp(corresp: Attribute, xmlId: string) {
+        let parts = corresp.value.split(' ').map(x => x.trim());
+        parts = parts.flatMap(x => x.split(':'));
+        parts = parts.flatMap(x => x.startsWith('#') ? x.substring(1) : x);
+        return parts.some(x => x === xmlId);
     }
 
     getPageElementByAttributeOrDefault(newPage: Page, attribute: Attribute): HTMLElement | null {
@@ -74,7 +78,7 @@ export class SynopsisService {
             const pages = this.editionStructureParser.parsePages(source).pages;
             const editionTitle = this.prefatoryMatterParser.parseEditionTitle(source);
             const defaultPage = pages[0];
-            const xmlIds = this.getXmlIdsWithCorrespInOtherEditions(editionSources, defaultPage);
+            const xmlIds = this.getXmlIdsWithCorrespInOtherEditions(editionSources, source, defaultPage);
             const pageSelectionList = {
                 selectedPage: {
                     pageId: defaultPage.id,
