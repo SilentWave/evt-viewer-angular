@@ -3,7 +3,7 @@
 <gridster [options]="this.gridsterOptions">
     <gridster-item [item]="this.mainEdition.gridsterItem" *ngIf="this.mainEdition">
         <evt-synopsis-text-panel [edition]="this.mainEdition.edition" (onPageChanged)="this.changePage($event)"
-            (onXmlIdChanged)="this.changeXmlId($event)"></evt-synopsis-text-panel>
+            (onXmlIdChanged)="this.changeXmlId($event)" (onEditionLevelChanged)="changeEditionLevel($event)"></evt-synopsis-text-panel>
     </gridster-item>
     <gridster-item [item]="this.otherPanelGridsterItem" *ngIf="this.otherEditions.length > 0">
         <div class="h-100" #otherEditionsPanel [class.align-self-center]="this.otherEditions.length === 0"

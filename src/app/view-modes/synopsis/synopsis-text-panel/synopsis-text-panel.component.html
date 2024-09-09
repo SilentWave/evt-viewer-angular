@@ -1,18 +1,22 @@
 <evt-panel>
-    <div header-left>
+    <div header-left class="d-flex">
         <evt-synopsis-page-selector [pageList]="edition.selectedPage.pageSelectionList"
             [selectedPage]="edition.selectedPage.pageSelectionList.selectedPage"
             (onSelectionChanged)="changePage($event)"></evt-synopsis-page-selector>
-        <evt-synopsis-xml-id-selector [xmlIds]="edition.selectedPage.xmlIds"
-            [selectedXmlId]="edition.selectedPage.selectedXmlId"
-            (onXmlIdChanged)="changeXmlId($event)"></evt-synopsis-xml-id-selector>
+        <div class="mx-1">
+            <evt-synopsis-xml-id-selector [xmlIds]="edition.selectedPage.xmlIds"
+                [selectedXmlId]="edition.selectedPage.selectedXmlId"
+                (onXmlIdChanged)="changeXmlId($event)"></evt-synopsis-xml-id-selector>
+        </div>
+        <div class="mx-1">
+            <evt-synopsis-edition-level-selector
+                (onEditionLevelChanged)="changeEditionLevel($event)"></evt-synopsis-edition-level-selector>
+        </div>
     </div>
     <div content evtAnnotator>
-        <ng-container *ngIf="edition">
-            <evt-page *ngIf="true" [attr.data-id]="edition.selectedPage.page.id"
-                [data]="edition.selectedPage.page" [editionLevel]="edition.editionLevel" [textFlow]="false"
-                [itemsToHighlight]="itemsToHighlight$ | async"></evt-page>
-        </ng-container>
+        <evt-page *ngIf="edition" [attr.data-id]="edition.selectedPage.page.id" [data]="edition.selectedPage.page"
+            [editionLevel]="edition.editionLevel" [textFlow]="false"
+            [itemsToHighlight]="itemsToHighlight$ | async"></evt-page>
     </div>
 
     <div footer>

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SynopsisService } from './synopsis.service';
 import { combineLatest, map, Subscription } from 'rxjs';
-import { PageChangedArgs, SynopsisEdition, XmlIdChangedArgs } from './synopsis.models';
+import { EditionLevelChangedArgs, PageChangedArgs, SynopsisEdition, XmlIdChangedArgs } from './synopsis.models';
 import { CompactType, DisplayGrid, GridsterConfig, GridsterItem, GridType } from 'angular-gridster2';
 
 @Component({
@@ -131,6 +131,11 @@ export class SynopsisComponent implements OnInit, OnDestroy {
 
       console.groupEnd();
     }
+  }
+
+  changeEditionLevel(args: EditionLevelChangedArgs) {
+    const edition = this.allEditions.find(x => x.editionTitle === args.editionTitle);
+    edition.editionLevel = args.editionLevel;
   }
 
   getGridsterItemForIndex(index: number) {

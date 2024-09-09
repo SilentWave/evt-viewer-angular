@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SynopsisEdition, PageChangedArgs, XmlIdChangedArgs } from '../synopsis.models';
+import { SynopsisEdition, PageChangedArgs, XmlIdChangedArgs, EditionLevelChangedArgs } from '../synopsis.models';
 import { Subject } from 'rxjs';
 import { EntitiesSelectItem } from 'src/app/components/entities-select/entities-select.component';
+import { EditionLevel } from 'src/app/app.config';
 
 @Component({
   selector: 'evt-synopsis-text-panel',
@@ -12,9 +13,10 @@ export class SynopsisTextPanelComponent implements OnInit {
   @Input() edition: SynopsisEdition;
   @Output() onPageChanged = new EventEmitter<PageChangedArgs>();
   @Output() onXmlIdChanged = new EventEmitter<XmlIdChangedArgs>();
+  @Output() onEditionLevelChanged = new EventEmitter<EditionLevelChangedArgs>();
 
   public itemsToHighlight$ = new Subject<EntitiesSelectItem[]>();
-  
+
   constructor(
   ) {
   }
@@ -31,9 +33,11 @@ export class SynopsisTextPanelComponent implements OnInit {
     this.onXmlIdChanged.emit({ editionTitle: this.edition.editionTitle, xmlId: xmlId })
   }
 
-  changeSelection(items: EntitiesSelectItem[]){
+  changeSelection(items: EntitiesSelectItem[]) {
     this.itemsToHighlight$.next(items)
   }
+
+  changeEditionLevel(level: EditionLevel) {
+    this.onEditionLevelChanged.emit({ editionTitle: this.edition.editionTitle, editionLevel: level });
+  }
 }
-
-

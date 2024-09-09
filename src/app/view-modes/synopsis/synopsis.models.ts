@@ -40,3 +40,8 @@ export interface XmlIdChangedArgs {
     editionTitle: string,
     xmlId: string,
 }
+
+export interface EditionLevelChangedArgs{
+    editionLevel: EditionLevel,
+    editionTitle: string,
+}
