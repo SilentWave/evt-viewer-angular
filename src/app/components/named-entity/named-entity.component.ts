@@ -5,6 +5,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { NamedEntity } from '../../models/evt-models';
 import { register } from '../../services/component-register.service';
 import { EVTModelService } from '../../services/evt-model.service';
+import { Observable } from 'rxjs';
 
 @register(NamedEntity)
 @Component({
@@ -35,6 +36,16 @@ export class NamedEntityComponent implements OnInit {
     return '';
   }
 
+  occurrencesFoundLabel$: Observable<OccurrencesLabel> = this.occurrences$.pipe(
+    map(occurrences => {
+      const occurrencesCount = occurrences
+        .flatMap(y => y.refsByDoc)
+        .reduce((a, b) => a + (b.refs ? b.refs.length : 0), 0);
+      const formsCount = occurrences.length;
+      return { occurrencesCount, formsCount };
+    }),
+  )
+
   constructor(
     private evtModelService: EVTModelService,
   ) {
@@ -56,4 +67,9 @@ export class NamedEntityComponent implements OnInit {
     event.stopPropagation();
   }
 
+}
+
+export interface OccurrencesLabel {
+  occurrencesCount: number,
+  formsCount: number,
 }
