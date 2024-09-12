@@ -1,7 +1,7 @@
 <span class="ne-occurrence text-center" *ngFor="let refByDoc of occurrence.refsByDoc">
     <div class="fw-bold">{{ occurrenceContent }}</div>
-    <div class="fst-italic">{{refByDoc.refs?.length}} occurrences</div>
     <div>{{ editionInfo?.editionTitle }}</div>
+    <div class="fst-italic">{{refByDoc.refs?.length}} occurrences</div>
     <evt-named-entity-occurrence-pages-list [occurrences]="[occurrence]" (onItemClicked)="goToOccurrenceRef(refByDoc)">
     </evt-named-entity-occurrence-pages-list>
 </span>
