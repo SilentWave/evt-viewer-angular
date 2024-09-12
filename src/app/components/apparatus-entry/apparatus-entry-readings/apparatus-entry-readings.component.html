@@ -1,4 +1,4 @@
-<span class="app-entry-reading">
+<span class="app-entry-reading" *ngIf="data.lemma">
     <!--
         It's necessary to handle both readings with and without nested apps, because nested apps inside app-entry-detail have different behaviour,
         so we can't use apparatus-entry-component to render them.
