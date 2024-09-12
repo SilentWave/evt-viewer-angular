@@ -150,6 +150,7 @@ import { SynopsisTextPanelComponent } from './view-modes/synopsis/synopsis-text-
 import { SynopsisPageSelector } from './view-modes/synopsis/synopsis-page-selector/synopsis-page-selector.component';
 import { SynopsisXmlIdSelectorComponent } from './view-modes/synopsis/synopsis-xml-id-selector/synopsis-xml-id-selector.component';
 import { SynopsisEditionLevelSelectorComponent } from './view-modes/synopsis/synopsis-edition-level-selector/synopsis-edition-level-selector.component';
+import { NamedEntityOccurrencePagesListComponent } from './components/named-entity/named-entity-occurrence-pages-list/named-entity-occurrence-pages-list.component';
 
 const routes: Routes = [
 ];
@@ -288,6 +289,7 @@ const DynamicComponents = [
     SynopsisXmlIdSelectorComponent,
     SynopsisEditionLevelSelectorComponent,
     ...DynamicComponents,
+    NamedEntityOccurrencePagesListComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -200,5 +200,6 @@
     "criticalNote": "Critical note",
     "showsDeletions": "Show deletions",
     "hidesDeletions": "Hide deletions",
-    "occurrencesFoundLabel": "{{occurrencesCount}} occurrences found in {{formsCount}} forms"
+    "occurrencesFoundLabel": "{{occurrencesCount}} occurrences found in {{formsCount}} forms",
+    "form": "Form"
 }
