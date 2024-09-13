@@ -21,7 +21,7 @@ const appRoutes: Routes = [
   { path: 'textSources', component: TextSourcesComponent },
   { path: 'textVersions', component: TextVersionsComponent },
   { path: 'documentalMixed', component: DocumentalMixedComponent },
-  { path: 'synopsis', component: SynopsisComponent },
+  { path: 'synopticEdition', component: SynopsisComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })],
