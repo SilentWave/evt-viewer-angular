@@ -65,7 +65,7 @@
                                         <span *ngIf="editionOccurrence.occurrences.length === 0">
                                             {{ 'noOccurrences' | translate }}
                                         </span>
-                                        <div>{{ editionOccurrence.editionInfo.editionTitle }}</div>
+                                        <div>{{ editionOccurrence.editionInfo | displayFriendlyName:'editionTitle':'editionFriendlyName' }}</div>
                                         <ng-container *ngIf="editionOccurrence.occurrences.length > 0">
                                             <div class="fst-italic">
                                                 {{ editionOccurrence.pageOccurrenceCount }} occurrences

@@ -6,6 +6,7 @@ import { Page } from "../../models/evt-models";
 import { PrefatoryMatterParserService } from "../../services/xml-parsers/prefatory-matter-parser.service";
 import { EditionDataService } from "src/app/services/edition-data.service";
 import { Attribute, SynopsisEdition } from "./synopsis.models";
+import { EditionSource } from "src/app/services/named-entities.service";
 
 @Injectable({
     providedIn: 'root',
@@ -73,12 +74,13 @@ export class SynopsisService {
         return null;
     }
 
-    private mapToSynopsisEdition(editionSources: HTMLElement[]) {
+    private mapToSynopsisEdition(editionSources: EditionSource[]) {
         const result = editionSources.map(source => {
-            const pages = this.editionStructureParser.parsePages(source).pages;
-            const editionTitle = this.prefatoryMatterParser.parseEditionTitle(source);
+            const pages = this.editionStructureParser.parsePages(source.editionData).pages;
+            const editionTitle = this.prefatoryMatterParser.parseEditionTitle(source.editionData);
             const defaultPage = pages[0];
-            const xmlIds = this.getXmlIdsWithCorrespInOtherEditions(editionSources, source, defaultPage);
+            const xmlIds = this.getXmlIdsWithCorrespInOtherEditions(
+                editionSources.map(x => x.editionData), source.editionData, defaultPage);
             const pageSelectionList = {
                 selectedPage: {
                     pageId: defaultPage.id,
@@ -89,8 +91,8 @@ export class SynopsisService {
                     pageLabel: page.label,
                 }))
             };
-            return {
-                editionSource: source,
+            const editionSource: SynopsisEdition = {
+                editionData: source.editionData,
                 pages: pages,
                 selectedPage: {
                     page: defaultPage,
@@ -101,6 +103,7 @@ export class SynopsisService {
                 editionTitle: editionTitle,
                 editionLevel: this.evtStatusService.defaultEditionLevel,
             };
+            return editionSource;
         });
         return result;
     }

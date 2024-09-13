@@ -1,21 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, Observable, of } from 'rxjs';
+import { forkJoin, Observable, of, throwError } from 'rxjs';
 import { catchError, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { AppConfig, EditionUrl } from '../app.config';
-import { OriginalEncodingNodeType } from '../models/evt-models';
 import { parseXml } from '../utils/xml-utils';
+import { PrefatoryMatterParserService } from './xml-parsers/prefatory-matter-parser.service';
+import { EditionInfo, EditionSource } from './named-entities.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EditionDataService {
   private readonly editionUrls = AppConfig.evtSettings.files.editionUrls || [];
-  readonly mainEditionSource$: Observable<OriginalEncodingNodeType> = this.loadAndParseMainEditionData().pipe(
+  private readonly mainUrl = this.editionUrls.find(x => this.isMainUrl(x)) ?? this.editionUrls[0];
+  private readonly otherUrls = this.editionUrls.filter(x => !this.isMainUrl(x)) ?? this.editionUrls.slice(1);
+
+  readonly mainEditionSource$: Observable<EditionSource> = this.loadAndParseMainEditionData().pipe(
     shareReplay(1));
-  readonly otherEditionSources$: Observable<OriginalEncodingNodeType[]> = this.loadOtherEditionsData().pipe(
+  readonly otherEditionSources$: Observable<EditionSource[]> = this.loadOtherEditionsData().pipe(
     shareReplay(1));
-  readonly allEditionSources$: Observable<OriginalEncodingNodeType[]> = forkJoin({
+  readonly allEditionSources$: Observable<EditionSource[]> = forkJoin({
     main: this.mainEditionSource$,
     others: this.otherEditionSources$,
   }).pipe(
@@ -24,19 +28,18 @@ export class EditionDataService {
 
   constructor(
     private http: HttpClient,
+    private prefatoryMatterParser: PrefatoryMatterParserService
   ) {
   }
 
-  private loadAndParseMainEditionData(): Observable<OriginalEncodingNodeType> {
-    const mainUrl = this.editionUrls.find(x => this.isMainUrl(x)) ?? this.editionUrls[0];
-    return this.loadAndParseEditionData(mainUrl.value);
+  private loadAndParseMainEditionData(): Observable<EditionSource> {
+    return this.loadAndParseEditionData(this.mainUrl);
   }
 
-  private loadOtherEditionsData(): Observable<OriginalEncodingNodeType[]> {
-    const otherUrls = this.editionUrls.filter(x => !this.isMainUrl(x)) ?? this.editionUrls.slice(1);
-    if(!otherUrls.length) return of([]);
+  private loadOtherEditionsData(): Observable<EditionSource[]> {
+    if(!this.otherUrls.length) return of([]);
 
-    const requests = otherUrls.map(editionUrl => this.loadAndParseEditionData(editionUrl.value));
+    const requests = this.otherUrls.map(editionUrl => this.loadAndParseEditionData(editionUrl));
     return forkJoin(requests);
   }
 
@@ -44,11 +47,18 @@ export class EditionDataService {
     return url.type === 'main';
   }
 
-  private loadAndParseEditionData(editionUrl: string): Observable<OriginalEncodingNodeType> {
-    return this.http.get(editionUrl, { responseType: 'text' }).pipe(
+  private loadAndParseEditionData({value, friendlyName}: EditionUrl): Observable<EditionSource> {
+    return this.http.get(value, { responseType: 'text' }).pipe(
       map((source) => parseXml(source)),
-      mergeMap((editionData) => this.loadXIinclude(editionData, editionUrl.substring(0, editionUrl.lastIndexOf('/') + 1))),
-      catchError(() => this.handleLoadingError())
+      mergeMap((editionData) => this.loadXIinclude(editionData, value.substring(0, value.lastIndexOf('/') + 1))),
+      map(editionData => {
+        const editionInfo: EditionInfo = {
+          editionTitle: this.prefatoryMatterParser.parseEditionTitle(editionData),
+          editionFriendlyName: friendlyName
+        }
+        return { editionData, editionInfo };
+      }),
+      catchError(() => throwError(() => this.createError()))
     );
   }
 
@@ -89,15 +99,11 @@ export class EditionDataService {
     return of(doc);
   }
 
-  private handleLoadingError() {
-    // TODO: TEMP
-    const errorEl: HTMLElement = document.createElement('div');
+  private createError() {
     if (!this.editionUrls || this.editionUrls.length === 0) {
-      errorEl.textContent = 'Missing configuration for edition files. Data cannot be loaded.';
+      return new Error('Missing configuration for edition files. Data cannot be loaded.');
     } else {
-      errorEl.textContent = 'There was an error in loading edition files.';
+      return new Error('There was an error in loading edition files.');
     }
-
-    return of(errorEl);
   }
 }

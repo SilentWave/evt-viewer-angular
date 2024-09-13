@@ -7,7 +7,7 @@ export interface Attribute {
 }
 
 export interface SynopsisEdition {
-    editionSource: HTMLElement,
+    editionData: HTMLElement,
     selectedPage: SynopsisSelectedPage,
     pages: Page[],
     editionLevel: EditionLevel,

@@ -15,17 +15,9 @@ export class NamedEntitiesService {
         main: this.editionDataService.mainEditionSource$,
         others: this.editionDataService.otherEditionSources$,
     }).pipe(
-        map(({ main, others }) => new AllEditionSources(
-            {
-                editionInfo: { editionTitle: this.prefatoryMatterParser.parseEditionTitle(main) },
-                editionData: main
-            },
-            others.map(other => ({
-                editionInfo: { editionTitle: this.prefatoryMatterParser.parseEditionTitle(other) },
-                editionData: other
-            }))
-        )),
-        shareReplay(1));
+        map(({ main, others }) => new AllEditionSources(main, others)),
+        shareReplay(1)
+    );
 
     private readonly allEditionsParsedLists$ = this.allEditionSources$.pipe(
         map((sources) => {
@@ -107,7 +99,6 @@ export class NamedEntitiesService {
         private editionDataService: EditionDataService,
         private namedEntitiesParser: NamedEntitiesParserService,
         private editionStructureParser: StructureXmlParserService,
-        private prefatoryMatterParser: PrefatoryMatterParserService,
     ) { }
 }
 
@@ -134,6 +125,7 @@ export interface EditionSource {
 
 export interface EditionInfo {
     editionTitle: string;
+    editionFriendlyName: string;
 }
 
 export interface EditionNamedEntities {

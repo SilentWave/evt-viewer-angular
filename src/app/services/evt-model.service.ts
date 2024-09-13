@@ -33,8 +33,8 @@ import { ModParserService } from './xml-parsers/mod-parser.service';
   providedIn: 'root',
 })
 export class EVTModelService {
-  public readonly editionSource$: Observable<OriginalEncodingNodeType> = this.editionDataService.mainEditionSource$
-    .pipe(
+  public readonly editionSource$: Observable<OriginalEncodingNodeType> = this.editionDataService.mainEditionSource$.pipe(
+      map(x => x.editionData),
       shareReplay(1),
     );
 
@@ -43,11 +43,12 @@ export class EVTModelService {
     shareReplay(1),
   );
 
-  public readonly projectInfo$ = this.prefatoryMatterParser.projectInfo$.pipe(
+  public readonly projectInfo$ =  this.editionSource$.pipe(
+    map((source) => this.prefatoryMatterParser.parseProjectInfo(source)),
     shareReplay(1),
   );
 
-  public readonly styleDefaults$ = this.prefatoryMatterParser.projectInfo$.pipe(
+  public readonly styleDefaults$ = this.projectInfo$.pipe(
     map((projectInfo) => projectInfo?.encodingDesc?.styleDefDecl),
     shareReplay(1),
   );
