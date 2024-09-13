@@ -5,7 +5,6 @@ import { map, shareReplay, Observable, forkJoin } from "rxjs";
 import { NamedEntities, NamedEntityOccurrence, OriginalEncodingNodeType } from "../models/evt-models";
 import { StructureXmlParserService } from "./xml-parsers/structure-xml-parser.service";
 import { Map } from '../utils/js-utils';
-import { PrefatoryMatterParserService } from "./xml-parsers/prefatory-matter-parser.service";
 
 @Injectable({
     providedIn: 'root',
