@@ -64,12 +64,12 @@
 			"enable": true
 		},
 		{
-			"icon": "documix",
+			"icon": "versions",
 			"iconSet": "evt",
-			"id": "synopsis",
-			"label": "Synopsis",
+			"id": "synopticEdition",
+			"label": "Synoptic edition",
 			"enable": true
-		}
+	    }
 	],
 	"localization": true,
 	"defaultLocalization": "en",
