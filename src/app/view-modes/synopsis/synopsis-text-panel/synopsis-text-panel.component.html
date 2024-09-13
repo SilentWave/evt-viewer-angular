@@ -9,7 +9,7 @@
                 (onXmlIdChanged)="changeXmlId($event)"></evt-synopsis-xml-id-selector>
         </div>
         <div class="mx-1">
-            <evt-synopsis-edition-level-selector
+            <evt-synopsis-edition-level-selector [editionLevel]="edition.editionLevel"
                 (onEditionLevelChanged)="changeEditionLevel($event)"></evt-synopsis-edition-level-selector>
         </div>
     </div>
