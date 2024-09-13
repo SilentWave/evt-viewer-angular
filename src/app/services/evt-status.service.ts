@@ -20,14 +20,10 @@ export class EVTStatusService {
     get defaultEditionLevel(): EditionLevel {
         const defaultConfig = AppConfig.evtSettings.edition.defaultEdition;
         const availableEditionLevels = AppConfig.evtSettings.edition.availableEditionLevels?.filter(((e) => e.enable)) ?? [];
-        let defaultEdition = availableEditionLevels[0];
-        if (defaultConfig) {
-            defaultEdition = availableEditionLevels.find((e) => e.id === defaultConfig) ?? defaultEdition;
-        }
-
-        return defaultEdition;
+        return defaultConfig ? availableEditionLevels.find((e) => e.id === defaultConfig)
+            : availableEditionLevels[0];
     }
-    
+
     get defaultEditionLevelId(): EditionLevelType {
         return this.defaultEditionLevel?.id;
     }
