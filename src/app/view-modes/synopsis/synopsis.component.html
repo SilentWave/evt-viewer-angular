@@ -2,7 +2,7 @@
 
 <gridster [options]="this.gridsterOptions">
     <gridster-item [item]="this.mainEdition.gridsterItem" *ngIf="this.mainEdition">
-        <evt-synopsis-text-panel [edition]="this.mainEdition.edition" (onPageChanged)="this.changePage($event)"
+        <evt-synopsis-text-panel [edition]="this.mainEdition.edition" [secondary]="false" (onPageChanged)="this.changePage($event)"
             (onXmlIdChanged)="this.changeXmlId($event)" (onEditionLevelChanged)="changeEditionLevel($event)"></evt-synopsis-text-panel>
     </gridster-item>
     <gridster-item [item]="this.otherPanelGridsterItem" *ngIf="this.otherEditions.length > 0">
@@ -10,7 +10,7 @@
             [class.empty]="this.otherEditions.length === 0">
             <gridster [options]="this.otherPanelGridsterOptions">
                 <gridster-item [item]="otherEdition.gridsterItem" *ngFor="let otherEdition of this.otherEditions; let i = index">
-                    <evt-synopsis-text-panel [edition]="otherEdition.edition" (onPageChanged)="this.changePage($event)"
+                    <evt-synopsis-text-panel [edition]="otherEdition.edition" [secondary]="true" (onPageChanged)="this.changePage($event)"
                         (onXmlIdChanged)="this.changeXmlId($event)"></evt-synopsis-text-panel>
                 </gridster-item>
             </gridster>

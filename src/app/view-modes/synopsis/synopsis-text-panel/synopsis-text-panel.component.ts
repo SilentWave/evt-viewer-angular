@@ -11,6 +11,7 @@ import { EditionLevel } from 'src/app/app.config';
 })
 export class SynopsisTextPanelComponent implements OnInit {
   @Input() edition: SynopsisEdition;
+  @Input() secondary: boolean;
   @Output() onPageChanged = new EventEmitter<PageChangedArgs>();
   @Output() onXmlIdChanged = new EventEmitter<XmlIdChangedArgs>();
   @Output() onEditionLevelChanged = new EventEmitter<EditionLevelChangedArgs>();
