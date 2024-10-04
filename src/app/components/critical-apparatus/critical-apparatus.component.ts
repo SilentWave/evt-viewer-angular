@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Input } from '@angular/core';
 import { EVTStatusService } from '../../services/evt-status.service';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { ApparatusEntry } from 'src/app/models/evt-models';
 
 @Component({
   selector: 'evt-critical-apparatus',
@@ -13,7 +14,7 @@ export class CriticalApparatusComponent {
 
   private appClasses = ['app'];
   private apparatusInCurrentPage = this.evtStatusService.getPageElementsByClassList(this.appClasses)
-  public entries$ = this.apparatusInCurrentPage.pipe(
+  public entries$: Observable<ApparatusEntry[]> = this.apparatusInCurrentPage.pipe(
     map(data => data.flat())
   )
 
