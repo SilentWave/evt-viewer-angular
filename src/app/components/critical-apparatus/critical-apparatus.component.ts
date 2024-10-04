@@ -22,6 +22,6 @@ export class CriticalApparatusComponent {
   }
 
   constructor(
-    public evtStatusService: EVTStatusService,
+    private evtStatusService: EVTStatusService,
   ) {}
 }
