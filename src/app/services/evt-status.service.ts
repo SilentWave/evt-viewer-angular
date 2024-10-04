@@ -208,7 +208,7 @@ export class EVTStatusService {
     }
 
     /** to avoid loops this function must not be fed with nodes */
-    getPageElementsByClassList(classList) {
+    getPageElementsByClassList(classList: string[]) {
         const attributesNotIncludedInSearch = ['originalEncoding','type','spanElements','includedElements'];
         const maxEffort = 4000;
 
