@@ -3,7 +3,7 @@ import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { BehaviorSubject, combineLatest, merge, Observable, Subject, timer } from 'rxjs';
 import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, withLatestFrom } from 'rxjs/operators';
 
-import { AppConfig, EditionLevelType } from '../app.config';
+import { AppConfig, EditionLevel, EditionLevelType } from '../app.config';
 import { ChangeLayerData, Page, ViewMode } from '../models/evt-models';
 import { EVTModelService } from './evt-model.service';
 import { deepSearch } from '../utils/dom-utils';
@@ -16,15 +16,16 @@ export type URLParams = { [T in URLParamsKeys]: string };
 })
 export class EVTStatusService {
     public availableEditionLevels = AppConfig.evtSettings.edition.availableEditionLevels?.filter(((e) => e.enable)) || [];
-    get defaultEditionLevelId(): EditionLevelType {
+
+    get defaultEditionLevel(): EditionLevel {
         const defaultConfig = AppConfig.evtSettings.edition.defaultEdition;
         const availableEditionLevels = AppConfig.evtSettings.edition.availableEditionLevels?.filter(((e) => e.enable)) ?? [];
-        let defaultEdition = availableEditionLevels[0];
-        if (defaultConfig) {
-            defaultEdition = availableEditionLevels.find((e) => e.id === defaultConfig) ?? defaultEdition;
-        }
+        return defaultConfig ? availableEditionLevels.find((e) => e.id === defaultConfig)
+            : availableEditionLevels[0];
+    }
 
-        return defaultEdition?.id;
+    get defaultEditionLevelId(): EditionLevelType {
+        return this.defaultEditionLevel?.id;
     }
 
     get availableViewModes() {
@@ -207,7 +208,7 @@ export class EVTStatusService {
     }
 
     /** to avoid loops this function must not be fed with nodes */
-    getPageElementsByClassList(classList) {
+    getPageElementsByClassList(classList: string[]) {
         const attributesNotIncludedInSearch = ['originalEncoding','type','spanElements','includedElements'];
         const maxEffort = 4000;
 

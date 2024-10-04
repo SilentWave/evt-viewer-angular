@@ -1,4 +1,4 @@
-<ng-container *ngFor="let element of entries"> 
-    <evt-apparatus-entry-detail *ngIf="element?.lemma && true" [data]="element" (click)="stopPropagation($event)" class="app-list">
+<ng-container *ngFor="let entry of (entries$ | async)"> 
+    <evt-apparatus-entry-detail *ngIf="true" [data]="entry" (click)="stopPropagation($event)" class="app-list">
     </evt-apparatus-entry-detail>
 </ng-container>

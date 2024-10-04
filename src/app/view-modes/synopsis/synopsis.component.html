@@ -1,0 +1,24 @@
+<div *ngIf="this.error">{{ this.error }}</div>
+
+<gridster [options]="this.gridsterOptions">
+    <gridster-item [item]="this.mainEdition.gridsterItem" *ngIf="this.mainEdition">
+        <evt-synopsis-text-panel [edition]="this.mainEdition.edition" [secondary]="false" (onPageChanged)="this.changePage($event)"
+            (onXmlIdChanged)="this.changeXmlId($event)" (onEditionLevelChanged)="changeEditionLevel($event)"></evt-synopsis-text-panel>
+    </gridster-item>
+    <gridster-item [item]="this.otherPanelGridsterItem" *ngIf="this.otherEditions.length > 0">
+        <div class="h-100" #otherEditionsPanel [class.align-self-center]="this.otherEditions.length === 0"
+            [class.empty]="this.otherEditions.length === 0">
+            <gridster [options]="this.otherPanelGridsterOptions">
+                <gridster-item [item]="otherEdition.gridsterItem" *ngFor="let otherEdition of this.otherEditions; let i = index">
+                    <evt-synopsis-text-panel [edition]="otherEdition.edition" [secondary]="true" (onPageChanged)="this.changePage($event)"
+                        (onXmlIdChanged)="this.changeXmlId($event)"></evt-synopsis-text-panel>
+                </gridster-item>
+            </gridster>
+
+            <!-- <evt-button class="btn" [class.btn-float-right]="getWitnesses().length > 0"
+                [additionalClasses]="witnessBtn?.additionalClasses" [label]="witnessBtn?.label | translate"
+                [iconLeft]="witnessBtn?.icon" [title]="witnessBtn?.title | translate"
+                (btnClick)="addWitness()"></evt-button> -->
+        </div>
+    </gridster-item>
+</gridster>

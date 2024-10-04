@@ -71,7 +71,7 @@ export class AppConfig {
         rules['.' + SourceClass + ' .opened'] = `background-color: ${edition.readingColorDark};`;
         rules['.' + AnalogueClass + ':hover'] = `background-color: ${edition.readingColorLight}; cursor:pointer;`;
         rules['.' + SourceClass + ':hover'] = `background-color: ${edition.readingColorLight}; cursor:pointer;`;
-        Object.entries(rules).forEach(([selector,style]) => { updateCSS([[selector,style]]) });
+        Object.entries(rules).forEach(([selector, style]) => { updateCSS([[selector, style]]) });
     }
 
 }
@@ -97,13 +97,13 @@ export interface UiConfig {
     thumbnailsButton: boolean;
     viscollButton: boolean;
     defaultBibliographicStyle: string;
-	  allowedBibliographicStyles: {
-      [key: string]: {
-              id: string;
-        label: string;
-        enabled: boolean;
-              propsOrder: BibliographicProperties[];
-              properties: BibliographicStyle;
+    allowedBibliographicStyles: {
+        [key: string]: {
+            id: string;
+            label: string;
+            enabled: boolean;
+            propsOrder: BibliographicProperties[];
+            properties: BibliographicStyle;
         }
     };
     mainFontFamily: string;
@@ -114,7 +114,7 @@ export interface UiConfig {
     syncZonesHighlightButton: boolean;
 }
 export type CitingRanges = 'issue' | 'volume' | 'page';
-export type BibliographicProperties = 'author'| 'date'| 'title'| 'editor' | 'publication' | 'pubPlace' | 'publisher' | 'doi';
+export type BibliographicProperties = 'author' | 'date' | 'title' | 'editor' | 'publication' | 'pubPlace' | 'publisher' | 'doi';
 export type BibliographicStyle = Partial<{
     propsDelimiter: string;
     authorStyle: Partial<{
@@ -163,13 +163,13 @@ export interface EditionConfig {
         elementAttributesToMatch: string[];
     }>;
     biblView: Partial<{
-		propsToShow: string[];
-		showAttrNames: boolean;
-		showEmptyValues: boolean;
-		inline: boolean;
+        propsToShow: string[];
+        showAttrNames: boolean;
+        showEmptyValues: boolean;
+        inline: boolean;
         commaSeparated: boolean;
         showMainElemTextContent: boolean;
-	}>;
+    }>;
     analogueMarkers: string[];
     sourcesExcludedFromListByParent: string[];
     showChangeLayerMarkerInText: boolean;
@@ -183,12 +183,13 @@ export interface EditionConfig {
     defaultImageZoomLevel: number;
     showSubstitutionMarker: boolean;
     multiPageEngineForCriticalEdition: boolean;
+    editionStructureSeparator: string;
 }
 
 export type EditionImagesSources = 'manifest' | 'graphics';
 
 export interface FileConfig {
-    editionUrls: string[];
+    editionUrls: EditionUrl[];
     editionImagesSource: {
         [T in EditionImagesSources]: EditionImagesConfig;
     };
@@ -202,6 +203,15 @@ export interface FileConfig {
         ui: string;
         editorialConventions: string;
     };
+}
+
+export type EditionUrlType = 'main' | undefined;
+
+export interface EditionUrl {
+    type: EditionUrlType;
+    value: string;
+    enable: boolean;
+    friendlyName: string;
 }
 
 export interface EditionImagesConfig {

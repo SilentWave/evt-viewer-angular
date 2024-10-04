@@ -59,7 +59,7 @@
                     <div>
                         <span class="more-info-label">{{'moreInfoAboutApp' | translate}}</span>
                         <ng-container *ngFor="let rdg of readings">
-                            <div *ngIf="(rdg.attributes | keyvalue).length !== 0" class="mb-2">
+                            <div *ngIf="rdg && (rdg.attributes | keyvalue).length !== 0" class="mb-2">
                                 <span>{{'metadataFor' | translate}} </span>
                                 <ng-container *ngIf="rdg.content.length !== 0">
                                     <evt-reading *ngIf="data.nestedAppsIDs.length === 0" class="info-rdg" [data]="rdg"></evt-reading>

@@ -109,7 +109,7 @@
   "notSignificantVariants": [
     "type=orthographic"
   ],
-  "defaultEdition": "diplomatic",
+  "defaultEdition": "critical",
   "defaultViewMode": "collation",
   "proseVersesToggler": true,
   "defaultTextFlow": "prose",
@@ -170,5 +170,6 @@
     }
   },
   "defaultImageZoomLevel": 0.8,
-  "multiPageEngineForCriticalEdition": false
+  "multiPageEngineForCriticalEdition": false,
+  "editionStructureSeparator": "pb, div[type='chapter']"
 }

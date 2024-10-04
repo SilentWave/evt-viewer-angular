@@ -62,7 +62,7 @@
     font-size: .7rem;
     margin-bottom: 3px;
     display: inline-block !important;
-    cursor: pointer;
+    cursor: default;
     line-height: 0.9rem;
 
     .ne-occurrence-count {
@@ -72,14 +72,13 @@
       border: 1px solid transparent;
     }
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.8) !important;
+    // &:hover {
+    //   background: rgba(255, 255, 255, 0.8) !important;
 
-      .ne-occurrence-count {
-        border: 1px solid #ccc;
-      }
-    }
-
+    //   .ne-occurrence-count {
+    //     border: 1px solid #ccc;
+    //   }
+    // }
   }
 }
 

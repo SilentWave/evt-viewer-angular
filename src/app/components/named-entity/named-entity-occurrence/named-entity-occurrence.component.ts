@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { NamedEntityOccurrence, NamedEntityOccurrenceRef } from '../../../models/evt-models';
 import { EVTStatusService } from '../../../services/evt-status.service';
+import { EditionInfo } from 'src/app/services/named-entities.service';
 
 @Component({
   selector: 'evt-named-entity-occurrence',
@@ -11,6 +12,19 @@ import { EVTStatusService } from '../../../services/evt-status.service';
 export class NamedEntityOccurrenceComponent {
   @Input() occurrence: NamedEntityOccurrence;
   @Input() entityId: string;
+  @Input() editionInfo: EditionInfo;
+
+  get occurrenceContent() {
+    try {
+      const text = this.occurrence.refsByDoc[0].refs[0].content[0] as any;
+      return text.text;
+    }
+    catch (e: any) {
+      console.error(e);
+      console.log('occurrence', this.occurrence);
+      return 'parsing failed';
+    }
+  }
 
   constructor(
     private evtStatusService: EVTStatusService,

@@ -16,7 +16,7 @@ export class StructureXmlParserService {
 
   private frontOrigContentAttr = 'document_front';
   readonly frontTagName = 'front';
-  readonly pageTagName = 'pb';
+  readonly pageTagName = AppConfig.evtSettings.edition.editionStructureSeparator;
   readonly bodyTagName = 'body';
 
   parsePages(el: XMLElement): EditionStructure {

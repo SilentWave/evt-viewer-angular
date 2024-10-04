@@ -198,5 +198,7 @@
   "corrSeq": "Sequenza correzioni",
   "criticalNote": "Nota critica",
   "showsDeletions": "Mostra cancellazioni",
-  "hidesDeletions": "Nascondi cancellazioni"
+  "hidesDeletions": "Nascondi cancellazioni",
+  "occurrencesFoundLabel": "{{occurrencesCount}} occorrenze trovate in {{formsCount}} forme",
+  "form": "Forma"
 }
