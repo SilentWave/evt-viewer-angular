@@ -4,7 +4,6 @@
 @import "./assets/scss/themes";
 @import "./assets/scss/mixins";
 @import "./assets/scss/bootstrapOverrides";
-@import "./assets/config/custom-styles.css";
 
 @font-face {
   font-family: "Junicode";
@@ -334,4 +333,14 @@ evt-mod-detail .tab-content > .active {
 
 evt-main-header .svg-inline--fa {
   height: 0.85em;
+}
+
+evt-page :not(evt-apparatus-entry-detail) .head {
+  font-weight: bold;
+  display: block;
+  padding: 0.5em 0.1em 0.5em 0em;
+}
+
+[ng-reflect-text-flow="verses"] evt-verse {
+  display: block;
 }

@@ -1,3 +1,12 @@
+.w .lb {
+    display: none;
+}
+
+.ab[rend="align-center"] {
+    display: block;
+    text-align: center;
+}
+
 *[rend="strikethrough"] {
     text-decoration: line-through;
 }
@@ -30,10 +39,6 @@
 
 *[place="superscript"] {
     vertical-align: text-bottom;
-}
-
-evt-verse {
-    display: block;
 }
 
 evt-page :not(evt-apparatus-entry-detail) .head {

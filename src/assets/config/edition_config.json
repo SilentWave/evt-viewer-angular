@@ -109,7 +109,7 @@
   "notSignificantVariants": [
     "type=orthographic"
   ],
-  "defaultEdition": "diplomatic",
+  "defaultEdition": "critical",
   "defaultViewMode": "collation",
   "proseVersesToggler": true,
   "defaultTextFlow": "prose",
@@ -152,7 +152,9 @@
     "Parallel",
     "parallel"
   ],
-  "sourcesExcludedFromListByParent": ["desc"],
+  "sourcesExcludedFromListByParent": [
+    "desc"
+  ],
   "showSubstitutionMarker": true,
   "showSeparatorBetweenChanges": true,
   "startingFromDefinitiveLayer": true,
@@ -170,5 +172,6 @@
     }
   },
   "defaultImageZoomLevel": 0.8,
+  "maxImageZoomLevel": 2,
   "multiPageEngineForCriticalEdition": false
 }

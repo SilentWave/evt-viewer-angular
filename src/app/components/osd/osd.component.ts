@@ -168,7 +168,7 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
     const commonOptions = {
       visibilityRatio: 0.66,
       minZoomLevel: 0.3,
-      maxZoomLevel: 1,
+      maxZoomLevel:  AppConfig.evtSettings.edition.maxImageZoomLevel,
       defaultZoomLevel: AppConfig.evtSettings.edition.defaultImageZoomLevel,
       sequenceMode: true,
       prefixUrl: 'assets/osd/images/',

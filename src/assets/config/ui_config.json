@@ -4,15 +4,15 @@
 			"icon": "images",
 			"iconSet": "fas",
 			"id": "imageImage",
-			"label": "Images",
-			"enable": true
+			"label": "Image-Image",
+			"enable": false
 		},
 		{
 			"icon": "image",
 			"iconSet": "fas",
 			"id": "imageOnly",
 			"label": "Image only",
-			"enable": true
+			"enable": false
 		},
 		{
 			"icon": "txt",
@@ -47,21 +47,21 @@
 			"iconSet": "evt",
 			"id": "textSources",
 			"label": "Text Sources",
-			"enable": true
+			"enable": false
 		},
 		{
 			"icon": "versions",
 			"iconSet": "evt",
 			"id": "textVersions",
 			"label": "Text Versions",
-			"enable": true
+			"enable": false
 		},
 		{
 			"icon": "documix",
 			"iconSet": "evt",
 			"id": "documentalMixed",
 			"label": "Documental",
-			"enable": true
+			"enable": false
 		}
 	],
 	"localization": true,
@@ -81,7 +81,7 @@
 	"enableNavBar": true,
 	"initNavBarOpened": true,
 	"thumbnailsButton": true,
-	"viscollButton": true,
+	"viscollButton": false,
 	"mainFontFamily": "Junicode, Times, serif",
 	"mainFontSize": "1.1rem",
 	"secondaryfontFamily": "Arial, sans-serif",
@@ -106,7 +106,9 @@
 			],
 			"properties": {
 				"titleQuotes": true,
-				"emphasized": [ "publisher" ]
+				"emphasized": [
+					"publisher"
+				]
 			}
 		},
 		"apa": {
@@ -129,12 +131,18 @@
 				},
 				"publicationStyle": {
 					"citingAcronym": "none",
-					"inBrackets": [ "issue" ]
+					"inBrackets": [
+						"issue"
+					]
 				},
 				"propsDelimiter": ".",
 				"titleQuotes": false,
-				"emphasized": [ "publication" ],
-				"inBrackets": [ "date" ]
+				"emphasized": [
+					"publication"
+				],
+				"inBrackets": [
+					"date"
+				]
 			}
 		},
 		"mla": {
@@ -155,12 +163,16 @@
 				},
 				"publicationStyle": {
 					"citingAcronym": "all",
-					"inBrackets": [ "issue" ],
+					"inBrackets": [
+						"issue"
+					],
 					"includeEditor": true
 				},
 				"dateInsidePublication": true,
 				"titleQuotes": false,
-				"emphasized": [ "publication" ]
+				"emphasized": [
+					"publication"
+				]
 			}
 		}
 	}

@@ -160,11 +160,6 @@ export class TextPanelComponent {
 
   public deletionsText: 'hidesDeletions' | 'showsDeletions' = 'showsDeletions';
 
-  public get proseVersesTogglerIcon(): EvtIconInfo {
-
-    return { icon: this.textFlow === 'prose' ? 'align-left' : 'align-justify', iconSet: 'fas' };
-  }
-
   public get hideDeletionsTogglerIcon(): EvtIconInfo {
     return { icon: (this.showDeletions) ? 'eye' : 'eye-slash', iconSet: 'fas' };
   }
@@ -203,8 +198,8 @@ export class TextPanelComponent {
     }
   }
 
-  toggleProseVerses() {
-    this.textFlow = this.textFlow === 'prose' ? 'verses' : 'prose';
+  toggleProseVerses(mode: TextFlow) {
+    this.textFlow = mode;
   }
 
   toggleHideDeletions() {

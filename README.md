@@ -18,14 +18,14 @@ Wanting to maintain the original feature of EVT, and therefore do not give up th
 Before the refactoring, EVT was composed of two main units: EVT Builder, for the transformation of the encoded text using special XSLT 2.0 templates, and EVT Viewer, for the visualization into a browser of the results of the transformations and the interaction with them. The idea under the new version of EVT is instead to leave to EVT Viewer the task of reading and parsing with JavaScript functions the encoded text, and “save” as much as possible within a data model, that persists in the client main memory, and is organized in a way that allows a very quick access to the data in case of need. This has obviously led to the elimination of the EVT Builder level, and therefore it allows to open a digital edition directly in the browser without any previous XSLT transformation.
 
 ### 1.3 - Main features
-At the present moment, EVT is being moved from AngularJS to Angular 2+.
+At the present moment, EVT is being moved from AngularJS to Angular.
 For a complete list of features, please refer to the [AngularJS version] (https://github.com/evt-project/evt-viewer)
 
 2 - A short guide to EVT
 --------------------------------
-If you are interested in **using** EVT to prepare an edition right away, you should probably download the ready-to-use release package that can be downloaded from [SourceForge](https://sourceforge.net/projects/evt-project/). See the *Installation and use* section first, then *Configuration*, to understand how EVT works and how you can use it to publish your editions. A more detailed guide will be published separately, as a reference manual, and will also include instructions about customization.
+If you are interested in **using** EVT to prepare an edition right away, you should probably download the ready-to-use release package that can be downloaded from the [release page on GitHub](https://github.com/evt-project/evt-viewer-angular/releases). See the *Installation and use* section first, then *Configuration*, to understand how EVT works and how you can use it to publish your editions. A more detailed guide will be published separately, as a reference manual, and will also include instructions about customization.
 
-If, on the other hand, you are interested in **developing** a specific functionality in EVT, or in modifying an existing one, or preparing your edition with the most recent (yet stable) version of EVT, you should download the [*GitHub Development framework*](https://github.com/evt-project/evt-viewer). See the *Development framework installation and use* section to know how to install and configure the environment needed for this purpose. If you intend to change the source code for personal needs, please **fork** the project. If you want to contribute to the main project (by fixing a bug or adding a feature), please ask for a **pull request** and/or contact us at evt.developers@gmail.com.
+If, on the other hand, you are interested in **developing** a specific functionality in EVT, or in modifying an existing one, or preparing your edition with the most recent (yet stable) version of EVT, you should download the [*GitHub Development framework*](https://github.com/evt-project/evt-viewer-angular). See the *Development framework installation and use* section to know how to install and configure the environment needed for this purpose. If you intend to change the source code for personal needs, please **fork** the project, and remember to contribute your changes back (see below for contact). If you want to contribute to the main project (by fixing a bug or adding a feature), please ask for a **pull request** and/or contact us at evt.developers@gmail.com.
 
 ### 2.1 - Installation and use
 EVT 3 can be used to prepare an edition right away, immediately after downloading the release package on your hard drive: see the [​Installation and management of the edition data](https://github.com/evt-project/evt-viewer-angular/wiki/Installation-and-use#installation-and-management-of-the-edition-data) section of the Wiki first, then [Configuration​](https://github.com/evt-project/evt-viewer-angular/wiki/Configuration), to understand how EVT works and how you can use it to publish your editions.
@@ -35,13 +35,13 @@ If, on the other hand, you are interested in ​developing a specific functional
 
 
 ### 2.2 - Configuration
-There are several configuration options, ranging from setting the folders where edition data is stored to choosing the User Interface layout and the tools to be made available for the final user, that can be set by editing the configuration files in the `assets/config` directory. To facilitate the configuration work, configuration options are divided into three macro groups:
+There are several configuration options, ranging from setting the folders where edition data is stored to choosing the User Interface layout and the tools to be made available for the final user, that can be set by editing the configuration files in the `assets/config` directory. To facilitate the configuration work, configuration options are divided into three macro groups with corresponding files:
 
 * Edition Configuration (`edition_config.json`), where to set the configurations closely related to the digital edition, such as the title, the edition level(s), etc. [See details in the Wiki page](https://github.com/evt-project/evt-viewer-angular/wiki/Edition-Configuration).
 * File Configuration (`file_config.json`), where to set the path(s) to the file(s) of the digital edition. [See details in the Wiki page](https://github.com/evt-project/evt-viewer-angular/wiki/File-Configuration).
 * UI Configuration (`ui_config.json`), where to set the configuration closely related to the UI, such as the default language, the default/available theme(s), etc. [See details in the Wiki page](https://github.com/evt-project/evt-viewer-angular/wiki/Ui-Configuration).
 
-It is also possible to configurate the style of editorial phenomena (e.g. addition, deletion, etc), in order to override the EVT default layouts. This particular configuration should be defined in the file `editorial_conventions_config.json`. [See details in the Wiki page](https://github.com/evt-project/evt-viewer-angular/wiki/Editorial-Conventions-Configuration)
+It is also possible to configure the style of editorial phenomena (e.g. addition, deletion, etc), in order to override the EVT default layouts. This particular configuration should be defined in the file `editorial_conventions_config.json`. [See details in the Wiki page](https://github.com/evt-project/evt-viewer-angular/wiki/Editorial-Conventions-Configuration)
 
 For more information please refer to the [Configuration section](https://github.com/evt-project/evt-viewer-angular/wiki/Configuration) on the Wiki.
 
@@ -55,9 +55,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 For development, you will only need Node.js installed on your environement. And please use the appropriate Editorconfig plugin for your Editor (not mandatory).
 
 ### 3.2 - Node
-[Node](http://nodejs.org/) is really easy to install & now include [NPM](https://npmjs.org/).
+[Node](http://nodejs.org/) is really easy to install & now includes [NPM](https://npmjs.org/).
 You should be able to run the following command after the installation procedure
-below. To properly install all the dependency, please use 12.20.x/14.15.x/16.10.x or later minor version of NodeJS.
+below. To properly install all the dependencies, please use 12.20.x/14.15.x/16.10.x or later minor version of NodeJS. To know which versions are installed on your computer:
 
     $ node --version
     v14.15.0
@@ -66,12 +66,22 @@ below. To properly install all the dependency, please use 12.20.x/14.15.x/16.10.
     v6.14.8
 
 ### 3.3 - Install 
+To download and install the current stable version of EVT use these commands:
+
     $ git clone https://github.com/evt-project/evt-viewer-angular.git
+    $ cd evt-viewer-angular
+    $ npm install
+
+You may be interested in installing the development branch (`develop`) which is the more up to date one, and generally quite stable:
+
+    $ git clone -b develop https://github.com/evt-project/evt-viewer-angular.git
     $ cd evt-viewer-angular
     $ npm install
 
 
 ### 3.4 - Start & watch with development server
+To start EVT directly just type
+
     $ npm run start
 
 If nothing happens, then open your browser and navigate to `http://localhost:4205/`.
@@ -84,12 +94,16 @@ If you want to use a different port where to run the application you can run `np
 Run `npm run ng generate component component-name` to generate a new component. You can also use `npm run ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ### 3.6 - Simple build for production
+This command will create a build of the current installation which you can use for testing or other purposes:
+
     $ npm run build
 
 The build artifacts will be stored in the `dist/` directory.
 With the second instruction you can use the `--c=production` flag for a production build.
 
 ## 3.6.1 - Build for release
+This command will create a build of the current installation flagging it as a release build:
+
     $ npm run build:release
 
 The build artifacts will be stored in the `release/` directory. If you set properly the variables in user_paths.sh file, both xml sample data and sample config will be copied in `release/assets` folder.
@@ -176,7 +190,7 @@ btn-primary {
 ### 4.2 - Localization
 To handle localization we use the plugin angular-l10n[https://github.com/robisim74/angular-l10n]; in this way we can offer a runtime solution for language switching without fully reload the application.
 
-Translations are defined in a JSON file (one for each language), saved inside the folder `assets/l10n`. This JSON is organized as follows:
+Translations are defined in a JSON file (one for each language), saved inside the folder `assets/i18n`. This JSON is organized as follows:
 ```
 {
 	"KEY": "Text in a particular language",
@@ -276,7 +290,7 @@ If you want to add a parameter in configuration, you need to add it first to the
 
 As a user manual please refer to the [Wiki](https://github.com/evt-project/evt-viewer-angular/wiki). It will always be updated based on the features merged into the `develop` branch. 
 
-For the functionalities and instructions related to a specific release, it is possible to refer to the `evt-documentation.pdf` file inside the `doc` folder in the release package.
+For the functionalities and instructions related to a specific release, when the manual is ready it will be possible to refer to the `evt-documentation.pdf` file inside the `doc` folder in the release package.
 
 
 7 - Feedback

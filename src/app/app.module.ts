@@ -141,6 +141,7 @@ import { TitleStmtComponent } from './components/title-stmt/title-stmt.component
 import { VerseComponent } from './components/verse/verse.component';
 import { VersesGroupComponent } from './components/verses-group/verses-group.component';
 import { VersionPanelComponent } from './panels/version-panel/version-panel.component';
+import { VerseProseSelectComponent } from './components/verse-prose-select/verse-prose-select.component';
 import { WordComponent } from './components/word/word.component';
 import { WitnessPanelComponent } from './panels/witness-panel/witness-panel.component';
 import { XmlBeautifyPipe } from './pipes/xml-beautify.pipe';
@@ -275,6 +276,7 @@ const DynamicComponents = [
     TextTextComponent,
     TextVersionsComponent,
     VersionPanelComponent,
+    VerseProseSelectComponent,
     WitnessPanelComponent,
     XmlBeautifyPipe,
     ...DynamicComponents,
