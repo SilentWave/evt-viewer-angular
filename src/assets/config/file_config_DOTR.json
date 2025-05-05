@@ -1,10 +1,6 @@
 {
 	"editionUrls": [
-		{
-			"type": "main",
-			"value":"assets/data/custom/DOTR/VB-complete-xinclude.xml",
-			"enable": true
-		}
+		"assets/data/VB-DOTR.xml"
 	],
 	"editionImagesSource": {
 		"manifest": {

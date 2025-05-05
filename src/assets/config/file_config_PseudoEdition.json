@@ -1,10 +1,6 @@
 {
 	"editionUrls": [
-		{
-			"type": "main",
-			"value": "assets/data/pseudoEdition.xml",
-			"enable": true
-		}
+		"assets/data/pseudoEdition.xml"
 	],
 	"editionImagesSource": {
 		"manifest": {

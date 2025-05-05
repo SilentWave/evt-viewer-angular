@@ -1,10 +1,6 @@
 {
 	"editionUrls": [
-		{
-			"type": "main",
-			"value": "assets/data/pelavicino.xml",
-			"enable": true
-		}
+		"assets/data/pelavicino.xml"
 	],
 	"editionImagesSource": {
 		"manifest": {
