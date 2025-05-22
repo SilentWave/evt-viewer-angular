@@ -14,8 +14,8 @@ export const namedEntitiesListsTagNamesMap: { [key: string]: string } = {
     places: 'listPlace',
     organizations: 'listOrg',
     events: 'listEvent',
-    occurrences: 'persName[ref], placeName[ref], orgName[ref], geogName[ref], event[ref]',
-    entries: 'listEntry'
+    entries: 'listEntry',
+    occurrences: 'persName[ref], placeName[ref], orgName[ref], geogName[ref], event[ref], term[ref]',
 };
 
 export function getListType(tagName): NamedEntityType {
