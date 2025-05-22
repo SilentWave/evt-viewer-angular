@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { EditionDataService } from "./edition-data.service";
 import { NamedEntitiesParserService } from "./xml-parsers/named-entities-parser.service";
 import { map, shareReplay, Observable, forkJoin } from "rxjs";
-import { NamedEntities, NamedEntityOccurrence, OriginalEncodingNodeType } from "../models/evt-models";
+import { NamedEntities, NamedEntityOccurrence } from "../models/evt-models";
 import { StructureXmlParserService } from "./xml-parsers/structure-xml-parser.service";
 import { Map } from '../utils/js-utils';
 
@@ -16,64 +16,6 @@ export class NamedEntitiesService {
     }).pipe(
         map(({ main, others }) => new AllEditionSources(main, others)),
         shareReplay(1)
-    );
-
-    private readonly allEditionsParsedLists$ = this.allEditionSources$.pipe(
-        map((sources) => {
-            const result = sources
-                .getAllEditionSources()
-                .map(({ editionInfo: info, editionData: data }) => ({
-                    editionInfo: info,
-                    parsedLists: this.namedEntitiesParser.parseLists(data)
-                }));
-            return result;
-        }),
-        shareReplay(1),
-    );
-
-    readonly allEditionsNamedEntities$: Observable<Map<EditionNamedEntities[]>> = this.allEditionsParsedLists$.pipe(
-        map(parsedLists => {
-            const result = parsedLists.reduce((editionMap: Map<EditionNamedEntities[]>, { editionInfo, parsedLists: { lists, entities, relations } }) => {
-                const persons = this.namedEntitiesParser.getResultsByType(lists, entities, ['person', 'personGrp']);
-                const places = this.namedEntitiesParser.getResultsByType(lists, entities, ['place']);
-                const organizations = this.namedEntitiesParser.getResultsByType(lists, entities, ['org']);
-                const events = this.namedEntitiesParser.getResultsByType(lists, entities, ['event']);
-                const all = {
-                    lists: [
-                        ...persons.lists,
-                        ...places.lists,
-                        ...organizations.lists,
-                        ...events.lists
-                    ],
-                    entities: [
-                        ...persons.entities,
-                        ...places.entities,
-                        ...organizations.entities,
-                        ...events.entities
-                    ]
-                };
-                const editionNamedEntities: EditionNamedEntities = {
-                    editionInfo,
-                    namedEntities: {
-                        all,
-                        persons,
-                        places,
-                        organizations,
-                        relations,
-                        events
-                    }
-                };
-
-                const editionId = editionInfo.editionTitle;
-                if (!editionMap[editionId]) {
-                    editionMap[editionId] = [];
-                }
-                editionMap[editionId].push(editionNamedEntities);
-
-                return editionMap;
-            }, {} as Map<EditionNamedEntities[]>);
-            return result;
-        })
     );
 
     private readonly allPages$ = this.allEditionSources$.pipe(
@@ -119,7 +61,8 @@ export class AllEditionSources {
 
 export interface EditionSource {
     editionInfo: EditionInfo;
-    editionData: OriginalEncodingNodeType;
+    editionData: HTMLElement;
+    glossary: HTMLElement;
 }
 
 export interface EditionInfo {

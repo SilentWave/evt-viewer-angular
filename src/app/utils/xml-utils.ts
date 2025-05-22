@@ -30,7 +30,7 @@ export function replaceNewLines(textContent: string) {
 }
 
 export function replaceNotWordChar(textContent: string) {
-  return textContent && textContent.replace(/[\W_]/, ' ') ;
+  return textContent && textContent.replace(/[\W_]/, ' ');
 }
 
 export function removeSpaces(textContent: string) {
@@ -59,8 +59,8 @@ export function chainFirstChildTexts(elem: XMLElement, evtTextComplexElements: s
     'p': 'textContent',
   };
   let result = '';
-  elem.childNodes.forEach((node) => (evtTextElements[node.nodeName] !== undefined) ? result += node[ evtTextElements[node.nodeName] ] : (
-    evtTextComplexElements.includes(node.nodeName) ? result += chainDeepTexts(node, evtInnerTextElements) : '' ))
+  elem.childNodes.forEach((node) => (evtTextElements[node.nodeName] !== undefined) ? result += node[evtTextElements[node.nodeName]] : (
+    evtTextComplexElements.includes(node.nodeName) ? result += chainDeepTexts(node, evtInnerTextElements) : ''))
 
   return result;
 }
@@ -84,7 +84,7 @@ export function chainDeepTexts(elem: ChildNode, evtInnerTextElements: string[]):
 */
 export function getExternalElements(elem: XMLElement, attrSourceNames: string[], attrTargetName: string, elTypes: string): XMLElement[] {
   const sourceIDs = attrSourceNames.map((x) => elem.getAttribute(x));
-  const sourcesToFind = sourceIDs.filter((x) => x).map((x) => x.replace('#',''));
+  const sourcesToFind = sourceIDs.filter((x) => x).map((x) => x.replace('#', ''));
 
   if (sourcesToFind.length === 0) {
     return [];
@@ -109,4 +109,18 @@ export function isSource(elem: XMLElement, attrs: string[]): boolean {
   attrs.forEach((attr) => { if (elem.getAttribute(attr) !== null) { validAttrs = true } });
 
   return (validAttrs);
+}
+
+export function getXmlIdOrDefault(elem: XMLElement): string {
+  const xmlId = elem.getAttribute('xml:id') ?? '';
+  return xmlId;
+}
+
+export function getXmlIdRequired(elem: XMLElement): string {
+  const xmlId = getXmlIdOrDefault(elem);
+  if (!xmlId) {
+    console.log('xml:id not found on element:', elem);
+    throw new Error('xml:id not found');
+  }
+  return xmlId;
 }

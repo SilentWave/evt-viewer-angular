@@ -8,6 +8,7 @@ import { Map } from '../../utils/js-utils';
 import { GenericElemParser } from './basic-parsers';
 import { getListsToParseTagNames, namedEntitiesListsTagNamesMap } from './named-entity-parsers';
 import { createParser } from './parser-models';
+import { EditionSource } from '../named-entities.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,26 +16,29 @@ import { createParser } from './parser-models';
 export class NamedEntitiesParserService {
   private tagNamesMap = namedEntitiesListsTagNamesMap;
 
-  public parseLists(document: XMLElement) {
+  public parseLists(editionSource: EditionSource) {
     const listsToParse = getListsToParseTagNames();
     const listParser = ParserRegister.get('evt-named-entities-list-parser');
     // We consider only first level lists; inset lists will be considered
-    const lists = (listsToParse.toString() ? Array.from(document.querySelectorAll<XMLElement>(listsToParse.toString())) : [])
+    const lists = (listsToParse.toString() ? Array.from(editionSource.editionData.querySelectorAll<XMLElement>(listsToParse.toString())) : []);
+    const glossaryLists = (listsToParse.toString() ? Array.from(editionSource.glossary.querySelectorAll<XMLElement>(listsToParse.toString())) : []);
+    const allLists =  [...lists, ...glossaryLists]
       .filter((list) => !isNestedInElem(list, list.tagName))
       .map((l) => listParser.parse(l) as NamedEntitiesList);
 
     return {
-      lists,
-      entities: lists.map(({ content }) => content).reduce((a, b) => a.concat(b), []),
-      relations: lists.map(({ relations }) => relations).reduce((a, b) => a.concat(b), []),
+      lists: allLists,
+      entities: allLists.flatMap(({ content }) => content),
+      relations: allLists.flatMap(({ relations }) => relations)
     };
   }
 
   public getResultsByType(lists: NamedEntitiesList[], entities: NamedEntity[], type: string[]) {
-    return {
+    const result = {
       lists: lists.filter((list) => type.indexOf(list.namedEntityType) >= 0),
       entities: entities.filter((entity) => type.indexOf(entity.namedEntityType) >= 0),
     };
+    return result;
   }
 
   public parseNamedEntitiesOccurrences(pages: Page[]) {

@@ -179,6 +179,7 @@ export interface EditionConfig {
         organizations: NamedEntitiesListsConfig;
         relations: NamedEntitiesListsConfig;
         events: NamedEntitiesListsConfig;
+        entries: NamedEntitiesListsConfig;
     }>;
     entitiesSelectItems: EntitiesSelectItemGroup[];
     notSignificantVariants: string[];
@@ -248,6 +249,7 @@ export interface EditionUrl {
     value: string;
     enable: boolean;
     friendlyName: string;
+    glossaryUrl: string;
 }
 
 export interface EditionImagesConfig {

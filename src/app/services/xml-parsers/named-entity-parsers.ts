@@ -5,7 +5,7 @@ import {
     NamedEntityRef, NamedEntityType, Relation, XMLElement,
 } from '../../models/evt-models';
 import { xpath } from '../../utils/dom-utils';
-import { replaceNewLines } from '../../utils/xml-utils';
+import { getXmlIdRequired, replaceNewLines } from '../../utils/xml-utils';
 import { AttributeMapParser, AttributeParser, EmptyParser, GenericElemParser, TextParser } from './basic-parsers';
 import { createParser, parseChildren, Parser } from './parser-models';
 
@@ -15,6 +15,7 @@ export const namedEntitiesListsTagNamesMap: { [key: string]: string } = {
     organizations: 'listOrg',
     events: 'listEvent',
     occurrences: 'persName[ref], placeName[ref], orgName[ref], geogName[ref], event[ref]',
+    entries: 'listEntry'
 };
 
 export function getListType(tagName): NamedEntityType {
@@ -94,23 +95,25 @@ export class NamedEntityRefParser extends EmptyParser implements Parser<XMLEleme
     parse(xml: XMLElement): NamedEntityRef | GenericElement {
         const ref = xml.getAttribute('ref');
         if (!ref) { return this.elementParser.parse(xml); }
-
+        
         const neTypeMap: { [key: string]: NamedEntityType } = {
             placename: 'place',
             geogname: 'place',
             persname: 'person',
             orgname: 'org',
             event: 'event',
+            term: 'term'
         };
-
+        
+        const tagName = xml.tagName.toLowerCase();
         return {
             type: NamedEntityRef,
             entityId: getEntityID(ref),
-            entityType: neTypeMap[xml.tagName.toLowerCase()],
+            entityType: neTypeMap[tagName],
             path: xpath(xml),
             content: parseChildren(xml, this.genericParse),
             attributes: this.attributeParser.parse(xml),
-            class: xml.tagName.toLowerCase(),
+            class: tagName,
         };
     }
 
@@ -238,6 +241,23 @@ export class OrganizationParser extends EntityParser {
             ...super.parse(xml),
             label: textLabel('orgName', xml),
         };
+    }
+}
+
+@xmlParser('entry', EntryParser)
+export class EntryParser extends EntityParser {
+    parse(xml: XMLElement): NamedEntity {
+        return {
+            ...super.parse(xml),
+            label: this.getLabel(xml),
+        };
+    }
+
+    private getLabel(xml: XMLElement): string {
+        const formLemma = xml.querySelector('form[type="lemma"]');
+        const mainOrth = formLemma.querySelector('orth[type="main"') || formLemma.querySelector('orth');
+        const label = mainOrth?.textContent ? mainOrth.textContent : (getXmlIdRequired(xml));
+        return label;
     }
 }
 
