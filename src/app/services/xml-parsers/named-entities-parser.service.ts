@@ -22,7 +22,7 @@ export class NamedEntitiesParserService {
     // We consider only first level lists; inset lists will be considered
     const listsSelector = listsToParse.map(x => x.listSelector).toString();
     const lists = Array.from(editionSource.editionData.querySelectorAll<XMLElement>(listsSelector));
-    const glossaryLists = Array.from(editionSource.glossary.querySelectorAll<XMLElement>(listsSelector));
+    const glossaryLists = editionSource.glossary ? Array.from(editionSource.glossary.querySelectorAll<XMLElement>(listsSelector)) : [];
     const allLists =  [...lists, ...glossaryLists]
       .filter((list) => !isNestedInElem(list, list.tagName))
       .map((l) => listParser.parse(l) as NamedEntitiesList);

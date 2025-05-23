@@ -66,11 +66,12 @@ export class EditionDataService {
           }
         }
       }),
+      // merge lists if both urls and xi:include are specified
       mergeMap((editionData) => this.loadXIinclude(editionData, editionUrl.value.substring(0, editionUrl.value.lastIndexOf('/') + 1))),
       mergeMap(editionData =>
         forkJoin({
           editionData: of(editionData),
-          glossary: this.http.get(editionUrl.glossaryUrl, { responseType: 'text' }),
+          glossary: editionUrl.glossaryUrl ? this.http.get(editionUrl.glossaryUrl, { responseType: 'text' }) : of(''),
         })
       ),
       map(({ editionData, glossary }) => {
@@ -78,7 +79,7 @@ export class EditionDataService {
           editionTitle: this.prefatoryMatterParser.parseEditionTitle(editionData),
           editionFriendlyName: editionUrl.friendlyName
         };
-        const parsedGlossary = parseXml(glossary);
+        const parsedGlossary = glossary ? parseXml(glossary) : null;
         return { editionData, editionInfo, glossary: parsedGlossary };
       }),
       catchError(() => throwError(() => this.createError()))
