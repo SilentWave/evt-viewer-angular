@@ -97,11 +97,10 @@ export interface OriginalEncoding {
     originalEncoding: OriginalEncodingNodeType;
 }
 
-export type NamedEntityType = 'person' | 'place' | 'org' | 'relation' | 'event' | 'generic' | 'term';
 export class NamedEntitiesList extends GenericElement {
     id: string;
     label: string;
-    namedEntityType: NamedEntityType;
+    namedEntityType: string;
     description?: Description;
     sublists: NamedEntitiesList[];
     content: NamedEntity[];
@@ -113,7 +112,7 @@ export class NamedEntity extends GenericElement {
     id: string;
     sortKey: string;
     label: NamedEntityLabel;
-    namedEntityType: NamedEntityType | 'personGrp';
+    namedEntityType: string;
     content: NamedEntityInfo[];
     originalEncoding: OriginalEncodingNodeType;
 }
@@ -148,7 +147,7 @@ export type Description = Array<ParseResult<GenericElement>>;
 
 export class NamedEntityRef extends GenericElement {
     entityId: string;
-    entityType: NamedEntityType;
+    entityType: string;
 }
 
 export interface Witnesses {

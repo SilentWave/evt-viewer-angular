@@ -67,15 +67,19 @@ export class EVTModelService {
   );
 
   public readonly persons$ = this.parsedLists$.pipe(
-    map(({ lists, entities }) => (this.namedEntitiesParser.getResultsByType(lists, entities, ['person', 'personGrp']))),
+    map(({ lists, entities }) => (
+      this.namedEntitiesParser.getResultsByType(
+        lists, entities, AppConfig.evtSettings.edition.namedEntitiesLists.persons.namedEntityType))),
   );
 
   public readonly places$ = this.parsedLists$.pipe(
-    map(({ lists, entities }) => this.namedEntitiesParser.getResultsByType(lists, entities, ['place'])),
+    map(({ lists, entities }) => this.namedEntitiesParser.getResultsByType(
+      lists, entities, AppConfig.evtSettings.edition.namedEntitiesLists.places.namedEntityType)),
   );
 
   public readonly organizations$ = this.parsedLists$.pipe(
-    map(({ lists, entities }) => this.namedEntitiesParser.getResultsByType(lists, entities, ['org'])),
+    map(({ lists, entities }) => this.namedEntitiesParser.getResultsByType(
+      lists, entities, AppConfig.evtSettings.edition.namedEntitiesLists.organizations.namedEntityType)),
   );
 
   public readonly relations$ = this.parsedLists$.pipe(
@@ -83,11 +87,13 @@ export class EVTModelService {
   );
 
   public readonly events$ = this.parsedLists$.pipe(
-    map(({ lists, entities }) => this.namedEntitiesParser.getResultsByType(lists, entities, ['event'])),
+    map(({ lists, entities }) => this.namedEntitiesParser.getResultsByType(
+      lists, entities, AppConfig.evtSettings.edition.namedEntitiesLists.events.namedEntityType)),
   );
 
   public readonly entries$ = this.parsedLists$.pipe(
-    map(({ lists, entities }) => this.namedEntitiesParser.getResultsByType(lists, entities, ['entry'])),
+    map(({ lists, entities }) => this.namedEntitiesParser.getResultsByType(
+      lists, entities, AppConfig.evtSettings.edition.namedEntitiesLists.entries.namedEntityType)),
   );
 
   public readonly verses$ = this.editionSource$.pipe(

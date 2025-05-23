@@ -31,30 +31,43 @@
 	"downloadableXMLSource": true,
 	"namedEntitiesLists": {
 		"persons": {
+			"enable": true,
 			"defaultLabel": "Persons",
-			"enable": true
+			"listSelector": "listPerson",
+			"namedEntityType": "person"
 		},
 		"places": {
+			"enable": true,
 			"defaultLabel": "Places",
-			"enable": true
+			"listSelector": "listPlace",
+			"namedEntityType": "place"
 		},
 		"organizations": {
+			"enable": true,
 			"defaultLabel": "Organizations",
-			"enable": true
+			"listSelector": "listOrg",
+			"namedEntityType": "org"
 		},
 		"relations": {
+			"enable": true,
 			"defaultLabel": "Relations",
-			"enable": true
+			"listSelector": "listRelation",
+			"namedEntityType": "relation"
 		},
 		"events": {
+			"enable": true,
 			"defaultLabel": "Events",
-			"enable": true
+			"listSelector": "listEvent",
+			"namedEntityType": "event"
 		},
 		"entries": {
+			"enable": true,
 			"defaultLabel": "Entries",
-			"enable": true
+			"listSelector": "div[type='glossary']",
+			"namedEntityType": "entry"
 		}
 	},
+	"namedEntitiesOccurrenceSelector": "persName[ref], placeName[ref], orgName[ref], geogName[ref], event[ref], term[ref]",
 	"showLists": true,
 	"entitiesSelectItems": [
 		{
