@@ -101,10 +101,25 @@ export class AppConfig {
         rules['.' + SourceClass + ' .opened'] = `background-color: ${edition.readingColorDark};`;
         rules['.' + AnalogueClass + ':hover'] = `background-color: ${edition.readingColorLight}; cursor:pointer;`;
         rules['.' + SourceClass + ':hover'] = `background-color: ${edition.readingColorLight}; cursor:pointer;`;
-        Object.entries(rules).forEach(([selector,style]) => { updateCSS([[selector,style]]) });
+        Object.entries(rules).forEach(([selector, style]) => { updateCSS([[selector, style]]) });
         console.log('Style applied from config', rules);
     }
 
+    static getListsToParseTagNames(): NamedEntitiesListConfig[] {
+        const neLists = AppConfig.evtSettings.edition.namedEntitiesLists || {};
+        const enabledLists: NamedEntitiesListConfig[] = Object.keys(neLists)
+            .map((i) => neLists[i].enable ? neLists[i] : undefined)
+            .filter((ne) => !!ne);
+        return enabledLists;
+    }
+
+    static getNamedEntityType(tagName: string): string {
+        const lists = AppConfig.getListsToParseTagNames();
+        const list = lists.find(list => 
+            list.listSelector.toLowerCase().includes(tagName.toLowerCase()) 
+            || list.namedEntityType.toLowerCase() === tagName.toLowerCase());
+        return list.namedEntityType;
+    }
 }
 
 export interface EVTConfig {
@@ -174,13 +189,14 @@ export interface EditionConfig {
     downloadableXMLSource: boolean;
     availableEditionLevels: EditionLevel[];
     namedEntitiesLists: Partial<{
-        persons: NamedEntitiesListsConfig;
-        places: NamedEntitiesListsConfig;
-        organizations: NamedEntitiesListsConfig;
-        relations: NamedEntitiesListsConfig;
-        events: NamedEntitiesListsConfig;
-        entries: NamedEntitiesListsConfig;
+        persons: NamedEntitiesListConfig;
+        places: NamedEntitiesListConfig;
+        organizations: NamedEntitiesListConfig;
+        relations: NamedEntitiesListConfig;
+        events: NamedEntitiesListConfig;
+        entries: NamedEntitiesListConfig;
     }>;
+    namedEntitiesOccurrenceSelector: string;
     entitiesSelectItems: EntitiesSelectItemGroup[];
     notSignificantVariants: string[];
     defaultEdition: EditionLevelType;
@@ -257,9 +273,11 @@ export interface EditionImagesConfig {
     enable: boolean;
 }
 
-export interface NamedEntitiesListsConfig {
+export interface NamedEntitiesListConfig {
     defaultLabel: string;
     enable: boolean;
+    listSelector: string;
+    namedEntityType: string;
 }
 export type EditionLevelType = 'diplomatic' | 'interpretative' | 'critical' | 'changesView';
 export interface EditionLevel {
