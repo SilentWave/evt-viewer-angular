@@ -6,6 +6,7 @@ import { AppConfig, EditionUrl } from '../app.config';
 import { parseXml } from '../utils/xml-utils';
 import { PrefatoryMatterParserService } from './xml-parsers/prefatory-matter-parser.service';
 import { EditionInfo, EditionSource } from './named-entities.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root',
@@ -50,6 +51,21 @@ export class EditionDataService {
   private loadAndParseEditionData({value, friendlyName}: EditionUrl): Observable<EditionSource> {
     return this.http.get(value, { responseType: 'text' }).pipe(
       map((source) => parseXml(source)),
+      tap(source => {
+        setId(source.lastElementChild as HTMLElement);
+        console.log('edited source', source);
+
+        function setId(element: HTMLElement) {
+          if (element.setAttributeNS) {
+            if (element.getAttribute('xml:id') === null) {
+              element.setAttributeNS("http://www.w3.org/XML/1998/namespace", 'xml:id', `evt-${uuidv4()}`);
+            }
+            for (const child of Array.from(element.children)) {
+              setId(child as HTMLElement);
+            }
+          }
+        }
+      }),
       mergeMap((editionData) => this.loadXIinclude(editionData, value.substring(0, value.lastIndexOf('/') + 1))),
       map(editionData => {
         const editionInfo: EditionInfo = {

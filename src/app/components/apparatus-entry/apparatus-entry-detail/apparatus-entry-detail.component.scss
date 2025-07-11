@@ -21,7 +21,9 @@
     display: flex;
     justify-content: space-between;
     padding: 0.2em 0 0 0;
-    background-color: rgba(32, 66, 81, 0.18);
+    @include themify($themes) {
+        background-color: themed("appHeaderBackground");
+    }
 }
 
 .app-detail-readings {
@@ -62,12 +64,14 @@
     .tab-content {
         @include themify($themes) {
             background-color: themed("appEntryBoxActiveTabBg");
+            color: themed("tabFontColor")
         }
     }
     .tab-content {
         padding: 0.4rem 0.813rem;
         max-height: 12.5rem;
         overflow: auto;
+        margin-top:-0.2em;
         .info-lemma-wrapper {
             @include themify($themes) {
                 border-bottom: 1px solid themed("baseBorder");

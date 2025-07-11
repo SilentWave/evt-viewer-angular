@@ -11,11 +11,12 @@ export type EditorialConventionDefaults = 'addition' | 'additionAbove' | 'additi
   providedIn: 'root',
 })
 export class EditorialConventionsService {
+  defaultHighlightColor = AppConfig.evtSettings.edition.readingColorLight;
   defaultLayouts: { [T in EditorialConventionDefaults]: Partial<EditorialConventionLayouts> } = {
     addition: {
       diplomatic: {
         style: {
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
     },
@@ -28,7 +29,7 @@ export class EditorialConventionsService {
         style: {
           'vertical-align': 'super',
           'font-size': '.7rem',
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
       changesView: {
@@ -47,7 +48,7 @@ export class EditorialConventionsService {
         style: {
           'vertical-align': 'bottom',
           'font-size': '.7rem',
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
       changesView: {
@@ -64,7 +65,7 @@ export class EditorialConventionsService {
       },
       diplomatic: {
         style: {
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
     },
@@ -78,7 +79,7 @@ export class EditorialConventionsService {
       diplomatic: {
         style: {
           'margin-left': '-1rem',
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
       changesView: {
@@ -96,7 +97,7 @@ export class EditorialConventionsService {
       },
       diplomatic: {
         style: {
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
     },
@@ -205,17 +206,17 @@ export class EditorialConventionsService {
     mod: {
       diplomatic: {
           style: {
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
       critical: {
         style: {
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
       interpretative: {
         style: {
-          'background-color': '#bdecb6',
+          'background-color': this.defaultHighlightColor,
         },
       },
     },

@@ -86,13 +86,14 @@ export class AppConfig {
     updateStyleFromConfig(edition: EditionConfig, ui: UiConfig) {
         const rules = [];
         rules['html'] = `font-size: ${ui.mainFontSize};`;
-        rules['.edition-font'] = `font-family: ${ui.mainFontFamily}; font-size: ${ui.mainFontSize};`;
+        rules['.edition-font'] = `font-family: ${ui.mainFontFamily};`;
         rules['.ng-select'] = `font-size: ${ui.secondaryFontSize};`;
         rules['.nav-link'] = `font-size: ${ui.secondaryFontSize} !important;`;
-        rules['.tab-content'] = `font-size: ${reduceCssUnit(ui.mainFontSize, 0.8)}`;
+        rules['.tab-content'] = `font-size: ${reduceCssUnit(ui.mainFontSize, 0.75)}`;
         rules['.apparatus-nav .nav-link'] = `font-size: ${reduceCssUnit(ui.mainFontSize, 0.8)} !important;`;
         rules['evt-biblio-list .msIdentifier, .btn-close, .layerMarker, .app-wit'] = `font-size: ${reduceCssUnit(ui.mainFontSize, 0.9)};`;
-        rules['.mod-layer, .code, .label, .relation-description, .source-detail-btn'] = `font-size: ${reduceCssUnit(ui.mainFontSize, 0.9)};`;
+        rules['.code, .label, .relation-description, .source-detail-btn'] = `font-size: ${reduceCssUnit(ui.mainFontSize, 0.9)};`;
+        rules['.mod-layer'] = `font-size: ${reduceCssUnit(ui.mainFontSize, 0.8)};`;
         rules['evt-original-encoding-viewer code'] = `font-size: ${ui.secondaryFontSize};`;
         rules['.app-detail-tabs .nav-link'] = `font-family: ${ui.secondaryFontFamily};`;
         rules['.ui-font'] = `font-family: ${ui.secondaryFontFamily}; font-size: ${ui.secondaryFontSize};`;
@@ -141,7 +142,7 @@ export interface UiConfig {
     mainFontSize: string;
     secondaryFontFamily: string;
     secondaryFontSize: string;
-    theme: 'neutral' | 'modern' | 'classic';
+    theme: string;
     syncZonesHighlightButton: boolean;
 }
 export type CitingRanges = 'issue' | 'volume' | 'page';

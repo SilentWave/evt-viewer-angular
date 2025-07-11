@@ -126,7 +126,7 @@ export class ContentViewerComponent implements OnDestroy {
   );
   public attributes: Observable<AttributesMap> = this.contentChange.pipe(
     filter((parsedContent) => !!parsedContent),
-    map((parsedContent) => ({ ...parsedContent.attributes || {}, ...{ class: `edition-font ${parsedContent.class || ''}` } })),
+    map((parsedContent) => ({ ...parsedContent.attributes || {}, ...{ class: `${parsedContent.class || ''}` } })),
     shareReplay(1),
   );
 

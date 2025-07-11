@@ -4,10 +4,11 @@
     (click)="toggleOpened$.next()" 
     [ngClass]="{'mod-highlighted': (editionLevel === 'changesView'), opened: opened$ | async}"
     [style.text-decoration-color]="changeLayerColor()"
+    [style.color]="'black'"
     [evtEditorialConventionLayout]="editorialConventionData">
 
     <ng-container *ngIf="editionLevel === 'changesView' && showLayerMarkers">
-        <span class="layerMarker" 
+        <span *ngIf="data?.changeLayer" class="layerMarker" 
             [hidden]="(isHidden(data) && !(alwaysShow))" 
             [style.background-color]="changeLayerColor()">
             {{getLayerIndex(data?.changeLayer) || 0}} 
