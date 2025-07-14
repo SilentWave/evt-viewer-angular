@@ -1011,7 +1011,6 @@ export class MsDescParser extends MsPartParser implements Parser<XMLElement> {
     parse(xml: XMLElement): MsDesc {
         const genericElem = super.parse(xml);
         const { n, label } = genericElem.attributes;
-        let firstIdnoValue = '';
 
         const msDesc: MsDesc = {
             ...super.parse(xml),
@@ -1021,16 +1020,22 @@ export class MsDescParser extends MsPartParser implements Parser<XMLElement> {
             label,
             msFrags: queryAndParseElements(xml, 'msFrag'),
         };
-        firstIdnoValue = this.getFirstIdnoValue(msDesc);
-        msDesc.label = xml.getAttribute('n') || xml.getAttribute('xml:id') || firstIdnoValue;
-
+        msDesc.label = xml.getAttribute('n') || xml.getAttribute('xml:id') || this.getFirstIdnoValue(msDesc);
         return msDesc;
     }
 
-    getFirstIdnoValue(ms) {
+    getFirstIdnoValue(ms: any): string {
         this.msDescCounter++;
         if (ms.msIdentifier.idnos.length > 0) {
             const item = ms.msIdentifier.idnos[0].filter((el: Text) => el.text?.trim() || el.content?.length > 0);
+
+            
+            if (!item[0]) {
+                // Here we should decide if it is an error in the xml or a case that needs handling
+                console.warn("Missing idno content", ms.msIdentifier.idnos);
+                return `MS Desc ${this.msDescCounter}`;
+            }
+
             if (item[0].text) {
                 return item[0].text.trim();
             }

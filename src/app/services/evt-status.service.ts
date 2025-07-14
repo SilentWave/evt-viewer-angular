@@ -8,7 +8,7 @@ import { ChangeLayerData, Page, ViewMode } from '../models/evt-models';
 import { EVTModelService } from './evt-model.service';
 import { deepSearch } from '../utils/dom-utils';
 
-export type URLParamsKeys = 'd' | 'p' | 'el' | 'ws' | 'vs' | 'lr';
+export type URLParamsKeys = 'd' | 'p' | 'el' | 'ws' | 'vs' | 'lr' | 'app';
 export type URLParams = { [T in URLParamsKeys]: string };
 
 @Injectable({
@@ -51,6 +51,7 @@ export class EVTStatusService {
     public updateVersions$: BehaviorSubject<string[]> = new BehaviorSubject([]);
     public updateChangeLayer$: BehaviorSubject<ChangeLayerData> = new BehaviorSubject(undefined);
     public updateLayer$: BehaviorSubject<string> = new BehaviorSubject(undefined);
+    public updateApparatusExponent$: BehaviorSubject<string> = new BehaviorSubject(undefined);
 
     public currentViewMode$ = this.updateViewMode$.asObservable();
     public currentDocument$ = merge(
@@ -90,6 +91,12 @@ export class EVTStatusService {
         this.route.queryParams.pipe(map((params: URLParams) => params.vs?.split(',') ?? [])),
         this.updateVersions$,
     );
+
+    public currentApparatusExponent$ = merge(
+        this.route.queryParams.pipe(map((params: URLParams) => params.app)),
+        this.updateApparatusExponent$,
+    );
+
     public currentChanges$ = merge(
         merge(
             //this.route.queryParams.pipe(map((params: URLParams) => params.lr ?? '')),
@@ -113,6 +120,7 @@ export class EVTStatusService {
         this.currentWitnesses$,
         this.currentVersions$,
         this.currentChanges$,
+        this.currentApparatusExponent$,
     ]).pipe(
         distinctUntilChanged((x, y) => JSON.stringify(x) === JSON.stringify(y)),
         shareReplay(1),
@@ -124,6 +132,7 @@ export class EVTStatusService {
             witnesses,
             versions,
             changeLayerData,
+            currentApparatus
         ]) => {
             if (viewMode.id === 'textText') {
                 if (editionLevels.length === 1) {
@@ -143,6 +152,7 @@ export class EVTStatusService {
                 witnesses,
                 versions,
                 changeLayerData,
+                currentApparatus
             };
         }),
     );
@@ -198,7 +208,8 @@ export class EVTStatusService {
             ws: status.witnesses.join(','),
             vs: status.versions.join(','),
             lr: status.changeLayerData.selectedLayer,
-            fileConfigUrl: fileConfigUrl
+            fileConfigUrl: fileConfigUrl,
+            app: status.currentApparatus
         };
         Object.keys(params).forEach((key) => (params[key] === '') && delete params[key]);
 
@@ -228,5 +239,6 @@ export interface AppStatus {
     editionLevels: EditionLevelType[];
     witnesses: string[];
     versions: string[];
-    changeLayerData: ChangeLayerData,
+    changeLayerData: ChangeLayerData;
+    currentApparatus: string;
 }

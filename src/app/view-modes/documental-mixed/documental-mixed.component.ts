@@ -24,6 +24,7 @@ export class DocumentalMixedComponent implements OnInit {
       enabled: false,
       //ignoreContent: true,
       dragHandleClass: 'panel-header',
+      ignoreContentClass: 'no-drag'
     },
     resizable: {
       enabled: false,

@@ -1,3 +1,4 @@
+import { getXPath } from 'src/app/utils/dom-utils';
 import { xmlParser } from '.';
 import {
     Facsimile,
@@ -35,6 +36,7 @@ export class FacsimileParser extends EmptyParser implements Parser<XMLElement> {
                 surfaces: undefined,//Array.from(xml.querySelectorAll<XMLElement>('surface')).map((g) => this.surfaceParser.parse(g)),
                 attributes: this.attributeParser.parse(xml),
                 content: parseChildren(xml, this.genericParse),
+                xPath: getXPath(xml),
             };
         }
 
@@ -47,6 +49,7 @@ export class FacsimileParser extends EmptyParser implements Parser<XMLElement> {
             surfaces: Array.from(xml.querySelectorAll<XMLElement>('surface')).map((g) => this.surfaceParser.parse(g)),
             attributes: this.attributeParser.parse(xml),
             content: parseChildren(xml, this.genericParse),
+            xPath: getXPath(xml),
         };
 
     }
@@ -105,6 +108,7 @@ export class ZoneParser extends EmptyParser implements Parser<XMLElement> {
             rotate: attributes.rotate ? parseInt(attributes.rotate, 10) || 0 : 0,
             content: parseChildren(xml, this.genericParse),
             surface: surface ? getID(surface) : '',
+            xPath: getXPath(xml),
         };
     }
 }
@@ -120,6 +124,7 @@ export class GraphicParser extends EmptyParser implements Parser<XMLElement> {
             width: xml.getAttribute('width') || '',
             attributes: this.attributeParser.parse(xml),
             content: parseChildren(xml, this.genericParse),
+            xPath: getXPath(xml),
         };
     }
 }
@@ -143,6 +148,7 @@ export class SurfaceParser extends EmptyParser implements Parser<XMLElement> {
             },
             attributes: this.attributeParser.parse(xml),
             content: parseChildren(xml, this.genericParse),
+            xPath: getXPath(xml),
         };
     }
 }
@@ -163,6 +169,7 @@ export class SurfaceGrpParser extends EmptyParser implements Parser<XMLElement> 
             surfaces: surfaces,
             attributes: this.attributeParser.parse(xml),
             content: parseChildren(xml, this.genericParse),
+            xPath: getXPath(xml),
         };
     }
 }

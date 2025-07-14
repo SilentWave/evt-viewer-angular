@@ -18,6 +18,7 @@ export class SynopsisComponent implements OnInit, OnDestroy {
     maxRows: 1,
     draggable: {
       enabled: false,
+      ignoreContentClass: 'no-drag'
     },
     resizable: {
       enabled: false,

@@ -100,3 +100,19 @@ export function snakeToCamelCased(str) {
 export function isUrl(path: string) {
     return /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(path);
  }
+
+/**
+ * Insert a separator every other element so the resulting array 
+ * is like [firstItem, separator, anotherItem, separator, lastItem]
+ * @param items The items to interleave with the separator
+ * @param separator The separator to interleave with the items
+ * @returns The interleaved array of items and separators
+ */
+export function interleave<T>(items: T[], separator: T): T[] {
+    const result: T[] = [];
+    for (let i = 0; i < items.length; i++) {
+        result.push(items[i]);
+        if (i < items.length - 1) result.push(separator);
+    }
+    return result;
+}
