@@ -151,14 +151,26 @@ export class AppParser extends EmptyParser implements Parser<XMLElement> {
         const fromEl = root.querySelector(`[*|id='${from.valueWithoutRef}']`) as HTMLElement;
 
         let parseResult = this.createParseResult(to, fromEl, from);
-        const lemma = this.parseLemma(appEntryEl);
-        if (!lemma.content.length) {
-            lemma.content = [];
-            lemma.content.push(...parseResult);
-        }
-
         const readings = this.parseReadings(appEntryEl);
-        const allReadings = (lemma !== undefined) ? [lemma].concat(readings) : readings;
+
+        const { lemma, changes, orderedReadings } = (() => {
+            const lemma = this.parseLemma(appEntryEl);
+            if (lemma && !lemma.content.length) {
+                lemma.content = [];
+                lemma.content.push(...parseResult);
+            }
+
+            const allReadings = lemma !== undefined ? [lemma].concat(readings) : readings;
+            const changes = lemma !== undefined ? this.orderChanges(allReadings, lemma) : []
+            const orderedReadings = Array.from(allReadings).sort((r1, r2) => r1.varSeq - r2.varSeq);
+            
+            return {
+                lemma,
+                changes,
+                orderedReadings
+            }
+        })();
+
         const appEntryObj = {
             type: ApparatusEntry,
             id: getID(appEntryEl),
@@ -171,8 +183,8 @@ export class AppParser extends EmptyParser implements Parser<XMLElement> {
             originalEncoding: appEntryEl,
             class: appEntryEl.tagName.toLowerCase(),
             nestedAppsIDs: this.getNestedAppsIDs(appEntryEl),
-            changes: (lemma !== undefined) ? this.orderChanges(allReadings, lemma) : [],
-            orderedReadings: Array.from(allReadings).sort((r1, r2) => r1.varSeq - r2.varSeq),
+            changes: changes,
+            orderedReadings: orderedReadings,
             additionalAttributes: new AdditionalAttributes(),
             exponent: '',
             xPath: getXPath(appEntryEl),
