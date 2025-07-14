@@ -1,4 +1,4 @@
-import { GenericElement, XMLElement } from '../models/evt-models';
+import { XMLElement } from '../models/evt-models';
 
 /**
  * Counter that takes into account the number of parsed elements with [xpath]{@link DOMUtilsService.html#xpath},
@@ -82,7 +82,7 @@ export function isNodeNestedInElem(
  * @returns calculated xpath of the given element
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function xpath(el: any): string {GenericElement
+export function xpath(el: any): string { 
   try {
     if (typeof el === 'string') {
       // document.evaluate(xpathExpression, contextNode, namespaceResolver, resultType, result );
