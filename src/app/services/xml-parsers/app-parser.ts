@@ -1,12 +1,13 @@
 import { AppConfig } from 'src/app/app.config';
 import { ParserRegister, xmlParser } from '.';
 import { AdditionalAttributes, ApparatusEntry, Attribute, GenericElement, Lacuna, Lacunas, Mod, Note, Reading, XMLElement } from '../../models/evt-models';
-import { removeSpaces } from '../../utils/xml-utils';
+import { createParsedWhiteSpace, removeSpaces } from '../../utils/xml-utils';
 import { AttributeParser, EmptyParser, NoteParser } from './basic-parsers';
 import { createParser, getID, Parser, ParseResult } from './parser-models';
 import { XMLID_ATTRIBUTE } from 'src/app/models/constants';
 import { getTopMostAncestor, getXPath } from 'src/app/utils/dom-utils';
 import { v4 as uuidv4 } from 'uuid';
+import { interleave } from 'src/app/utils/js-utils';
 
 @xmlParser('rdg', RdgParser)
 export class RdgParser extends EmptyParser implements Parser<XMLElement> {
@@ -106,7 +107,6 @@ export class LacunaParser extends EmptyParser implements Parser<XMLElement> {
         const attributes = this.attributeParser.parse(lacunaElement as HTMLElement)
         const lacunaWitnessIds = attributes?.['wit'] ? attributes['wit'].split(' ')
             : reading.getAttribute('wit')?.split(' ') || [];
-            
         let witnessesIds: string[];
         if (lacunaWitnessIds.length) {
             witnessesIds = lacunaWitnessIds;
@@ -143,15 +143,46 @@ export class AppParser extends EmptyParser implements Parser<XMLElement> {
         return ParserRegister.get('evt-apparatus-entry-parser');
     }
 
-    public parse(appEntry: XMLElement): ApparatusEntry {
-        const root = getTopMostAncestor(appEntry);
-        const lemma = this.parseLemma(appEntry);
-        const attributes = this.attributeParser.parse(appEntry);
-        let parsedResult: ParseResult<GenericElement>[] = [];
-
+    public parse(appEntryEl: XMLElement): ApparatusEntry {
+        const root = getTopMostAncestor(appEntryEl);
+        const attributes = this.attributeParser.parse(appEntryEl);
         const from = Attribute.createOrDefault(attributes.from);
         const to = Attribute.createOrDefault(attributes.to);
         const fromEl = root.querySelector(`[*|id='${from.valueWithoutRef}']`) as HTMLElement;
+
+        let parseResult = this.createParseResult(to, fromEl, from);
+        const lemma = this.parseLemma(appEntryEl);
+        if (!lemma.content.length) {
+            lemma.content = [];
+            lemma.content.push(...parseResult);
+        }
+
+        const readings = this.parseReadings(appEntryEl);
+        const allReadings = (lemma !== undefined) ? [lemma].concat(readings) : readings;
+        const appEntryObj = {
+            type: ApparatusEntry,
+            id: getID(appEntryEl),
+            attributes: this.attributeParser.parse(appEntryEl),
+            content: [],
+            criticalContent: parseResult,
+            lemma: lemma,
+            readings: readings,
+            notes: this.parseAppNotes(appEntryEl),
+            originalEncoding: appEntryEl,
+            class: appEntryEl.tagName.toLowerCase(),
+            nestedAppsIDs: this.getNestedAppsIDs(appEntryEl),
+            changes: (lemma !== undefined) ? this.orderChanges(allReadings, lemma) : [],
+            orderedReadings: Array.from(allReadings).sort((r1, r2) => r1.varSeq - r2.varSeq),
+            additionalAttributes: new AdditionalAttributes(),
+            exponent: '',
+            xPath: getXPath(appEntryEl),
+        };
+        const appEntry = Object.assign(new ApparatusEntry(), appEntryObj);
+        return appEntry;
+    }
+
+    private createParseResult(to: Attribute, fromEl: HTMLElement, from: Attribute) {
+        let parsedResult: ParseResult<GenericElement>[] = [];
         if (!to) {
             parsedResult.push(this.genericParse(fromEl));
         }
@@ -159,42 +190,15 @@ export class AppParser extends EmptyParser implements Parser<XMLElement> {
             const fromParent = fromEl.parentElement;
             if (!fromParent) throw new Error("From parent is required");
 
-            parsedResult = Array
+            const whiteSpace = createParsedWhiteSpace();
+            const elements = Array
                 .from(fromParent.children)
                 .skipWhile(element => !this.isElementByXmlId(element, from))
                 .takeWhile(element => !this.isElementByXmlId(element, to), { includeLastItem: true })
                 .map(this.genericParse);
+            parsedResult = interleave(elements, whiteSpace);
         }
-
-        if (lemma) {
-            lemma.content = [];
-            lemma.content.push(...parsedResult);
-        }
-
-        const criticalContent = parsedResult;
-        const readings = this.parseReadings(appEntry);
-
-        const allReadings = (lemma !== undefined) ? [lemma].concat(readings) : readings;
-        const result = {
-            type: ApparatusEntry,
-            id: getID(appEntry),
-            attributes: this.attributeParser.parse(appEntry),
-            content: [],
-            criticalContent: criticalContent,
-            lemma: lemma,
-            readings: readings,
-            notes: this.parseAppNotes(appEntry),
-            originalEncoding: appEntry,
-            class: appEntry.tagName.toLowerCase(),
-            nestedAppsIDs: this.getNestedAppsIDs(appEntry),
-            changes: (lemma !== undefined) ? this.orderChanges(allReadings, lemma) : [],
-            orderedReadings: Array.from(allReadings).sort((r1, r2) => r1.varSeq - r2.varSeq),
-            additionalAttributes: new AdditionalAttributes(),
-            exponent: '',
-            isWitnessExcluded: ApparatusEntry.prototype.isWitnessExcluded,
-            xPath: getXPath(appEntry),
-        };
-        return result;
+        return parsedResult;
     }
 
     private isElementByXmlId(element: Element, attribute: Attribute) {
