@@ -11,7 +11,7 @@ import {
   Punctuation, PunctuationMarks, PunctuationPlacement,
   Purpose, Quotation, QuotationMarks, RefsDecl, RefState, Rendition, RenditionScope, Resp, RespStmt, RevisionDesc,
   SamplingDecl, Scheme, Segmentation, SeriesStmt, Setting, SettingDesc, SourceDesc, Status, StdVals,
-  StyleDefDecl, TagsDecl, TagUsage, Term, TextClass, TextDesc, TitleStmt, Transpose, XMLElement,
+  StyleDefDecl, TagsDecl, TagUsage, Term, TextClass, TextDesc, TitleStmt, Transpose, VariantEncoding, XMLElement,
 } from '../../models/evt-models';
 import { GenericElemParser, GenericParser, parseElement, queryAndParseElement, queryAndParseElements } from './basic-parsers';
 import { NamedEntityRefParser } from './named-entity-parsers';
@@ -460,6 +460,7 @@ export class EncodingDescParser extends GenericParser implements Parser<XMLEleme
       unitDecl: queryAndParseElements<GenericElement>(xml, 'unitDecl'),
       schemaSpec: queryAndParseElements<GenericElement>(xml, 'schemaSpec'),
       schemaRef: queryAndParseElements<GenericElement>(xml, 'schemaRef'),
+      variantEncoding: queryAndParseElement<VariantEncoding>(xml, 'variantEncoding')
     };
   }
 }

@@ -5,7 +5,7 @@ import { forkJoin, Observable, throwError } from 'rxjs';
 import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
 import { EntitiesSelectItemGroup } from './components/entities-select/entities-select.component';
 import { AnalogueClass, SourceClass, ViewMode, ViewModeId } from './models/evt-models';
-import { Attributes, EditorialConventionLayout } from './models/evt-models';
+import { EditorialConventionLayout } from './models/evt-models';
 import { reduceCssUnit, updateCSS } from './utils/dom-utils';
 
 @Injectable()
@@ -97,6 +97,7 @@ export class AppConfig {
         rules['.app-detail-tabs .nav-link'] = `font-family: ${ui.secondaryFontFamily};`;
         rules['.ui-font'] = `font-family: ${ui.secondaryFontFamily}; font-size: ${ui.secondaryFontSize};`;
         rules['.app-detail-tabs'] = `font-family: ${ui.secondaryFontFamily};`;
+        //rules['.app-detail-content'] = `font-family: ${ui.mainFontFamily}; font-size: ${ui.secondaryFontSize};`;
         rules['.' + AnalogueClass + ' .opened'] = `background-color: ${edition.readingColorDark};`;
         rules['.' + SourceClass + ' .opened'] = `background-color: ${edition.readingColorDark};`;
         rules['.' + AnalogueClass + ':hover'] = `background-color: ${edition.readingColorLight}; cursor:pointer;`;
@@ -233,6 +234,7 @@ export interface EditionConfig {
     showSubstitutionMarker: boolean;
     multiPageEngineForCriticalEdition: boolean;
     editionStructureSeparator: string;
+    exponentEnumerateBy: string | 'global';
 }
 
 export type EditionImagesSources = 'manifest' | 'graphics';
@@ -292,13 +294,15 @@ export interface EditorialConventionsConfig {
     [key: string]: CustomEditorialConvention;
 }
 
+export interface EditorialConventionAttributes { [key: string]: string[]; }
+
 export interface CustomEditorialConvention {
     layouts: { // indicate the output style to be assigned for the indicated encoding for each edition level
         [key in EditionLevelType]: EditorialConventionLayout;
     };
     markup: { // Identifies the element depending on its encoding
         element: string;
-        attributes: Attributes;
+        attributes: EditorialConventionAttributes;
     };
 }
 

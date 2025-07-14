@@ -23,6 +23,7 @@ export class ImageTextComponent {
       enabled: true,
       ignoreContent: true,
       dragHandleClass: 'panel-header',
+      ignoreContentClass: 'no-drag'
     },
     resizable: {
       enabled: false,

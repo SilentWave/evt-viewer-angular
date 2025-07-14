@@ -1,6 +1,5 @@
 <evt-content-viewer
     [mouseCapture]="true"
-    
     *ngFor="let element of (pageDataChange | async)?.parsedContent || []"
     [content]="element"
     [editionLevel]="editionLevel?.id"

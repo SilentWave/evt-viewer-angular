@@ -31,6 +31,7 @@ export class EditionDataService {
     private http: HttpClient,
     private prefatoryMatterParser: PrefatoryMatterParserService
   ) {
+
   }
 
   private loadAndParseMainEditionData(): Observable<EditionSource> {

@@ -38,7 +38,6 @@ export class AnalogueEntryComponent implements OnInit {
       name: 'analogues',
       attributes: this.data?.attributes || {},
       editionLevel: this.editionLevel,
-      defaultsKey: 'analogues',
     };
   }
 
