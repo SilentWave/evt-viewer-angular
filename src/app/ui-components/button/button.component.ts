@@ -5,6 +5,7 @@ import { EvtIconInfo } from '../icon/icon.component';
   selector: 'evt-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  host: { class: "d-inline-block" }
 })
 export class ButtonComponent implements OnInit, OnChanges {
   @Input() public iconLeft: EvtIconInfo;

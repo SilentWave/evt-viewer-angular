@@ -1,10 +1,10 @@
-<button class="btn btn-secondary" *ngIf="(errors$ | async) as errorsList" (click)="openModal()">
+<button class="btn btn-sm btn-secondary d-flex align-items-center" *ngIf="(errors$ | async) as errorsList" (click)="openModal()">
     <span>{{ "errors" | translate }}</span>
     <div class="spinner-border spinner-border-sm text-tertiary ms-2" role="status" *ngIf="isLoading(); else errorIcon">
         <span class="sr-only">Loading...</span>
     </div>
     <ng-template #errorIcon>
-        <evt-icon class="ms-2 h5" [ngStyle]="{'color': getColor(errorsList)}"
+        <evt-icon class="ms-2" [ngStyle]="{'color': getColor(errorsList)}"
             [iconInfo]="{ icon: getIcon(errorsList), iconSet: 'fas' }">
         </evt-icon>
     </ng-template>
