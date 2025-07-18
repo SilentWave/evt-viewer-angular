@@ -313,6 +313,12 @@ evt-mod-group .substMarker {
   display: none !important;
 }
 
+.subst {
+  @include themify($themes) {
+    color: themed("generalFontColor");
+  }
+}
+
 .mod-text {
   font-style: normal;
 }

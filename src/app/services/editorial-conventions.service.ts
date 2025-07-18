@@ -22,7 +22,6 @@ export class EditorialConventionsService {
         if (isMatch) return config;
       }
     }
-
     return externalConfigs[0];
   }
 

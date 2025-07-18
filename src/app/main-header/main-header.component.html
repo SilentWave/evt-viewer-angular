@@ -1,7 +1,7 @@
 <nav class="navbar justify-content-between temp-header">
     <a class="navbar-brand">
         <img [src]="logoUrl" height="30" class="d-inline-block align-top me-2" alt="evt3 logo">
-        <h1 class="edition-title"><span (click)="openEditionHome()" class="edition-font" [class.pointer]="editionHome">{{ (title$ | async) | translate }}</span></h1>
+        <h1 class="edition-title"><span (click)="openEditionHome()" [class.pointer]="editionHome">{{ (title$ | async) | translate }}</span></h1>
         <a *ngIf="editionHome" [href]="editionHome" target="_blank"
             class="ms-2 edition-home-link">
             <evt-icon [iconInfo]="{icon: 'external-link-alt', iconSet: 'fas' }"></evt-icon>

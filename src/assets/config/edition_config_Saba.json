@@ -138,12 +138,7 @@
     "showEmptyValues": false,
     "inline": true,
     "commaSeparated": true,
-    "showMainElemTextContent": true,
-    "changeSequenceView": {
-      "showVarSeqAttr": false,
-      "showSeqAttr": false,
-      "layerColors": []
-    }
+    "showMainElemTextContent": true
   },
   "analogueMarkers": [
     "ParallelPassage",
@@ -174,5 +169,5 @@
   "maxImageZoomLevel": 2,
   "multiPageEngineForCriticalEdition": false,
   "syncZonesHighlightButton": false,
-  "editionStructureSeparator": "pb, div"
+  "editionStructureSeparator": "pb"
 }

@@ -98,6 +98,8 @@
         }
         .content {
             border: $mainContainer-border-width solid themed('baseColorDark');
+            background-color: themed('generalBackgroundColor');
+            color: themed('generalFontColor');
         }
         .secondary-content {
             background: themed('panelSecondaryBackgroundColor');
