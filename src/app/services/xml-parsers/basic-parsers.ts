@@ -4,7 +4,7 @@ import {
     Addition, Analogue, Anchor, Attributes, Damage, Deletion, Gap, GenericElement, Lb, Milestone, Note, NoteLayout,
     Paragraph, PlacementType, Ptr, QuoteEntry, Space, Span, SpanGrp, Subst, Supplied, Term, Text, Verse, VersesGroup, Word, XMLElement,
 } from '../../models/evt-models';
-import { getElementsBetweenTreeNode, isNestedInElem, xpath } from '../../utils/dom-utils';
+import { getElementsBetweenTreeNode, getXPath, isNestedInElem, xpath } from '../../utils/dom-utils';
 import { getExternalElements, isAnalogue, isSource, replaceMultispaces } from '../../utils/xml-utils';
 import { createParser, getClass, getDefaultN, getID, parseChildren, ParseFn, Parser } from './parser-models';
 import { AppConfig } from 'src/app/app.config';
@@ -47,7 +47,7 @@ export class GenericElemParser extends AttrParser implements Parser<XMLElement> 
             class: getClass(xml),
             content: parseChildren(xml, this.genericParse),
             attributes: this.attributeParser.parse(xml),
-            // path?: string; // TODO: add path
+            xPath: getXPath(xml)
         };
     }
 }
@@ -123,6 +123,7 @@ export class ParagraphParser extends EmptyParser implements Parser<XMLElement> {
             n: getDefaultN(attributes.n),
             source: this.source,
             analogue: this.analogue,
+            xPath: getXPath(xml),
         };
 
         return paragraphComponent;
@@ -144,6 +145,7 @@ export class LBParser extends EmptyParser implements Parser<XMLElement> {
             type: Lb,
             content: [],
             attributes,
+            xPath: getXPath(xml),
         };
     }
 }
@@ -157,6 +159,7 @@ export class SpaceParser extends EmptyParser implements Parser<XMLElement> {
             type: Space,
             content: parseChildren(xml, this.genericParse),
             attributes,
+            xPath: getXPath(xml),
         };
 
         return spaceComponent;
@@ -202,6 +205,7 @@ export class NoteParser extends EmptyParser implements Parser<XMLElement> {
             source: this.source,
             analogue: this.analogue,
             attributes,
+            xPath: getXPath(xml),
         };
 
         return noteElement;
@@ -287,6 +291,7 @@ export class VerseParser extends EmptyParser implements Parser<XMLElement> {
             n: getDefaultN(attributes.n),
             source: this.source,
             analogue: this.analogue,
+            xPath: getXPath(xml),
         };
 
         return lineComponent;
@@ -321,6 +326,7 @@ export class VersesGroupParser extends EmptyParser implements Parser<XMLElement>
             groupType: getDefaultN(attributes.type),
             source: this.source,
             analogue: this.analogue,
+            xPath: getXPath(xml),
         };
 
         return lgComponent;
@@ -342,6 +348,7 @@ export class SuppliedParser extends EmptyParser implements Parser<XMLElement> {
             class: getClass(xml),
             content: parseChildren(xml, this.genericParse),
             attributes,
+            xPath: getXPath(xml),
         };
     }
 }
@@ -361,6 +368,7 @@ export class DamageParser extends EmptyParser implements Parser<XMLElement> {
             class: getClass(xml),
             content: parseChildren(xml, this.genericParse),
             attributes: this.attributeParser.parse(xml),
+            xPath: getXPath(xml),
         };
     }
 }
@@ -382,6 +390,7 @@ export class GapParser extends EmptyParser implements Parser<XMLElement> {
             class: getClass(xml),
             content: parseChildren(xml, this.genericParse),
             attributes,
+            xPath: getXPath(xml),
         };
     }
 }
@@ -394,7 +403,7 @@ export class AdditionParser extends EmptyParser implements Parser<XMLElement> {
         return {
             type: Addition,
             place: xml.getAttribute('place') as PlacementType,
-            path: xpath(xml),
+            xPath: getXPath(xml),
             content: parseChildren(xml, this.genericParse),
             attributes: this.attributeParser.parse(xml),
             class: xml.tagName.toLowerCase(),
@@ -415,6 +424,7 @@ export class WordParser extends EmptyParser implements Parser<XMLElement> {
             class: getClass(xml),
             content: parseChildren(xml, this.genericParse),
             attributes: this.attributeParser.parse(xml),
+            xPath: getXPath(xml),
         };
     }
 }
@@ -428,6 +438,7 @@ export class DeletionParser extends EmptyParser implements Parser<XMLElement> {
             type: Deletion,
             rend: xml.getAttribute('rend'),
             path: xpath(xml),
+            xPath: getXPath(xml),
             content: parseChildren(xml, this.genericParse),
             attributes: this.attributeParser.parse(xml),
             class: xml.tagName.toLowerCase(),
@@ -467,6 +478,7 @@ export class MilestoneParser extends GenericElemParser implements Parser<XMLElem
             spanText: '',
             spanElements: parsedElements,
             content: parseChildren(xml, this.genericParse),
+            xPath: getXPath(xml),
         };
     }
 }
@@ -482,6 +494,7 @@ export class AnchorParser extends GenericElemParser implements Parser<XMLElement
             id: xml.getAttribute('xml:id'),
             attributes: this.attributeParser.parse(xml),
             content: parseChildren(xml, this.genericParse),
+            xPath: getXPath(xml),
         };
     }
 }
@@ -605,14 +618,22 @@ export class CitParser extends DisambiguationParser implements Parser<XMLElement
 
 @xmlParser('subst', SubstParser)
 export class SubstParser extends GenericElemParser implements Parser<XMLElement> {
+    delParser = createParser(DeletionParser, this.genericParse);
+
+    addParser = createParser(AdditionParser, this.genericParse);
+
     parse(xml: XMLElement): Subst {
-        let parsing = {
+        let parsing : Subst = {
             ...super.parse(xml),
             type: Subst,
-            after: [],
+            add: this.addParser.parse(xml.getElementsByTagName('add')[0] as XMLElement),
+            del: this.delParser.parse(xml.getElementsByTagName('del')[0] as XMLElement)
         }
-        parsing.after = parsing.content.filter((el) => (el['type']) && (el['type'] !== Deletion));
+        
+        //parsing.after = parsing.content.filter((el) => (el['type']) && (el['type'] !== Deletion));
 
         return parsing;
     }
+
+
 }

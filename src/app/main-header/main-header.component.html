@@ -8,7 +8,8 @@
         </a>
         <span class="ms-2 badge badge-pill badge-info inverted font-weight-normal edition-badge" *ngIf="editionConfig?.badge">{{editionConfig?.badge}}</span>
     </a>
-    <div>
+    <div class="d-flex align-items-center">
+        <evt-errors-button class="mx-3"></evt-errors-button>
         <evt-button additionalClasses="btn-no-border viewMode-btn" ariaLabel="{{ 'ariaLabels.switchToViewmode' | translate }}" aria-role="button"
             *ngFor="let viewMode of viewModes; trackBy: trackViewModes;" 
             [title]="viewMode.label" [active]="viewMode.id === (currentViewMode$ | async)?.id" [inverted]="true"
@@ -22,4 +23,4 @@
     </div>
 </nav>
 
-<evt-main-menu *ngIf="mainMenuOpened" (itemClicked)=handleItemClicked($event)></evt-main-menu>
+<evt-main-menu *ngIf="mainMenuOpened" (itemClicked)='handleItemClicked($event)'></evt-main-menu>

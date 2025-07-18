@@ -70,7 +70,6 @@ export class ModComponent {
       name: 'mod',
       attributes: this.data?.attributes || {},
       editionLevel: this.editionLevel || 'diplomatic',
-      defaultsKey: 'mod',
     };
   }
 

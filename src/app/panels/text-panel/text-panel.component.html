@@ -1,5 +1,5 @@
 <evt-panel [showSecondaryContent]="isSecondaryContentOpened()" (scrollContent)="updatePageFromScroll$.next()">
-    <div header-left>
+    <div header-left class="no-drag" >
         <evt-button
             ariaLabel="{{ 'ariaLabels.openInfoTab' | translate }}"
             aria-role="button"

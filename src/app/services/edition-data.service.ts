@@ -31,6 +31,7 @@ export class EditionDataService {
     private http: HttpClient,
     private prefatoryMatterParser: PrefatoryMatterParserService
   ) {
+
   }
 
   private loadAndParseMainEditionData(): Observable<EditionSource> {
@@ -38,18 +39,18 @@ export class EditionDataService {
   }
 
   private loadOtherEditionsData(): Observable<EditionSource[]> {
-    if(!this.otherUrls.length) return of([]);
+    if (!this.otherUrls.length) return of([]);
 
     const requests = this.otherUrls.map(editionUrl => this.loadAndParseEditionData(editionUrl));
     return forkJoin(requests);
   }
 
-  private isMainUrl(url: EditionUrl): boolean{
+  private isMainUrl(url: EditionUrl): boolean {
     return url.type === 'main';
   }
 
-  private loadAndParseEditionData({value, friendlyName}: EditionUrl): Observable<EditionSource> {
-    return this.http.get(value, { responseType: 'text' }).pipe(
+  private loadAndParseEditionData(editionUrl: EditionUrl): Observable<EditionSource> {
+    return this.http.get(editionUrl.value, { responseType: 'text' }).pipe(
       map((source) => parseXml(source)),
       tap(source => {
         setId(source.lastElementChild as HTMLElement);
@@ -66,13 +67,21 @@ export class EditionDataService {
           }
         }
       }),
-      mergeMap((editionData) => this.loadXIinclude(editionData, value.substring(0, value.lastIndexOf('/') + 1))),
-      map(editionData => {
+      // merge lists if both urls and xi:include are specified
+      mergeMap((editionData) => this.loadXIinclude(editionData, editionUrl.value.substring(0, editionUrl.value.lastIndexOf('/') + 1))),
+      mergeMap(editionData =>
+        forkJoin({
+          editionData: of(editionData),
+          glossary: editionUrl.glossaryUrl ? this.http.get(editionUrl.glossaryUrl, { responseType: 'text' }) : of(''),
+        })
+      ),
+      map(({ editionData, glossary }) => {
         const editionInfo: EditionInfo = {
           editionTitle: this.prefatoryMatterParser.parseEditionTitle(editionData),
-          editionFriendlyName: friendlyName
-        }
-        return { editionData, editionInfo };
+          editionFriendlyName: editionUrl.friendlyName
+        };
+        const parsedGlossary = glossary ? parseXml(glossary) : null;
+        return { editionData, editionInfo, glossary: parsedGlossary };
       }),
       catchError(() => throwError(() => this.createError()))
     );
@@ -88,8 +97,8 @@ export class EditionDataService {
             const fileXpointer = element.getAttribute('xpointer');
             let includedTextElem: Node;
             if (fileXpointer) {
-              includedTextElem = doc.querySelector(`[*|id="${fileXpointer}"]`) 
-                || includedDoc.querySelector(`[*|id="${fileXpointer}"]`)  
+              includedTextElem = doc.querySelector(`[*|id="${fileXpointer}"]`)
+                || includedDoc.querySelector(`[*|id="${fileXpointer}"]`)
                 || includedDoc.querySelector('text');
             } else {
               includedTextElem = includedDoc.querySelector('text');

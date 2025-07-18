@@ -1,4 +1,8 @@
-<ng-container *ngFor="let entry of (entries$ | async)"> 
-    <evt-apparatus-entry-detail *ngIf="true" [data]="entry" (click)="stopPropagation($event)" class="app-list">
-    </evt-apparatus-entry-detail>
+<ng-container>
+        <ng-container *ngFor="let entry of (entries$ | async)">
+                <div #appDetails style="scroll-margin-top: 100px;" (click)="selectApparatusEntry(entry.entry)">
+                        <evt-apparatus-entry-detail *ngIf="true" [data]="entry.entry" class="app-list"
+                                [isSelected]="entry.isSelected"></evt-apparatus-entry-detail>
+                </div>
+        </ng-container>
 </ng-container>

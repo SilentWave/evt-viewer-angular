@@ -55,9 +55,8 @@
                                 </ng-container>
                             </ng-container>
                         </div>
-                        <div class="container-fluid">
-                            <div class="row align-items-start"
-                                *ngIf="activeOccurrencesView === 'edition' && (occurrencesForms$ | async) as occurrencesForms">
+                        <div class="container-fluid" *ngIf="activeOccurrencesView === 'edition' && (occurrencesForms$ | async) as occurrencesForms">
+                            <div class="row align-items-start">
                                 <div class="col-auto ne-occurrence text-center"
                                     *ngFor="let occurrenceForm of occurrencesForms">
                                     <div class="fw-bold">{{ occurrenceForm.form }}</div>

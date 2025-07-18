@@ -68,7 +68,7 @@
       "iconSet": "evt",
       "id": "synopticEdition",
       "label": "Synoptic edition",
-      "enable": false
+      "enable": true
     }
   ],
   "localization": true,

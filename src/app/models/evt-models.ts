@@ -1,10 +1,11 @@
 import { Type } from '@angular/core';
-import { EditionLevelType } from '../app.config';
+import { EditionLevelType, EditorialConventionAttributes } from '../app.config';
 import { ParseResult } from '../services/xml-parsers/parser-models';
+import { getFromAttributeOrDefault, getToAttributeOrDefault } from '../extensions/apparatus.extensions';
 
 export interface EditorialConvention {
     element: string;
-    attributes: Attributes;
+    attributes: EditorialConventionAttributes;
     layouts: EditorialConventionLayouts;
 }
 export type EditorialConventionLayouts = Partial<{ [key in EditionLevelType]: Partial<EditorialConventionLayout> }>;
@@ -27,6 +28,7 @@ export class GenericElement {
     class?: string;
     attributes: Attributes;
     content: Array<ParseResult<GenericElement>>;
+    xPath: string;
 }
 
 export type XMLElement = HTMLElement;
@@ -34,10 +36,25 @@ export type OriginalEncodingNodeType = XMLElement;
 
 export interface EditionStructure {
     pages: Page[];
+    documentApparatusEntries?: DocumentApparatusEntries;
+}
+
+export class DocumentApparatusEntries {
+    apps: Map<string, PageApparatusEntries> = new Map();
+}
+
+export class PageApparatusEntries {
+    pageId: string;
+    apps: Map<string, ElementApparatusEntries> = new Map();
+}
+
+export class ElementApparatusEntries {
+    elementId: string;
+    apps: ApparatusEntry[] = [];
 }
 
 export type ViewModeId = 'imageOnly' | 'imageImage' | 'readingText' | 'imageText' | 'textText' |
-'collation' | 'textSources' | 'textVersions' | 'documentalMixed' | 'synopticEdition';
+    'collation' | 'textSources' | 'textVersions' | 'documentalMixed' | 'synopticEdition';
 
 export interface ViewMode {
     id: ViewModeId;
@@ -55,6 +72,7 @@ export interface Page {
     parsedContent: Array<ParseResult<GenericElement>>;
     url: string;
     facsUrl: string;
+    isPartOfLacuna?: boolean;
 }
 
 export interface ChangeLayerData {
@@ -85,19 +103,62 @@ export interface NamedEntities {
         lists: NamedEntitiesList[];
         entities: NamedEntity[];
     };
+    entries: {
+        lists: NamedEntitiesList[];
+        entities: NamedEntity[];
+    };
 }
 
 export interface Attributes { [key: string]: string; }
+
+export class Attribute {
+    valueRef: string;
+    valueWithoutRef: string;
+
+    private constructor(value: string) {
+        if (!value) throw new Error('value is required');
+
+        this.valueWithoutRef = value.withoutSelectorCharacter();
+        this.valueRef = value.withSelectorCharacter();
+    }
+
+    equals(other: Attribute | string): boolean {
+        if (typeof other === 'string') {
+            return this.valueWithoutRef === other;
+        }
+        if (!(other instanceof Attribute)) {
+            return false;
+        }
+        return this.valueWithoutRef === other.valueWithoutRef;
+    }
+
+    static create(value: string): Attribute | null {
+        return new Attribute(value);
+    }
+
+    static createOrDefault(value: string): Attribute | null {
+        return value ? new Attribute(value) : null;
+    }
+
+    static createFromOrDefault(app: HTMLElement): Attribute | null {
+        const from = getFromAttributeOrDefault(app);
+        return Attribute.createOrDefault(from);
+    }
+
+    static createToOrDefault(app: HTMLElement): Attribute | null {
+        const to = getToAttributeOrDefault(app);
+        return Attribute.createOrDefault(to);
+    }
+}
 
 export interface OriginalEncoding {
     originalEncoding: OriginalEncodingNodeType;
 }
 
-export type NamedEntityType = 'person' | 'place' | 'org' | 'relation' | 'event' | 'generic';
 export class NamedEntitiesList extends GenericElement {
     id: string;
     label: string;
-    namedEntityType: NamedEntityType;
+    namedEntityType: string;
     description?: Description;
     sublists: NamedEntitiesList[];
     content: NamedEntity[];
@@ -109,7 +170,7 @@ export class NamedEntity extends GenericElement {
     id: string;
     sortKey: string;
     label: NamedEntityLabel;
-    namedEntityType: NamedEntityType | 'personGrp';
+    namedEntityType: string;
     content: NamedEntityInfo[];
     originalEncoding: OriginalEncodingNodeType;
 }
@@ -144,28 +205,17 @@ export type Description = Array<ParseResult<GenericElement>>;
 
 export class NamedEntityRef extends GenericElement {
     entityId: string;
-    entityType: NamedEntityType;
-}
-
-export interface Witnesses {
-    witnesses: Witness[];
-    groups: WitnessGroup[];
+    entityType: string;
 }
 
 export interface Witness {
     id: string;
-    name: string | Array<ParseResult<GenericElement>> | XMLElement;
+    name: string;
+    label?: ParseResult<GenericElement>,
     attributes: Attributes;
     content: Array<ParseResult<GenericElement>>;
-    groupId: string;
-}
-
-export interface WitnessGroup {
-    id: string;
-    name: string;
-    attributes: Attributes;
-    witnesses: string[];
-    groupId: string;
+    witnesses: Witness[],
+    anchestorWitnessesIds: string[]
 }
 
 export class ApparatusEntry extends GenericElement {
@@ -177,6 +227,37 @@ export class ApparatusEntry extends GenericElement {
     nestedAppsIDs: string[];
     changes: Mod[];
     orderedReadings: Reading[];
+
+    /**
+     * The {@link GenericElement[attributes]} are used to display data
+     * so to avoid messing what already works, this property can be used
+     * to store additional attributes. 
+     */
+    additionalAttributes: AdditionalAttributes;
+    criticalContent: ParseResult<GenericElement>[];
+    exponent: string;
+
+    isWitnessExcluded(witnessId: string): boolean {
+        const isWitnessExcluded = this.readings.some(x => x.excludedWitIDs.includes(witnessId));
+        return isWitnessExcluded;
+    }
+}
+
+export class AdditionalAttributes {
+    attributes: Attributes = {};
+
+    get exponentId() {
+        return this.attributes['exponent-id'];
+    }
+
+    addExponentId(id: string): void {
+        this.attributes['exponent-id'] = id;
+    }
+
+    has(id: string) {
+        const values = Object.values(this.attributes);
+        return values.includes(id);
+    }
 }
 
 export const SourceClass = 'sourceEntry';
@@ -264,8 +345,27 @@ export class Analogue extends GenericElement {
 export class Reading extends GenericElement {
     id: string;
     witIDs: string[];
+    excludedWitIDs: string[];
     significant: boolean;
     varSeq?: number;
+    notes: Note[];
+    lacunas: Lacunas
+}
+
+export class Lacunas {
+    lacunaStart?: Lacuna;
+    lacunaEnd?: Lacuna;
+}
+
+export interface LacunaPair {
+  start?: HTMLElement;
+  end?: HTMLElement;
+}
+
+export class Lacuna extends GenericElement {
+    id: string;
+    witnessesIds: string[];
+    isLacunaStart: boolean;
 }
 
 export interface GridItem {
@@ -315,7 +415,7 @@ export class Surface extends GenericElement {
     };
 }
 
-export class Facsimile extends GenericElement{
+export class Facsimile extends GenericElement {
     corresp: string | undefined;
     surfaces: Surface[];
     surfaceGrps: SurfaceGrp[];
@@ -430,7 +530,9 @@ export class Gap extends GenericElement {
 }
 
 export class Subst extends GenericElement {
-    after: ParseResult<GenericElement>;
+    //after: ParseResult<GenericElement>;
+    del: Deletion;
+    add: Addition;
 }
 
 
@@ -442,7 +544,7 @@ export class Addition extends GenericElement {
 
 export class Space extends GenericElement {
     quantity?: number;
-    unit?: 'chars' | 'letter' ;
+    unit?: 'chars' | 'letter';
 }
 
 export type SicType = 'crux'; // sic types supported in specific ways
@@ -453,6 +555,7 @@ export class Sic extends GenericElement {
 export class Word extends GenericElement {
     lemma?: string;
 }
+
 
 export class Deletion extends GenericElement {
     rend: string;
@@ -992,6 +1095,14 @@ export class StyleDefDecl extends GenericElement {
     schemeVersion: string;
 }
 
+export type VariantEncodingType = 'double-end-point' | 'inline';
+export type VariantEncodingLocationType = 'external' | 'internal';
+
+export interface VariantEncoding {
+    method: VariantEncodingType;
+    location: VariantEncodingLocationType;
+}
+
 export class EncodingDesc extends GenericElement {
     structuredData: boolean;
     projectDesc: ProjectDesc[];
@@ -1005,6 +1116,7 @@ export class EncodingDesc extends GenericElement {
     unitDecl: Array<ParseResult<GenericElement>>; // TODO: Add specific type when unitDecl is handled
     schemaSpec: Array<ParseResult<GenericElement>>; // TODO: Add specific type when schemaSpec is handled
     schemaRef: Array<ParseResult<GenericElement>>; // TODO: Add specific type when schemaRef is handled
+    variantEncoding: VariantEncoding;
 }
 
 export class ProjectDesc extends GenericElement {
@@ -1379,4 +1491,47 @@ export interface XMLImagesValues {
 export interface ViewerDataType {
     type: string;
     value: ViewerDataValue;
+}
+
+export class ApparatusEntryExponent extends GenericElement {
+    /**
+     * Avoid calling this directly, use the class factory methods
+     * cannot set type if private constructor
+     */
+    constructor(public label: string, public appEntry: ApparatusEntry) {
+        super();
+        this.type = ApparatusEntryExponent;
+    }
+
+    id(): Attribute {
+        return Attribute.create(this.attributes['id']);
+    }
+    from(): Attribute {
+        return Attribute.create(this.attributes['from']);
+    }
+    to(): Attribute {
+        return Attribute.create(this.attributes['to']);
+    }
+
+    static create(id: string, from: string, to: string, label: string, appEntry: ApparatusEntry): ApparatusEntryExponent {
+        if (!this.isValidId(id))
+            throw new Error('id is required');
+
+        if (!this.isValidId(from))
+            throw new Error('from is required');
+
+        appEntry.additionalAttributes.addExponentId(id);
+        const anchor = new ApparatusEntryExponent(label, appEntry);
+        anchor.attributes = {
+            'name': 'apparatusEntryAnchor',
+            'id': id,
+            'from': from,
+            'to': to
+        };
+        return anchor;
+    }
+
+    private static isValidId(id: string) {
+        return id !== undefined && id !== null && id.length > 0;
+    }
 }

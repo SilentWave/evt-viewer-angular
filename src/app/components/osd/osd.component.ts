@@ -4,7 +4,7 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmi
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { BehaviorSubject, combineLatest, Observable, of, Subject, Subscription  } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of, Subject, Subscription } from 'rxjs';
 import { combineLatestWith, distinctUntilChanged, filter, takeUntil, withLatestFrom } from 'rxjs/operators';
 import { Page, Point, Surface, ViewerDataType } from '../../models/evt-models';
 import { OsdTileSource, ViewerDataInput, ViewerSource } from '../../models/evt-polymorphic-models';
@@ -45,13 +45,13 @@ interface OsdViewerAPI {
   gestureSettingsMouse;
   container;
   raiseEvent: (evtName: string) => void;
-  forceRedraw: ()=> void;
-  destroy: ()=> void;
-  canvasOverlay: ({})=> OpenSeaDragonOverlay;
+  forceRedraw: () => void;
+  destroy: () => void;
+  canvasOverlay: ({ }) => OpenSeaDragonOverlay;
 }
 
-interface OpenSeaDragonOverlay{
-  canvas: ()=> HTMLCanvasElement;
+interface OpenSeaDragonOverlay {
+  canvas: () => HTMLCanvasElement;
   context2d: () => CanvasRenderingContext2D;
 }
 
@@ -64,7 +64,7 @@ interface OpenSeaDragonOverlay{
 export class OsdComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('osd', { read: ElementRef, static: true }) div: ElementRef;
-    private unsubscribeAll$ = new Subject<void>();
+  private unsubscribeAll$ = new Subject<void>();
 
   @Input() surface: Surface | undefined;
   @Input() pageElement: Page;
@@ -87,7 +87,7 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
 
       this._viewerSource = ViewerSource.getSource(v, v.type);
       this.sourceChange.next(this._viewerSource);
-    }catch{
+    } catch {
 
     }
   }
@@ -144,31 +144,31 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
     let intersections = 0;
 
     for (let i = 0; i < coords.length; i++) {
-        const p1 = coords[i];
-        const p2 = coords[(i + 1) % coords.length];
+      const p1 = coords[i];
+      const p2 = coords[(i + 1) % coords.length];
 
-        if ((p1.y > y) !== (p2.y > y) &&
-            x < ((p2.x - p1.x) * (y - p1.y)) / (p2.y - p1.y) + p1.x) {
-            intersections++;
-        }
+      if ((p1.y > y) !== (p2.y > y) &&
+        x < ((p2.x - p1.x) * (y - p1.y)) / (p2.y - p1.y) + p1.x) {
+        intersections++;
+      }
     }
 
     return intersections % 2 === 1;
-}
+  }
 
   ngAfterViewInit() {
     this.viewerId = uuid('openseadragon');
     this.div.nativeElement.id = this.viewerId;
 
-    try{
-    this.tileSources = ViewerSource.getTileSource(this.sourceChange, this._viewerDataType, this.http);
-    } catch{
-      this.tileSources=of([]);
+    try {
+      this.tileSources = ViewerSource.getTileSource(this.sourceChange, this._viewerDataType, this.http);
+    } catch {
+      this.tileSources = of([]);
     }
     const commonOptions = {
       visibilityRatio: 0.66,
       minZoomLevel: 0.3,
-      maxZoomLevel:  AppConfig.evtSettings.edition.maxImageZoomLevel,
+      maxZoomLevel: AppConfig.evtSettings.edition.maxImageZoomLevel,
       defaultZoomLevel: AppConfig.evtSettings.edition.defaultImageZoomLevel,
       sequenceMode: true,
       prefixUrl: 'assets/osd/images/',
@@ -188,7 +188,7 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
     this.subscriptions.push(combineLatest([this.optionsChange, this.tileSources, this.evtModelService.pages$])
       .subscribe(([_, tileSources, pages]) => {
 
-        if (this.viewer){
+        if (this.viewer) {
           this.viewer.destroy();
           this.viewer = undefined;
         }
@@ -196,30 +196,30 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
 
         if (!!tileSources) {
           //TODO: check this, for test only
-          if (tileSources.length === 0){
+          if (tileSources.length === 0) {
 
-           const tiles = pages.map((p) =>( {
-                type: 'image',
-                url: p.facsUrl,
-               //  protocol: 'http',
-               //  height: '',
-               // '@id': p.id,
-               //  '@context': p.id,
-               //  width: '',
-               //  profile: [],
-
-
-              } as OsdTileSource));
-
-           //console.log('tiles:', tiles);
-              this.viewer = OpenSeadragon({
-                ...commonOptions,
-                ...this.options,
-                tileSources: tiles,
-              });
+            const tiles = pages.map((p) => ({
+              type: 'image',
+              url: p.facsUrl,
+              //  protocol: 'http',
+              //  height: '',
+              // '@id': p.id,
+              //  '@context': p.id,
+              //  width: '',
+              //  profile: [],
 
 
-          } else{
+            } as OsdTileSource));
+
+            //console.log('tiles:', tiles);
+            this.viewer = OpenSeadragon({
+              ...commonOptions,
+              ...this.options,
+              tileSources: tiles,
+            });
+
+
+          } else {
             this.viewer = OpenSeadragon({
               ...commonOptions,
               ...this.options,
@@ -230,7 +230,7 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
 
           this.viewer = OpenSeadragon({
             ...commonOptions,
-           ...this.options,
+            ...this.options,
           });
         }
         this.viewer.goToPage(this.page);
@@ -245,10 +245,10 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
           }
         });
         this.viewer.addHandler('canvas-click', (canvasClickEvent) => {
-            const webPoint = canvasClickEvent.position;
-              const viewportPoint = this.viewer.viewport.pointFromPixel(webPoint);
-              const imagePoint = this.viewer.viewport.viewportToImageCoordinates(viewportPoint);
-              this.mouseClicked$.next({ x: imagePoint.x, y: imagePoint.y });
+          const webPoint = canvasClickEvent.position;
+          const viewportPoint = this.viewer.viewport.pointFromPixel(webPoint);
+          const imagePoint = this.viewer.viewport.viewportToImageCoordinates(viewportPoint);
+          this.mouseClicked$.next({ x: imagePoint.x, y: imagePoint.y });
         });
         this.viewer.addHandler('open', () => {
           const tracker = new OpenSeadragon.MouseTracker({
@@ -263,18 +263,18 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
           tracker.setTracking(true);
         });
 
-        if (this.surface?.zones?.lines?.length > 0){
+        if (this.surface?.zones?.lines?.length > 0) {
           this.mouseMoved$.pipe(
-              combineLatestWith(this.linesHighlightService.syncTextImage$.asObservable()),
-              filter(([_mm, isSync])=> isSync),
-              distinctUntilChanged(),
-              takeUntil(this.unsubscribeAll$),
+            combineLatestWith(this.linesHighlightService.syncTextImage$.asObservable()),
+            filter(([_mm, isSync]) => isSync),
+            distinctUntilChanged(),
+            takeUntil(this.unsubscribeAll$),
           ).subscribe(([imagePoint]) => {
-            const linesOver = this.surface.zones.lines.filter((line) => this.isPointInsidePolygon(line.coords,imagePoint.x,imagePoint.y ));
+            const linesOver = this.surface.zones.lines.filter((line) => this.isPointInsidePolygon(line.coords, imagePoint.x, imagePoint.y));
 
-            const elementsSelected = this.linesHighlightService.lineBeginningSelected$.getValue().filter( (e) => e.selected);
+            const elementsSelected = this.linesHighlightService.lineBeginningSelected$.getValue().filter((e) => e.selected);
 
-            const linesOverMapped =  linesOver.filter((lo)=> !elementsSelected.some((es) => es.corresp === lo.corresp)  ).map((lo) => ({
+            const linesOverMapped = linesOver.filter((lo) => !elementsSelected.some((es) => es.corresp === lo.corresp)).map((lo) => ({
               id: lo.corresp,
               corresp: lo.corresp,
               selected: undefined,
@@ -286,10 +286,10 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
           });
 
           this.mouseClicked$.pipe(
-              combineLatestWith(this.linesHighlightService.syncTextImage$.asObservable()),
-              filter(([_mm, isSync])=> isSync),
-              distinctUntilChanged(),
-              takeUntil(this.unsubscribeAll$),
+            combineLatestWith(this.linesHighlightService.syncTextImage$.asObservable()),
+            filter(([_mm, isSync]) => isSync),
+            distinctUntilChanged(),
+            takeUntil(this.unsubscribeAll$),
           ).subscribe(([imagePoint]) => {
 
             const linesOver = this.surface.zones.lines.filter((line) => {
@@ -298,17 +298,17 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
               const lrPoint = line.coords[2];
 
               return imagePoint.x > ulPoint.x &&
-                  imagePoint.x < lrPoint.x &&
-                  imagePoint.y > ulPoint.y &&
-                  imagePoint.y < lrPoint.y;
+                imagePoint.x < lrPoint.x &&
+                imagePoint.y > ulPoint.y &&
+                imagePoint.y < lrPoint.y;
             });
 
-            let elementsSelected = this.linesHighlightService.lineBeginningSelected$.getValue().filter( (e) => e.selected);
+            let elementsSelected = this.linesHighlightService.lineBeginningSelected$.getValue().filter((e) => e.selected);
 
-            linesOver.forEach((lo)=>{
-              if (elementsSelected.some((es) => es.corresp === lo.corresp)){
+            linesOver.forEach((lo) => {
+              if (elementsSelected.some((es) => es.corresp === lo.corresp)) {
                 elementsSelected = elementsSelected.filter((es) => es.corresp !== lo.corresp)
-              } else{
+              } else {
                 elementsSelected.push({
                   id: lo.corresp,
                   corresp: lo.corresp,
@@ -320,24 +320,24 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
           });
         }
 
-        if (!this.surface){
+        if (!this.surface) {
           return;
         }
-        const originalImageWidth = +this.surface.graphics[0].width.replace('px','');
-        const originalImageHeight = +this.surface.graphics[0].height.replace('px','');
+        const originalImageWidth = +this.surface.graphics[0].width.replace('px', '');
+        const originalImageHeight = +this.surface.graphics[0].height.replace('px', '');
         const aspectRatio = originalImageHeight / originalImageWidth;
 
         this.linesHighlightService.zonesHighlights$.pipe(
           distinctUntilChanged((a, b) => JSON.stringify(a.map((ae) => ae.id)) === JSON.stringify(b.map((be) => be.id))),
           withLatestFrom(this.linesHighlightService.syncTextImage$),
-          filter(([_zones, sync])=> sync),
+          filter(([_zones, sync]) => sync),
           takeUntil(this.unsubscribeAll$),
         ).subscribe(([zones]) => {
           this.lineSelected = zones ?? [];
           if (zones?.length > 0) {
-              this.linesHighlightService.highlightLineText(
-                            zones.map((z)=> ({ id: z.corresp, selected: z.selected })),
-                          );
+            this.linesHighlightService.highlightLineText(
+              zones.map((z) => ({ id: z.corresp, selected: z.selected })),
+            );
           } else {
             this.linesHighlightService.clearHighlightText();
           }
@@ -350,13 +350,13 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
               const context2d = this.overlay.context2d();
               context2d.beginPath();
               context2d.moveTo(
-                (lineSelected.coords[0].x /originalImageWidth),
+                (lineSelected.coords[0].x / originalImageWidth),
                 (lineSelected.coords[0].y / originalImageHeight) * aspectRatio);
               for (let i = 1; i < lineSelected.coords.length; i++) {
                 context2d.lineTo(
-                  (lineSelected.coords[i].x/originalImageWidth),
-                  (lineSelected.coords[i].y/ originalImageHeight)* aspectRatio,
-                  );
+                  (lineSelected.coords[i].x / originalImageWidth),
+                  (lineSelected.coords[i].y / originalImageHeight) * aspectRatio,
+                );
               }
               context2d.closePath();
               context2d.fillStyle = lineSelected.selected ? '#aaaa19' : '#d36019';
@@ -372,7 +372,11 @@ export class OsdComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.forEach((s) => s.unsubscribe());
-    this.linesHighlightService.clearHighlightText();
+    try {
+      this.linesHighlightService.clearHighlightText();
+    } catch (e) {
+      console.error(e);
+    }
     this.unsubscribeAll$.next();
     this.unsubscribeAll$.complete();
   }
